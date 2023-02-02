@@ -3,6 +3,7 @@ package org.codeship;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+// This is some extra comments to push code on Github
 class SomeThread extends Thread{
 	private String name;
  
