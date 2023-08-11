@@ -1,0 +1,2 @@
+module collections_framework {
+}
