@@ -28,14 +28,14 @@ public class SearchContoller {
 	public String home() {
 		System.out.println("Going to home view...");
 		
+		//processing area
 		//NullPointer exception will be occurred
 //		String str=null;
 //		System.out.println(str.length());  
 		
 		//ArrayIndexOutOfBounds exception will be occurred
-//		int[] arr = new int[5];
-//		System.out.println(arr[5]);
-		//processing area
+		int[] arr = new int[5];
+		System.out.println(arr[5]);
 		
 		return "home";
 	}
@@ -52,34 +52,35 @@ public class SearchContoller {
 	
 	//Handling exception in spring mvc
 	
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(value=NullPointerException.class)
-	public String exceptionHandlerNull(Model m) 
-	{
-		m.addAttribute("msg", "Null Pointer exception has occured");
-		return "null_page";
-	}
-	
-	@ResponseStatus(value = HttpStatus.GATEWAY_TIMEOUT)
-	@ExceptionHandler(value=NumberFormatException.class)
-	public String exceptionHandlerNumberFormat(Model m) 
-	{
-		m.addAttribute("msg", "Number Format exception has occured");
-		return "null_page";
-	}
-	
-	@ResponseStatus(value = HttpStatus.GATEWAY_TIMEOUT)
-	@ExceptionHandler(value=ArrayIndexOutOfBoundsException.class)
-	public String exceptionHandlerArrayIndexOutOfBounds(Model m) 
-	{
-		m.addAttribute("msg", "Array Index Out Of Bounds exception has occured");
-		return "null_page";
-	}
-	
-	@ExceptionHandler(value = Exception.class)
-	public String exceptionHandlerGeneric(Model m) 
-	{
-		m.addAttribute("msg", "Generic exception has occured");
-		return "null_page";
-	}
+//	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+//	@ExceptionHandler(value=NullPointerException.class)
+//	public String exceptionHandlerNull(Model m) 
+//	{
+//		m.addAttribute("msg", "Null Pointer exception has occured");
+//		return "null_page";
+//	}
+//	
+//	@ResponseStatus(value = HttpStatus.GATEWAY_TIMEOUT)
+//	@ExceptionHandler(value=NumberFormatException.class)
+//	public String exceptionHandlerNumberFormat(Model m) 
+//	{
+//		m.addAttribute("msg", "Number Format exception has occured");
+//		return "null_page";
+//	}
+//	
+//	@ResponseStatus(value = HttpStatus.GATEWAY_TIMEOUT)
+//	@ExceptionHandler(value=ArrayIndexOutOfBoundsException.class)
+//	public String exceptionHandlerArrayIndexOutOfBounds(Model m) 
+//	{
+//		m.addAttribute("msg", "Array Index Out Of Bounds exception has occured");
+//		return "null_page";
+//	}
+//	
+//	//Generalised exception handling for all types of exception for this controller
+//	@ExceptionHandler(value = Exception.class)
+//	public String exceptionHandlerGeneric(Model m) 
+//	{
+//		m.addAttribute("msg", "Generic exception has occured");
+//		return "null_page";
+//	}
 }
