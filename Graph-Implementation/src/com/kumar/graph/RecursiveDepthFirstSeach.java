@@ -38,14 +38,14 @@ public class RecursiveDepthFirstSeach {
       return sb.toString();
    }
 
-//   public void dfs() {
-//      boolean[] visited = new boolean[V];
-//      for (int v = 0; v < V; v++) {
-//         if (!visited[v]) {
-//            dfs(v, visited);
-//         }
-//      }
-//   }
+   public void dfs() {
+      boolean[] visited = new boolean[V];
+      for (int v = 0; v < V; v++) {
+         if (!visited[v]) {
+            dfs(v, visited);
+         }
+      }
+   }
 
    // Recursively call dfs(v,visited) on adjacent nodes of 'v' node
    private void dfs(int v, boolean[] visited) {
@@ -59,16 +59,17 @@ public class RecursiveDepthFirstSeach {
    }
 
    public static void main(String[] args) {
-	  int nodes = 5;
+	  int nodes = 6;
 	  RecursiveDepthFirstSeach g = new RecursiveDepthFirstSeach(nodes);
 	  boolean[] visited = new boolean[nodes];
 	  g.addEdge(2, 3);
 	  g.addEdge(2, 4);
       g.addEdge(0, 3);
       g.addEdge(0, 1);
-      g.addEdge(2, 1);      
+      g.addEdge(2, 1); 
+      g.addEdge(5, 5);
       System.out.println(g);
       //passing starting node as 0
-      g.dfs(0,visited);
+      g.dfs();
    }
 }
