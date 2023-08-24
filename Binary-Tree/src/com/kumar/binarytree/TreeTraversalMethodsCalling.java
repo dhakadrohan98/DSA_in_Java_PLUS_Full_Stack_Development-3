@@ -13,6 +13,9 @@ public class TreeTraversalMethodsCalling {
 		System.out.println();
 		System.out.print("Iterative Postorder traversal: ");
 		tn.itrPostOrder(tn.getRoot());
+		System.out.println();
+		System.out.print("Level Order Traversal: ");
+		tn.levelOrderTraversal(tn.getRoot());
 
 	}
 
