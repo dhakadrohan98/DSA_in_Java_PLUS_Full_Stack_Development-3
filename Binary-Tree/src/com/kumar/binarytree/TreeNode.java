@@ -150,25 +150,28 @@ public class TreeNode {
 	//Iterative postOrder traversal
 	public void itrPostOrder(TreeNode root) {
 		TreeNode current = root;
+		//Stack will use to store nodes
 		Stack<TreeNode> stack = new Stack<>();
 		while(current != null || !stack.isEmpty()) {
 			if(current != null) {
 				stack.push(current);
-				current = current.left;
+				current = current.left; //Assign current to left subtree side if current is not null.
 			}
 			else {
+				//Get right subtree value in temp variable of TreeNode type.
 				TreeNode temp = stack.peek().right;
-				if(temp == null) {
-					temp = stack.pop();
+				if(temp == null) { //if temp is null, it means there are no childrens at right subtree side to visit.
+					temp = stack.pop(); //Get parent node out of stack & print it.
 					System.out.print(temp.data + ", ");
-					//if temp is right subtree of a Node then backtrack & print parent node.
+					//if temp is pointing to right subtree of a Node then backtrack & print parent node iteratively.
 					while(!stack.isEmpty() && temp == stack.peek().right) {
 						temp = stack.pop();
 						System.out.print(temp.data + ", ");
 					}
 				}
+				//If temp is not null, it means, there are nodes at right subtree side to visit. 
 				else {
-					current = temp;
+					current = temp; // Assign temp to Current. Now current is pointing to right subtree side.
 				}
 			}
 		}
