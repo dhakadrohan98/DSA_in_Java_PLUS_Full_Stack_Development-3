@@ -148,7 +148,7 @@ public class TreeNode {
 	}
 	
 	//Iterative postOrder traversal
-	public void currPostOrder(TreeNode root) {
+	public void itrPostOrder(TreeNode root) {
 		TreeNode current = root;
 		Stack<TreeNode> stack = new Stack<>();
 		while(current != null || !stack.isEmpty()) {
