@@ -1,5 +1,7 @@
 package com.kumar.binarytree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TreeNode {
@@ -176,4 +178,27 @@ public class TreeNode {
 			}
 		}
 	}
+	
+	//Level Order Traversal (Iterative approach)
+	public void levelOrderTraversal(TreeNode root) {
+		//Base case
+		if(root == null) {
+			return;
+		}
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+		
+		while(!queue.isEmpty()) {
+			TreeNode temp = queue.poll();
+			System.out.print(temp.data+ ", ");
+			if(temp.left != null) {
+				queue.offer(temp.left);
+			}
+			if(temp.right != null) {
+				queue.offer(temp.right);
+			}
+			
+		}
+	}
+	
 }
