@@ -23,12 +23,34 @@ public class TreeNode {
 	}
 	
 	public void createBinaryTree() {
+		
 		TreeNode first = new TreeNode(1);
 		TreeNode second = new TreeNode(2);
 		TreeNode third = new TreeNode(3);
 		TreeNode fourth = new TreeNode(4);
 		TreeNode fifth = new TreeNode(5);
 		TreeNode sixth = new TreeNode(6);
+		
+		root = first;
+		first.left = second;    // second<---first--->third
+		first.right = third;
+		second.left = fourth;   // fourth<---second--->fifth
+		second.right = fifth;
+		third.right = sixth;    // null<---third--->sixth
+		System.out.println("Binary Tree Created successfully");
+		
+//		TreeNode first = new TreeNode(1);
+//		TreeNode second = new TreeNode(2);
+//		TreeNode third = new TreeNode(3);
+//		TreeNode fourth = new TreeNode(4);
+//		TreeNode fifth = new TreeNode(5);
+//		TreeNode sixth = new TreeNode(6);
+//		root = first;
+//		first.left = second; //    second<---first--->third
+//		first.right = third;
+//		second.left = fourth;//     fourth<---second--->fifth
+//		second.right = fifth;
+//		third.left = sixth;//      sixth<--third-->null
 		
 //		TreeNode first = new TreeNode(9);
 //		TreeNode second = new TreeNode(2);
@@ -37,7 +59,6 @@ public class TreeNode {
 //		TreeNode fifth = new TreeNode(3);
 //		TreeNode sixth = new TreeNode(6);
 //		TreeNode seventh = new TreeNode(7);
-		
 //		root = first;
 //		first.left = second; //    second<---first--->fifth
 //		first.right = fifth;
@@ -45,14 +66,6 @@ public class TreeNode {
 //		second.right = fourth;
 //		fifth.left = sixth;//      sixth<--fifth-->seventh
 //		fifth.right = seventh;
-		
-		root = first;
-		first.left = second; //    second<---first--->third
-		first.right = third;
-		second.left = fourth;//     fourth<---second--->fifth
-		second.right = fifth;
-		third.left = sixth;//      sixth<--third-->null
-		System.out.println("Binary Tree Created successfully");
 	}
 	
 	//PreOrder (Boundary level) Traversal (DLR)
@@ -132,5 +145,32 @@ public class TreeNode {
 		postOrder(root.left);
 		postOrder(root.right);
 		System.out.print(root.data + ", ");
+	}
+	
+	//Iterative postOrder traversal
+	public void currPostOrder(TreeNode root) {
+		TreeNode current = root;
+		Stack<TreeNode> stack = new Stack<>();
+		while(current != null || !stack.isEmpty()) {
+			if(current != null) {
+				stack.push(current);
+				current = current.left;
+			}
+			else {
+				TreeNode temp = stack.peek().right;
+				if(temp == null) {
+					temp = stack.pop();
+					System.out.print(temp.data + ", ");
+					//if temp is right subtree of a Node then backtrack & print parent node.
+					while(!stack.isEmpty() && temp == stack.peek().right) {
+						temp = stack.pop();
+						System.out.print(temp.data + ", ");
+					}
+				}
+				else {
+					current = temp;
+				}
+			}
+		}
 	}
 }
