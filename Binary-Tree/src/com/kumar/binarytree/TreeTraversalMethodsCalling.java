@@ -5,17 +5,25 @@ public class TreeTraversalMethodsCalling {
 	public static void main(String[] args) {
 		TreeNode tn = new TreeNode();
 		tn.createBinaryTree();
+		
 		System.out.print("Iterative PreOrder traversal: ");
 		tn.itrPreorder(tn.getRoot());
 		System.out.println();
+		
 		System.out.print("Iterative Inorder traversal: ");
 		tn.itrInorder(tn.getRoot());
 		System.out.println();
+		
 		System.out.print("Iterative Postorder traversal: ");
 		tn.itrPostOrder(tn.getRoot());
 		System.out.println();
+		
 		System.out.print("Level Order Traversal: ");
 		tn.levelOrderTraversal(tn.getRoot());
+		System.out.println();
+		
+		System.out.print("Maximum values among nodes of a given tree: ");
+		System.out.println(tn.findMax(tn.getRoot()));
 
 	}
 

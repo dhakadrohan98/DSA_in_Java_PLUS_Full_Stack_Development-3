@@ -27,7 +27,7 @@ public class TreeNode {
 	public void createBinaryTree() {
 		
 		TreeNode first = new TreeNode(1);
-		TreeNode second = new TreeNode(2);
+		TreeNode second = new TreeNode(22);
 		TreeNode third = new TreeNode(3);
 		TreeNode fourth = new TreeNode(4);
 		TreeNode fifth = new TreeNode(5);
@@ -199,6 +199,32 @@ public class TreeNode {
 			}
 			
 		}
+	}
+	
+	//Find Maximum value
+	//Intuition=> Find maximum value in LST & then RST. Then compare max values of LST, RST and 
+	//root.data with each other, whichever is greater value among three values that is final answer.
+	public int findMax(TreeNode root) {
+		if(root==null) {
+			return Integer.MIN_VALUE;
+		}
+		int result = root.data;
+		//Recursively calling findMax() with root.left params each time until we reached till leaf 
+		//nodes of LST.Then store values in left(int) variable.
+		int left = findMax(root.left);
+		//Recursively calling findMax() with root.right params each time until we reached till leaf 
+		//nodes of RST.Then store values in right(int) variable.
+		int right = findMax(root.right);
+		
+		//Start comparing for three values (root.data, left, right) from bottom subtree of given tree.
+		if(left > result) {
+			result = left;
+		}
+		
+		if(right > result) {
+			result = right;
+		}
+		return result;
 	}
 	
 }
