@@ -23,21 +23,36 @@ public class TreeNode {
 	}
 	
 	public void createBinaryTree() {
-		TreeNode first = new TreeNode(9);
+		TreeNode first = new TreeNode(1);
 		TreeNode second = new TreeNode(2);
-		TreeNode third = new TreeNode(4);
-		TreeNode fourth = new TreeNode(5);
-		TreeNode fifth = new TreeNode(3);
+		TreeNode third = new TreeNode(3);
+		TreeNode fourth = new TreeNode(4);
+		TreeNode fifth = new TreeNode(5);
 		TreeNode sixth = new TreeNode(6);
-		TreeNode seventh = new TreeNode(7);
+		
+//		TreeNode first = new TreeNode(9);
+//		TreeNode second = new TreeNode(2);
+//		TreeNode third = new TreeNode(4);
+//		TreeNode fourth = new TreeNode(5);
+//		TreeNode fifth = new TreeNode(3);
+//		TreeNode sixth = new TreeNode(6);
+//		TreeNode seventh = new TreeNode(7);
+		
+//		root = first;
+//		first.left = second; //    second<---first--->fifth
+//		first.right = fifth;
+//		second.left = third;//     third<---second--->fourth
+//		second.right = fourth;
+//		fifth.left = sixth;//      sixth<--fifth-->seventh
+//		fifth.right = seventh;
 		
 		root = first;
-		first.left = second; //    second<---first--->fifth
-		first.right = fifth;
-		second.left = third;//     third<---second--->fourth
-		second.right = fourth;
-		fifth.left = sixth;//      sixth<--fifth-->seventh
-		fifth.right = seventh;
+		first.left = second; //    second<---first--->third
+		first.right = third;
+		second.left = fourth;//     fourth<---second--->fifth
+		second.right = fifth;
+		third.left = sixth;//      sixth<--third-->null
+		System.out.println("Binary Tree Created successfully");
 	}
 	
 	//PreOrder (Boundary level) Traversal (DLR)
@@ -105,5 +120,17 @@ public class TreeNode {
 				temp = temp.right;
 			}
 		}
+	}
+	
+	
+	//Recursive postOrder traversal methods
+	public void postOrder(TreeNode root) {
+		if(root == null) {
+			return;
+		}
+		
+		postOrder(root.left);
+		postOrder(root.right);
+		System.out.print(root.data + ", ");
 	}
 }

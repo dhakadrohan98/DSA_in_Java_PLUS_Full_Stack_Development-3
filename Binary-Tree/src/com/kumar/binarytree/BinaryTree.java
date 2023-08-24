@@ -5,5 +5,4 @@ public class BinaryTree {
 		TreeNode tn = new TreeNode();
 		tn.createBinaryTree();
 	}
-
 }
