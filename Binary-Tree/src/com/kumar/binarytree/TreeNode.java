@@ -1,5 +1,7 @@
 package com.kumar.binarytree;
 
+import java.util.Stack;
+
 public class TreeNode {
 	
 	private TreeNode left;
@@ -10,7 +12,7 @@ public class TreeNode {
 	
 	//Get root node
 	public TreeNode getRoot() {
-		return root;
+		return this.root;
 	}
 	
 	public TreeNode() {
@@ -38,15 +40,48 @@ public class TreeNode {
 		fifth.right = seventh;
 	}
 	
-	//InOrder (Boundary level) Traversal
-	public void preOrder(TreeNode root) {
+	//PreOrder (Boundary level) Traversal
+	public void recPreorder(TreeNode root) {
 		// Base case to break recursive call
 		if(root == null) {
 			return;
 		}
 		System.out.print(root.data + ", ");
-		preOrder(root.left);
-		preOrder(root.right);
+		recPreorder(root.left);
+		recPreorder(root.right);
 
 	}
+	
+	//Iterative PreOrder(Boundary level) traversal
+	public void itrPreorder(TreeNode root) {
+		if(root == null) {
+			return;
+		}
+		
+		Stack<TreeNode> stack = new Stack<>();
+		stack.push(root);
+		
+		while(!stack.isEmpty()) {
+			TreeNode temp = stack.pop();
+			System.out.print(temp.data + ", ");
+			if(temp.right != null) {
+				stack.push(temp.right);
+			}
+			if(temp.left != null) {
+				stack.push(temp.left);
+			}
+	    }
+	}
+	
+	//Recursive InOrder traversal
+	public void recInorder(TreeNode root) {
+		if(root == null) {
+			return;
+		}
+		
+		recInorder(root.left);
+		System.out.print(root.data + ", ");
+		recInorder(root.right);
+	}
+	
 }
