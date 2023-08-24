@@ -40,7 +40,7 @@ public class TreeNode {
 		fifth.right = seventh;
 	}
 	
-	//PreOrder (Boundary level) Traversal
+	//PreOrder (Boundary level) Traversal (DLR)
 	public void recPreorder(TreeNode root) {
 		// Base case to break recursive call
 		if(root == null) {
@@ -52,7 +52,7 @@ public class TreeNode {
 
 	}
 	
-	//Iterative PreOrder(Boundary level) traversal
+	//Iterative PreOrder(Boundary level) traversal (DLR)
 	public void itrPreorder(TreeNode root) {
 		if(root == null) {
 			return;
@@ -73,7 +73,7 @@ public class TreeNode {
 	    }
 	}
 	
-	//Recursive InOrder traversal
+	//Recursive InOrder traversal (LDR)
 	public void recInorder(TreeNode root) {
 		if(root == null) {
 			return;
@@ -84,4 +84,26 @@ public class TreeNode {
 		recInorder(root.right);
 	}
 	
+	//Iterative InOrder traversal of BT (LDR)
+	public void itrInorder(TreeNode root) {
+		if(root == null) {
+			return; 
+		}
+		
+		Stack<TreeNode> stack = new Stack<>();
+		TreeNode temp = root;
+		
+		while(!stack.isEmpty() || temp!=null) {
+			
+			if(temp!=null) {
+				stack.push(temp);
+				temp = temp.left;
+			}
+			else {
+				temp = stack.pop();
+				System.out.print(temp.data + ", ");
+				temp = temp.right;
+			}
+		}
+	}
 }
