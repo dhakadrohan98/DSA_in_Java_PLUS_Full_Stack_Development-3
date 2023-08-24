@@ -12,7 +12,7 @@ public class TreeTraversalMethodsCalling {
 		tn.itrInorder(tn.getRoot());
 		System.out.println();
 		System.out.print("Iterative Postorder traversal: ");
-		tn.currPostOrder(tn.getRoot());
+		tn.itrPostOrder(tn.getRoot());
 
 	}
 
