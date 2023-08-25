@@ -17,6 +17,11 @@ public class TreeNode {
 		return this.root;
 	}
 	
+	//Get data of current node
+	public int getData() {
+		return data;
+	}
+	
 	public TreeNode() {
 		super();
 	}
