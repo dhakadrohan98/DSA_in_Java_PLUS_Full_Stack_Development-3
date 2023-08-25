@@ -4,7 +4,11 @@ public class BinarySearchTree {
 
 	   private TreeNode root;
 
-	   private class TreeNode {
+	   public TreeNode getRoot() {
+		return root;
+	}
+
+	private class TreeNode {
 	      private int data; // Generic type
 	      private TreeNode left;
 	      private TreeNode right;
@@ -69,8 +73,35 @@ public class BinarySearchTree {
 			   return search(root.right, key);
 		   }
 	   }
+	   
+	   //IsValidBST leetcode #98 problem solved easliy.
+	   public boolean isValidBST(TreeNode root, long min, long max){
+		   
+		   	//completed traversal of left/right subtree w.r.t. a Node
+	        if(root == null) {
+	            return true;
+	        }
+	        
+	      //current node value if out of range(min,max), it means give tree is not valid BST, then simply return false;
+	        if(root.data <= min || root.data >= max){
+	            return false;
+	        }
+	        
+	        ////when we go towards left subtree then MIN will remain same,only MAX will update with current node's root value(before leaving current node)
+	        boolean left = isValidBST(root.left, min, root.data);
+	     
+	        if(left) { //If any node of left subtree is not valid BST then, return false(skip this if block), 
+	        	//Otherwise check at right subtree side.
+	            ////when we go towards right subtree then MAX will remain same,only MIN will update with current node's root value(before leaving current node)
+	        	boolean right = isValidBST(root.right, root.data, max);
+	            return right;
+	        }
+	        return false;
+	    }
 
 	   public static void main(String[] args) {
+		   long max = Long.MAX_VALUE;
+		   long min = Long.MIN_VALUE;
 	      BinarySearchTree bst = new BinarySearchTree();
 	      bst.insert(5);
 	      bst.insert(7);
@@ -88,5 +119,8 @@ public class BinarySearchTree {
 	      } else {
 	         System.out.println("Key not found!xxxx");
 	      }
+	      
+	      System.out.print("Is above tree a valid BST: ");
+	      System.out.println(bst.isValidBST(bst.getRoot(), Long.MIN_VALUE, Long.MAX_VALUE));
 	   }
 }
