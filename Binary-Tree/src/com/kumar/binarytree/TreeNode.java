@@ -29,6 +29,26 @@ public class TreeNode {
 		this.data = data;
 	}
 	
+	public void createBinaryTree1() {
+		TreeNode first = new TreeNode(1);
+		TreeNode second = new TreeNode(22);
+		TreeNode third = new TreeNode(3);
+		TreeNode fourth = new TreeNode(4);
+		TreeNode fifth = new TreeNode(5);
+		TreeNode sixth = new TreeNode(6);
+		TreeNode ninth = new TreeNode(7);
+		TreeNode tenth = new TreeNode(9);
+		
+		first.left = second;
+		first.right = third;
+		second.left = fourth;
+		second.right = tenth;
+		third.left = ninth;
+		third.right = tenth;
+		fourth.right = fifth;
+		fifth.right = sixth;
+	}
+	
 	public void createBinaryTree() {
 		
 		TreeNode first = new TreeNode(1);
