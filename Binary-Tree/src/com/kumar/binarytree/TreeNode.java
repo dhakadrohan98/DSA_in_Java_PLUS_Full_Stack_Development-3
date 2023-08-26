@@ -232,4 +232,29 @@ public class TreeNode {
 		return result;
 	}
 	
+	//Leetcode #101
+	//Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center)
+	public boolean isSymmetric(TreeNode root) {
+        if(root == null) return true;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root.right);
+        stack.push(root.left);
+        
+        while(!stack.isEmpty()) {
+            TreeNode n1 = stack.pop();
+            TreeNode n2 = stack.pop();
+            if(n1 == null && n2 == null) continue;
+            
+            if(n1 == null || n2 == null || n1.data != n2.data) {
+                return false;
+            }
+            
+            stack.push(n1.left);
+            stack.push(n2.right);
+            stack.push(n1.right);
+            stack.push(n2.left);
+        }
+        return true;
+    }
+	
 }
