@@ -1,6 +1,10 @@
 package com.kumar.binarytree;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -93,6 +97,28 @@ public class TreeNode {
 //		second.right = fourth;
 //		fifth.left = sixth;//      sixth<--fifth-->seventh
 //		fifth.right = seventh;
+	}
+	
+	public void createBTForDiagonalElements() {
+		TreeNode first = new TreeNode(1);
+		TreeNode second = new TreeNode(2);
+		TreeNode third = new TreeNode(3);
+		TreeNode fourth = new TreeNode(4);
+		TreeNode fifth = new TreeNode(5);
+		TreeNode sixth = new TreeNode(6);
+		TreeNode seventh = new TreeNode(7);
+		TreeNode eighth = new TreeNode(8);
+		TreeNode ninth = new TreeNode(9);
+		
+		root = first;
+		first.left = second;
+		first.right = third;
+		second.left = fourth;
+		third.left = fifth;
+		third.right = sixth;
+		fifth.left = seventh;
+		fifth.right = eighth;
+		seventh.right = ninth;
 	}
 	
 	//PreOrder (Boundary level) Traversal (DLR)
@@ -276,5 +302,31 @@ public class TreeNode {
         }
         return true;
     }
+	
+	//Diagonal Traversal of tree
+	public void printDiagonal(TreeNode root, int diagonal, Map<Integer,List<Integer>> map) {
+		if(root == null)
+			return;
+		
+		map.putIfAbsent(diagonal, new ArrayList<>());
+		
+		//Recursive preOrder traversal.
+		map.get(diagonal).add(root.data);
+		printDiagonal(root.left, diagonal+1, map);
+		printDiagonal(root.right, diagonal, map);
+		
+	}
+	
+	//print Diagonal elements.
+	public void printDiagonal(TreeNode root) {
+		Map<Integer,List<Integer>> map = new HashMap<>();
+		
+		//calling preOrder traversal
+		printDiagonal(root, 0, map);
+		
+		for(int i=0; i<map.size(); i++) {
+			System.out.println(map.get(i));
+		}
+	}
 	
 }
