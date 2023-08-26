@@ -24,7 +24,7 @@ public class TreeTraversalMethodsCalling {
 		
 		System.out.print("Maximum values among nodes of a given tree: ");
 		System.out.println(tn.findMax(tn.getRoot()));
-		
+		 
 		System.out.print("Symmetric Tree: ");
 		System.out.println(tn.isSymmetric(tn.getRoot()));
 
