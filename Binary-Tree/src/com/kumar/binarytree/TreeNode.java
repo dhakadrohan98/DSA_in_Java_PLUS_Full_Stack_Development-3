@@ -121,7 +121,7 @@ public class TreeNode {
 		seventh.right = ninth;
 	}
 	
-	public void createBTForBLT() {
+	public void createBTforBLT() {
 		TreeNode first = new TreeNode(1);
 		TreeNode second = new TreeNode(2);
 		TreeNode third = new TreeNode(3);
@@ -355,7 +355,7 @@ public class TreeNode {
 		}
 	}
 	
-	//Boundary Traversal function
+	//Boundary Traversal methods
 	
 	public boolean isLeaf(TreeNode node) {
 		if(node.left == null && node.right == null) {
@@ -437,5 +437,52 @@ public class TreeNode {
 		addRightBoundary(node, ans);
 		return ans;
 	}
+	
+	//Zig zag level order traversal
+	public List<List<Integer>> zigzagOrderTraversal(TreeNode root){
+		Queue<TreeNode> queue = new LinkedList<>();
+		List<List<Integer>> wrapList = new ArrayList<>();
+		
+		if(root == null) {
+			return wrapList;
+		}
+		
+		queue.offer(root);
+		boolean flag = true;
+		
+		while(!queue.isEmpty()) {
+			int levelNum = queue.size();
+			
+			//To store nodes of a level from LtoR or RtoL(in a reverse manner)
+			List<Integer> subList = new ArrayList<Integer>();
+			
+			for(int i=0; i<levelNum; i++) {
+				
+				if(queue.peek().left != null) {
+					queue.offer(queue.peek().left);
+				}
+				if(queue.peek().right != null) {
+					queue.offer(queue.peek().right);
+				}		
+				
+				if(flag==true) {
+					subList.add(queue.poll().data);
+				}
+				else {
+					//Adding elements in a reverse manner when flag value is false(it means 
+					//we have to traverse from right to left in this case)
+					subList.add(0, queue.poll().data);
+				}
+			}//for CB.
+			
+				//setting opposite of flag value to the flag variable in order to find direction of traversing.
+				//L to R (flag=true)
+				//R to L (flag==false)
+				flag = !flag;
+				
+				wrapList.add(subList);			
+		}//while CB
+		return wrapList;
+	}//zigzagOrderTraversal CB
 	
 }

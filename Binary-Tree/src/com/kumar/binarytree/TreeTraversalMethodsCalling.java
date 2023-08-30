@@ -33,9 +33,14 @@ public class TreeTraversalMethodsCalling {
 		tn.printDiagonal(tn.getRoot());
 		
 		System.out.println();
-		tn.createBTForBLT();
+		tn.createBTforBLT();
 		System.out.print("Boundary Level traversal: ");
 		System.out.println(tn.printBoundary(tn.getRoot()));
+		
+		System.out.println();
+		tn.createBTforBLT();
+		System.out.print("ZigZag level order traversal : ");
+		System.out.println(tn.zigzagOrderTraversal(tn.getRoot()));
 
 	}
 
