@@ -121,6 +121,32 @@ public class TreeNode {
 		seventh.right = ninth;
 	}
 	
+	public void createBTForBLT() {
+		TreeNode first = new TreeNode(1);
+		TreeNode second = new TreeNode(2);
+		TreeNode third = new TreeNode(3);
+		TreeNode fourth = new TreeNode(4);
+		TreeNode fifth = new TreeNode(5);
+		TreeNode sixth = new TreeNode(6);
+		TreeNode seventh = new TreeNode(7);
+		TreeNode eighth = new TreeNode(8);
+		TreeNode ninth = new TreeNode(9);
+		TreeNode tenth = new TreeNode(10);
+		TreeNode eleventh = new TreeNode(11);
+		
+		root = first;
+		first.left = second;
+		first.right = seventh;
+		second.left = third;
+		third.right = fourth;
+		fourth.left = fifth;
+		fourth.right = sixth;
+		seventh.right = eighth;
+		eighth.left = ninth;
+		ninth.left = tenth;
+		ninth.right = eleventh;
+	}
+	
 	//PreOrder (Boundary level) Traversal (DLR)
 	public void recPreorder(TreeNode root) {
 		// Base case to break recursive call
@@ -327,6 +353,89 @@ public class TreeNode {
 		for(int i=0; i<map.size(); i++) {
 			System.out.println(map.get(i));
 		}
+	}
+	
+	//Boundary Traversal function
+	
+	public boolean isLeaf(TreeNode node) {
+		if(node.left == null && node.right == null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	// Add left boundary
+	public void addLeftBoundary(TreeNode root, ArrayList<Integer> res) {
+		TreeNode curr = root.left;
+		while(curr != null) {
+			//checking leaf node condition
+			if(!isLeaf(curr)) {
+				res.add(curr.data);
+			}
+			
+			if(curr.left!=null) {
+				curr = curr.left;
+			}
+			else {
+				curr = curr.right;
+			}
+		}
+	}
+	
+	//Add right boundary method
+	public void addRightBoundary(TreeNode root, ArrayList<Integer> res) {
+		TreeNode curr = root.right;
+		ArrayList<Integer> temp = new ArrayList<>();
+		while(curr != null) {
+			//checking leaf node condition
+			if(!isLeaf(curr)) {
+				temp.add(curr.data);
+			}
+			
+			if(curr.right!=null) {
+				curr = curr.right;
+			}
+			else {
+				curr = curr.left;
+			}
+		}
+		//put elements of temp list into res list in reverse manner.
+		for(int i=temp.size()-1; i>=0; i--) {
+			res.add(temp.get(i));
+		}
+	}
+	
+	// Adding leaf nodes into res(List). 
+	//Traverse from root towards left subtree first & then towards right subtree in recursive manner.
+	public void addLeaves(TreeNode root, ArrayList<Integer> res) {
+		//If Given BT has one node only, that is only left & right subtree itself.
+		//Base case
+		if(isLeaf(root)) {
+			res.add(root.data);
+			return;
+		}
+		// Recursive call.
+		if(root.left != null) {
+			addLeaves(root.left, res);
+		}
+		if(root.right != null) {
+			addLeaves(root.right, res);
+		}
+	}
+	
+	//Boundary Traversal function starts from here
+	public ArrayList<Integer> printBoundary(TreeNode node){
+		ArrayList<Integer> ans = new ArrayList<Integer>();
+		
+		if(!isLeaf(node)) {
+			ans.add(root.data);
+		}
+		addLeftBoundary(node, ans);
+		addLeaves(node, ans);
+		addRightBoundary(node, ans);
+		return ans;
 	}
 	
 }
