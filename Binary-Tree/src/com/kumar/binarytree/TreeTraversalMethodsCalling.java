@@ -31,6 +31,11 @@ public class TreeTraversalMethodsCalling {
 		tn.createBTForDiagonalElements();
 		System.out.print("Diagonal traversal of tree: ");
 		tn.printDiagonal(tn.getRoot());
+		
+		System.out.println();
+		tn.createBTForBLT();
+		System.out.print("Boundary Level traversal: ");
+		System.out.println(tn.printBoundary(tn.getRoot()));
 
 	}
 
