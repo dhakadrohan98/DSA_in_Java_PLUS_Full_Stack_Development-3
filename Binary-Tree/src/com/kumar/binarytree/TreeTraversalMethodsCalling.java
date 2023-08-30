@@ -41,6 +41,10 @@ public class TreeTraversalMethodsCalling {
 		tn.createBTforBLT();
 		System.out.print("ZigZag level order traversal : ");
 		System.out.println(tn.zigzagOrderTraversal(tn.getRoot()));
+		
+		System.out.println();
+		System.out.print("Top view of Binary Tree: ");
+		System.out.println(tn.topView(tn.getRoot()));
 
 	}
 

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.TreeMap;
 
 public class TreeNode {
 	
@@ -484,5 +485,47 @@ public class TreeNode {
 		}//while CB
 		return wrapList;
 	}//zigzagOrderTraversal CB
+	
+	//Top View of Binary Tree method implementation starts from here.
+	//Pair class to store values of Node & its state
+	private class Pair {
+		TreeNode node;
+		int state; 
+		
+		Pair(TreeNode node, int state) { 
+		this.node = node;
+		this.state = state;  
+		} 
+	}
+	
+	//Actual Top View of Binary Tree method's implementation
+	public ArrayList<Integer> topView(TreeNode root)
+    {
+        ArrayList<Integer> ans = new ArrayList<>(); 
+        if(root == null) return ans;
+        Map<Integer, Integer> map = new TreeMap<>();
+        Queue<Pair> q = new LinkedList<Pair>();
+        q.add(new Pair(root, 0)); 
+        while(!q.isEmpty()) {
+            Pair it = q.remove();
+            int state = it.state; 
+            TreeNode temp = it.node; 
+            if(map.get(state) == null) map.put(state, temp.data); 
+            if(temp.left != null) {
+                
+                q.add(new Pair(temp.left, state - 1)); 
+            }
+            if(temp.right != null) {
+                
+                q.add(new Pair(temp.right, state + 1)); 
+            }
+        }
+    
+        for (Map.Entry<Integer,Integer> entry : map.entrySet()) {
+            ans.add(entry.getValue()); 
+        }
+        return ans; 
+        
+    }
 	
 }
