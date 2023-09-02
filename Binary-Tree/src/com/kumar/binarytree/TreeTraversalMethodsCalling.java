@@ -33,7 +33,7 @@ public class TreeTraversalMethodsCalling {
 		tn.printDiagonal(tn.getRoot());
 		
 		System.out.println();
-		tn.createBTforBLT();
+		tn.createBTforBLT(); //Creating binary tree for Border Level traversal
 		System.out.print("Boundary Level traversal: ");
 		System.out.println(tn.printBoundary(tn.getRoot()));
 		
@@ -46,6 +46,9 @@ public class TreeTraversalMethodsCalling {
 		System.out.print("Top view of Binary Tree: ");
 		System.out.println(tn.topView(tn.getRoot()));
 
+		System.out.println();
+		System.out.print("Bottom view of Binary Tree: ");
+		System.out.println(tn.bottomView(tn.getRoot()));
 	}
 
 }
