@@ -528,4 +528,36 @@ public class TreeNode {
         
     }
 	
+	// TC: O(n)
+	//Actual Bottom View of Binary Tree method's implementation
+		public ArrayList<Integer> bottomView(TreeNode root)
+	    {
+	        ArrayList<Integer> ans = new ArrayList<>(); 
+	        if(root == null) return ans;
+	        Map<Integer, Integer> map = new TreeMap<>();
+	        Queue<Pair> q = new LinkedList<Pair>();
+	        q.add(new Pair(root, 0)); 
+	        while(!q.isEmpty()) {
+	            Pair it = q.remove();
+	            int state = it.state; 
+	            TreeNode temp = it.node; 
+	            //through below line, i will store data of last node of a particular number line (like -2,-1,-0,1,2)
+	            map.put(state, temp.data); 
+	            if(temp.left != null) {
+	                
+	                q.add(new Pair(temp.left, state - 1)); 
+	            }
+	            if(temp.right != null) {
+	                
+	                q.add(new Pair(temp.right, state + 1)); 
+	            }
+	        }
+	    
+	        for (Map.Entry<Integer,Integer> entry : map.entrySet()) {
+	            ans.add(entry.getValue()); 
+	        }
+	        return ans; 
+	        
+	    }
+	
 }
