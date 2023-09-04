@@ -53,6 +53,10 @@ public class TreeTraversalMethodsCalling {
 		System.out.println();
 		System.out.print("Right view of Binary Tree: ");
 		System.out.println(tn.rightSideView(tn.getRoot()));
+		
+		System.out.println();
+		System.out.print("Left view of Binary Tree: ");
+		System.out.println(tn.leftSideView(tn.getRoot()));
 	}
 
 }
