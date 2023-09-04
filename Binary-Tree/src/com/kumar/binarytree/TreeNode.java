@@ -566,7 +566,7 @@ public class TreeNode {
 	        
 	    }
 		
-		//Right view of BT
+		//Right side view of BT
 		public List<Integer> rightSideView(TreeNode root){
 			List<Integer> res = new ArrayList<>();
 			rightView(root, 0, res);
@@ -585,6 +585,27 @@ public class TreeNode {
 			
 			rightView(node.right,level+1,res);
 			rightView(node.left,level+1,res);
+		}
+		
+		//Left side view of BT
+		public List<Integer> leftSideView(TreeNode root){
+			List<Integer> res = new ArrayList<>();
+			leftView(root, 0, res);
+			return res;
+		}
+				
+		//Left view of BT
+		public void leftView(TreeNode node, int level, List<Integer> res) {
+			if(node==null) {
+				return;
+			}
+					
+			if(level == res.size()) {
+				res.add(node.data);
+			}
+			
+			rightView(node.left,level+1,res);
+			rightView(node.right,level+1,res);
 		}
 	
 }
