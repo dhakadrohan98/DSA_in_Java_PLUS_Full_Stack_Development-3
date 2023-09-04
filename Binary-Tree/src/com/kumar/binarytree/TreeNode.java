@@ -486,7 +486,7 @@ public class TreeNode {
 		return wrapList;
 	}//zigzagOrderTraversal CB
 	
-	//Top View of Binary Tree method implementation starts from here.
+	//Top and Bottom View of Binary Tree method implementation starts from here.
 	//Pair class to store values of Node & its state
 	private class Pair {
 		TreeNode node;
@@ -520,9 +520,15 @@ public class TreeNode {
                 q.add(new Pair(temp.right, state + 1)); 
             }
         }
-    
-        for (Map.Entry<Integer,Integer> entry : map.entrySet()) {
-            ans.add(entry.getValue()); 
+        
+        //Map traversing techniques
+        
+//        for (Map.Entry<Integer,Integer> entry : map.entrySet()) {
+//            ans.add(entry.getValue()); 
+//        }
+        
+        for(int key: map.keySet()) {
+        	ans.add(map.get(key));
         }
         return ans; 
         
@@ -559,5 +565,26 @@ public class TreeNode {
 	        return ans; 
 	        
 	    }
+		
+		//Right view of BT
+		public List<Integer> rightSideView(TreeNode root){
+			List<Integer> res = new ArrayList<>();
+			rightView(root, 0, res);
+			return res;
+		}
+		
+		//Right view of BT
+		public void rightView(TreeNode node, int level, List<Integer> res) {
+			if(node==null) {
+				return;
+			}
+			
+			if(level == res.size()) {
+				res.add(node.data);
+			}
+			
+			rightView(node.right,level+1,res);
+			rightView(node.left,level+1,res);
+		}
 	
 }
