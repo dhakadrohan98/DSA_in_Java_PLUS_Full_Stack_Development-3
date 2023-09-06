@@ -24,7 +24,7 @@ public class TreeNode {
 	
 	//Get data of current node
 	public int getData() {
-		return data;
+		return this.data;
 	}
 	
 	public TreeNode() {
@@ -604,8 +604,31 @@ public class TreeNode {
 				res.add(node.data);
 			}
 			
-			rightView(node.left,level+1,res);
-			rightView(node.right,level+1,res);
+			leftView(node.left,level+1,res);
+			leftView(node.right,level+1,res);
 		}
 	
+		//236. Lowest Common Ancestor of a Binary Tree
+		 public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+		        //base case
+		        if(root == null || root==p || root==q) {
+		            return root;
+		        }
+		        
+		        TreeNode left = lowestCommonAncestor(root.left, p, q);
+		        TreeNode right = lowestCommonAncestor(root.right, p, q);
+		        
+		        //result
+		        if(left == null) {
+		            return right;
+		        }
+		        
+		        else if(right==null) {
+		            return left;
+		        }
+		        
+		        else {//both left and right are not null. we found our result
+		            return root;
+		        }
+		    }
 }
