@@ -57,6 +57,10 @@ public class TreeTraversalMethodsCalling {
 		System.out.println();
 		System.out.print("Left view of Binary Tree: ");
 		System.out.println(tn.leftSideView(tn.getRoot()));
+		
+//		System.out.println();
+//		System.out.print("Lowest Common Ancestor of Binary Tree: ");
+//		System.out.println(tn.lowestCommonAncestor(tn.getRoot(),p,q));
 	}
 
 }
