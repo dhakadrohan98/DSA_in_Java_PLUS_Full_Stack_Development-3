@@ -61,6 +61,11 @@ public class TreeTraversalMethodsCalling {
 //		System.out.println();
 //		System.out.print("Lowest Common Ancestor of Binary Tree: ");
 //		System.out.println(tn.lowestCommonAncestor(tn.getRoot(),p,q));
+		
+		tn.createBTForHeight();
+		System.out.println();
+		System.out.print("Max Height/Depth of Binary Tree: ");
+		System.out.println(tn.maxDepth(tn.getRoot()));
 	}
 
 }

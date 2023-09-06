@@ -631,4 +631,37 @@ public class TreeNode {
 		            return root;
 		        }
 		    }
+		 
+		 //Create BT for calculating height of BT
+		 public void createBTForHeight() {
+				TreeNode first = new TreeNode(1);
+				TreeNode second = new TreeNode(2);
+				TreeNode third = new TreeNode(3);
+				TreeNode fourth = new TreeNode(4);
+				TreeNode fifth = new TreeNode(5);
+				TreeNode sixth = new TreeNode(6);
+				TreeNode seventh = new TreeNode(7);
+				TreeNode eight = new TreeNode(8);
+				TreeNode ninth = new TreeNode(9);
+				
+				first.left = second;
+				first.right = third;
+				second.left = fourth;
+				second.right = fifth;
+				third.right = seventh;
+				fifth.left = sixth;
+				sixth.left = eight;
+				eight.left = ninth;
+		}
+		 
+		 //Max depth of a tree
+		 public int maxDepth(TreeNode root) {
+			 if(root == null) { //Base case
+				 return 0;
+			 }
+			 int maxLeft = maxDepth(root.left);
+			 int maxRight = maxDepth(root.right);
+			 
+			 return 1 + Math.max(maxLeft,maxRight);
+		 }
 }
