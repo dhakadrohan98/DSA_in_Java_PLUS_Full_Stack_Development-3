@@ -66,6 +66,10 @@ public class TreeTraversalMethodsCalling {
 		System.out.println();
 		System.out.print("Max Height/Depth of Binary Tree: ");
 		System.out.println(tn.maxDepth(tn.getRoot()));
+		
+		System.out.println();
+		System.out.print("Diameter of Binary Tree: ");
+		System.out.println(tn.diameterOfBinaryTree(tn.getRoot()));
 	}
 
 }
