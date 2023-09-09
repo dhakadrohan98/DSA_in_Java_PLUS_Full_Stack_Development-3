@@ -70,6 +70,18 @@ public class TreeTraversalMethodsCalling {
 		System.out.println();
 		System.out.print("Diameter of Binary Tree: ");
 		System.out.println(tn.diameterOfBinaryTree(tn.getRoot()));
+        
+		System.out.println();
+		tn.createSumTree();
+		System.out.println("Check if a binary tree is a sum tree or not: ");
+		if(tn.isSumTree(tn.getRoot()) != Integer.MIN_VALUE) {
+			System.out.println(tn.isSumTree(tn.getRoot()));
+			System.out.println("Given tree is sum tree");
+		}
+		else {
+			System.out.println(tn.isSumTree(tn.getRoot()));
+			System.out.println("Given tree is not sum tree");
+		}
 	}
 
 }
