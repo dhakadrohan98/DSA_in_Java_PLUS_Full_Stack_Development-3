@@ -82,6 +82,10 @@ public class TreeTraversalMethodsCalling {
 			System.out.println(tn.isSumTree(tn.getRoot()));
 			System.out.println("Given tree is not sum tree");
 		}
+		
+		System.out.println();
+		System.out.print("Balanced Binary Tree: ");
+		System.out.println(tn.isBalanced(tn.getRoot()));
 	}
 
 }
