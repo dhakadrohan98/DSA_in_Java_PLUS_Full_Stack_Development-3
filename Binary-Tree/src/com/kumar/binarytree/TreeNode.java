@@ -756,4 +756,25 @@ public class TreeNode {
 			return -1;
 		return Math.max(leftHeight, rightHeight) + 1;
 	}
+	
+	//Minimum element in BST
+		public int minValue(TreeNode node) {
+        
+        TreeNode root= node;
+        int min = -1;
+        
+        if(root == null) {
+            return min;
+        }
+        
+        if(root.left != null) {
+            while(root != null){
+                min = root.data;
+                root = root.left;
+            }
+        } else {
+            min = root.data;
+        }
+        return min;
+     }
 }
