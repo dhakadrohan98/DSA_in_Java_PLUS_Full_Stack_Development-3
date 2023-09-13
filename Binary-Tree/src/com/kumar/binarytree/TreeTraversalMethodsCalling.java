@@ -87,9 +87,15 @@ public class TreeTraversalMethodsCalling {
 		System.out.print("Balanced Binary Tree: ");
 		System.out.println(tn.isBalanced(tn.getRoot()));
 		
+		
+		//Binary Search Tree functions
 		System.out.println();
 		System.out.print("Minimum element in BST: ");
 		System.out.println(tn.minValue(tn.getRoot()));
+		
+		System.out.println();
+		System.out.print("Delete a node in BST: ");
+		System.out.println(tn.deleteNode(tn.getRoot(), 3).getData());
 	}
 
 }
