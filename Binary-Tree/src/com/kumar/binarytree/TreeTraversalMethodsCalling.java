@@ -86,6 +86,10 @@ public class TreeTraversalMethodsCalling {
 		System.out.println();
 		System.out.print("Balanced Binary Tree: ");
 		System.out.println(tn.isBalanced(tn.getRoot()));
+		
+		System.out.println();
+		System.out.print("Minimum element in BST: ");
+		System.out.println(tn.minValue(tn.getRoot()));
 	}
 
 }
