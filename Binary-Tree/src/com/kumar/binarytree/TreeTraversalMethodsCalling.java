@@ -96,6 +96,11 @@ public class TreeTraversalMethodsCalling {
 		System.out.println();
 		System.out.print("Delete a node in BST: ");
 		System.out.println(tn.deleteNode(tn.getRoot(), 3).getData());
+		
+		tn.createBinaryTree();
+		tn.recInorder(tn.getRoot());
+//		System.out.println("Inorder successor and predecessor in BST: ");
+//		System.out.println(tn.inorderSuccessor(tn.getRoot(), tn));
 	}
 
 }

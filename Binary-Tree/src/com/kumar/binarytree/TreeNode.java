@@ -13,6 +13,7 @@ public class TreeNode {
 
 	private TreeNode left;
 	private TreeNode right;
+	private TreeNode next;
 	private int data;
 
 	private TreeNode root;
@@ -825,5 +826,59 @@ public class TreeNode {
 	            return root;
 	        }
 	        return findLastRight(root.right);
+	    }
+	    
+	    //InOrder successor in BST
+	    public TreeNode inorderSuccessor(TreeNode root, TreeNode key) {
+	    	TreeNode succ = null;
+	    	
+	    	while(root != null) {
+	    		if(root.data <= key.data) {
+	    			root= root.right;
+	    		}
+	    		else { //if(key < root.data)
+	    			succ = root;
+	    			root = root.left;
+	    		}
+	    	}
+	    	return succ;
+	    }
+	    
+	    //InOrder Predecessor in BST
+	    public TreeNode inorderPredecessor(TreeNode root, TreeNode key) {
+	    	TreeNode pre = null;
+	    	
+	    	while(root != null) {
+	    		if(root.data < key.data) {
+	    			pre = root;
+	    			root= root.right;
+	    		}
+	    		else { //if(key > root.data)
+	    			root = root.left;
+	    		}
+	    	}
+	    	return pre;
+	    }
+	    
+	    //Populate Inorder Successor for all nodes(Topics: BST)
+	    public static TreeNode prev=null;
+	    
+	    //Inorder traversal
+	    public void solve(TreeNode root,TreeNode prev) {
+	    	if(root == null) {
+	    		return;
+	    	}
+	    	//Left subtree traversal
+	    	solve(root.left,prev);
+	    	//Main logic for root node
+	    	if(prev != null) {
+	    		prev.next = root;
+	    	}
+	    	prev = root;
+	    	//Right subtree traversal
+	    	solve(root.right,prev);
+	    }
+	    public void populateNext(TreeNode root) {
+	    	solve(root, prev);
 	    }
 }
