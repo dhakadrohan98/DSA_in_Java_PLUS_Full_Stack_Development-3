@@ -1,6 +1,7 @@
 package com.kumar.binarytree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -880,5 +881,50 @@ public class TreeNode {
 	    }
 	    public void populateNext(TreeNode root) {
 	    	solve(root, prev);
+	    }
+	    
+	    //Construct Binary Search Tree from Preorder Traversal
+	    //Amazon: 4 Microsoft:3 Facebook:2 Bloomberg:2
+	    public TreeNode bstFromPreorder(int[] A) {
+	        return bstFromPreorder(A, Integer.MAX_VALUE, new int[]{0});
+	    }
+	    
+	    public TreeNode bstFromPreorder(int[] A,int bound,int[] i) {
+	        if(i[0] == A.length || A[i[0]] > bound){ //if array is of length 1 or value of array is greater than bound(Integer.MAX_VALUE), then simply return null.
+	            return null;
+	        }
+	        
+	        TreeNode root = new TreeNode(A[i[0]++]);
+	        root.left =  bstFromPreorder(A, root.data, i);
+	        root.right = bstFromPreorder(A, bound, i);
+	        return root;
+	    }
+	    
+	    //convert Binary Tree to BST (keeps the original structure of Binary Tree intact.)
+	    
+	    int i=0;
+	    // The given root is the root of the Binary Tree
+	    // Return the root of the generated BST
+	    public TreeNode binaryTreeToBST(TreeNode root)
+	    {
+	       ArrayList<Integer> list = new ArrayList<>();
+	       getNodes(root,list);
+	       Collections.sort(list);
+	       inorder(root,list); //passing root of binary tree 
+	       return root;
+	    }
+	    
+	    void getNodes(TreeNode root, ArrayList<Integer> list) {
+	        if(root==null) return;
+	        list.add(root.data);
+	        getNodes(root.left, list);
+	        getNodes(root.right, list);
+	    }
+	    
+	    void inorder(TreeNode root,ArrayList<Integer> list) {
+	        if(root==null) return;
+	        inorder(root.left, list);
+	        root.data = list.get(i++);
+	        inorder(root.right, list);
 	    }
 }
