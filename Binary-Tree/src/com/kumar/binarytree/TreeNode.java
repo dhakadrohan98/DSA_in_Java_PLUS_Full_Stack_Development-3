@@ -927,4 +927,63 @@ public class TreeNode {
 	        root.data = list.get(i++);
 	        inorder(root.right, list);
 	    }
+	    
+	    //Creating sample BST for testing of below methods: normalBSTToBalancedBST(root);
+	    public void createBinarySeachTree() {
+			TreeNode first = new TreeNode(1);
+			TreeNode second = new TreeNode(2);
+			TreeNode third = new TreeNode(3);
+			TreeNode fourth = new TreeNode(4);
+			TreeNode fifth = new TreeNode(5);
+			TreeNode sixth = new TreeNode(6);
+			TreeNode seventh = new TreeNode(7);
+			
+			root = seventh;
+			seventh.left = sixth;
+			sixth.left = fifth;
+			fifth.left = fourth;
+			fourth.left = third;
+			third.left = second;
+			second.left = first;
+		}
+	    
+	    //**************************************************************************************
+	    //convert a normal BST into balanced BST
+	    static List<Integer> list = new ArrayList<>();
+	    int j=0;
+	    public TreeNode normalBSTToBalancedBST(TreeNode root, int n) {
+	    	System.out.println("is inorder called: "+root.data);
+	    	inorder(root);
+	    	System.out.println(list);
+	    	int start=0;
+	    	int end = list.size()-1; // 7-1=6;
+	    	TreeNode node = solve(start,end);
+	    	return node;
+	    }
+	    
+	    //Adding nodes to list while traversing inorder
+	    public void inorder(TreeNode root) {
+	    	if(root == null) {
+	    		return;
+	    	}
+	    	inorder(root.left);
+	    	list.add(root.data);
+	    	inorder(root.right);
+	    }
+	    
+	    //Real logic of BST into balanced BST here
+	    public TreeNode solve(int start, int end) {
+	    	if(start > end) {
+	    		return null;
+	    	}
+	    	
+	    	int mid = (start+end)/2;
+	    	System.out.println("mid val: "+mid);
+	    	TreeNode root = new TreeNode(list.get(mid));
+	    	root.left = solve(start, mid-1);
+	    	root.right = solve(mid+1, end);
+	    	return root;
+	    }
+	    //****************************************************************************************
+	    
 }
