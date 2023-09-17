@@ -102,11 +102,25 @@ public class TreeTraversalMethodsCalling {
 //		System.out.println("Inorder successor and predecessor in BST: ");
 //		System.out.println(tn.inorderSuccessor(tn.getRoot(), tn));
 		
+//		System.out.println();
+//		tn.createBinarySeachTree();
+//		System.out.print("Convert a normal BST into balanced BST: ");
+//		TreeNode result = tn.normalBSTToBalancedBST(tn.getRoot(),7);
+//		System.out.println("root of balanced BST: "+result.getData());
+		
 		System.out.println();
-		tn.createBinarySeachTree();
-		System.out.print("Convert a normal BST into balanced BST: ");
-		TreeNode result = tn.normalBSTToBalancedBST(tn.getRoot(),7);
-		System.out.println("root of balanced BST: "+result.getData());
+		TreeNode tn1 = new TreeNode();
+		TreeNode tn2 = new TreeNode();
+		tn1.createBinarySeachTree1();
+		tn2.createBinarySeachTree2();
+		System.out.println("Merge two BST result: ");
+		System.out.println(tn1.getRoot().getData() + " "+tn2.getRoot().getData());
+		TreeNode finalResult = tn1.mergeTwoBST(tn1.getRoot(), tn2.getRoot());
+		System.out.println("Root of merge BST: "+finalResult.getData());
+		System.out.print("Iterative Inorder traversal: ");
+		tn.itrInorder(finalResult);
+		System.out.println();
+		
 	}
 
 }
