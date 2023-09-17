@@ -978,12 +978,102 @@ public class TreeNode {
 	    	}
 	    	
 	    	int mid = (start+end)/2;
-	    	System.out.println("mid val: "+mid);
+//	    	System.out.println("mid val: "+mid);
 	    	TreeNode root = new TreeNode(list.get(mid));
 	    	root.left = solve(start, mid-1);
 	    	root.right = solve(mid+1, end);
 	    	return root;
 	    }
 	    //****************************************************************************************
+	    
+	    //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	    //Merge Two BST
+	    public static List<Integer> list1 = new ArrayList<>();
+	    public static List<Integer> list2 = new ArrayList<>();
+    	
+	    public TreeNode mergeTwoBST(TreeNode root1, TreeNode root2) {
+	    	//Step1 => Inorder traversing through BST1 and BST2
+	    	inorder(root1, list1);
+	    	inorder(root2,list2);
+	    	System.out.println(list1);
+	    	System.out.println(list2);
+	    	//Step2 => Merging two inorder traversed lists
+	    	List<Integer> list3 = mergeTwoList(list1, list2);
+	    	System.out.println(list3);
+	    	//Step3 => Building balanced BST from inorder traversal.
+	    	int start=0;
+	    	int end = list3.size()-1; // 7-1=6;
+	    	TreeNode root = solve(start,end, list3);
+	    	return root;
+	    }
+	    //method overloading
+	    //Adding nodes to list while traversing inorder
+	    public void inorder(TreeNode root, List<Integer> list) {
+	    	if(root == null) {
+	    		return;
+	    	}
+	    	inorder(root.left,list);
+	    	list.add(root.data);
+	    	inorder(root.right,list);
+	    }
+	    
+	    public List<Integer> mergeTwoList(List<Integer> list1, List<Integer> list2) {
+	    	List<Integer> list3 = new ArrayList<Integer>();
+	    	//Adding list1's values to list3
+	    	int i=0;
+	    	for(int value:list1) {
+	    		System.out.println();
+	    		list3.add(value);
+	    		i++;
+	    	}
+	    	System.out.println("val of i: "+i);
+	    	//Adding list2's values to list3
+	    	int j=0;
+	    	for(int value:list2) {
+	    		list3.add(value);
+	    		j++;
+	    	}
+	    	System.out.println("val of j: "+j);
+	    	return list3;
+	    }
+	    
+	  //Real logic of BST into balanced BST here
+	    public TreeNode solve(int start, int end, List<Integer> list3) {
+	    	if(start > end) {
+	    		return null;
+	    	}
+	    	
+	    	int mid = (start+end)/2;
+//	    	System.out.println("mid val: "+mid);
+	    	TreeNode root = new TreeNode(list3.get(mid));
+	    	root.left = solve(start, mid-1, list3);
+	    	root.right = solve(mid+1, end, list3);
+	    	return root;
+	    }
+	    
+	    //Creating BST1 which is part of input of merger two BST problem
+	    public void createBinarySeachTree1() {
+			TreeNode first = new TreeNode(1);
+			TreeNode second = new TreeNode(2);
+			TreeNode third = new TreeNode(3);
+			TreeNode fourth = new TreeNode(4);
+			
+			root = third;
+			third.left = second;
+			second.left = first;
+			third.right = fourth;
+		}
+	    
+	    //Creating BST1 which is part of input of merger two BST problem
+	    public void createBinarySeachTree2() {
+	    	TreeNode fifth = new TreeNode(5);
+			TreeNode sixth = new TreeNode(6);
+			TreeNode seventh = new TreeNode(7);
+			
+			root = sixth;
+			sixth.left = fifth;
+			sixth.right = seventh;
+		}
+	    //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7
 	    
 }
