@@ -5,14 +5,14 @@ import java.util.List;
 import java.util.Scanner;
  
 public class DepthFirstSearch {
-    public static void DFS(int node, List<Integer>[] G, List<Integer> used, List<Integer> parent) {
+    public static void DFS(int node, List<Integer>[] G, List<Integer> visited, List<Integer> parent) {
         System.out.println(node);
-        used.set(node, 1);
+        visited.set(node, 1);
  
         for (int u : G[node]) {
-            if (used.get(u) == 0) {
-                parent.set(u, node);
-                DFS(u, G, used, parent);
+            if (visited.get(u) == 0) {
+                parent.set(u, node);  //setting parent of u as value of node
+                DFS(u, G, visited, parent);
             }
         }
     }
@@ -24,7 +24,7 @@ public class DepthFirstSearch {
         int n = scanner.nextInt();
         System.out.println("Enter number of edges of a graph:");
         int m = scanner.nextInt();
-        List<Integer>[] G = new List[n + 5];
+        List<Integer>[] G = new List[n + 5]; //Array of List<Integer>; size=(n+5);
         for (int i = 0; i < n + 5; i++) {
             G[i] = new ArrayList<>();
         }
@@ -38,14 +38,14 @@ public class DepthFirstSearch {
             i++;
         }
  
-        List<Integer> used = new ArrayList<>(n + 5);
+        List<Integer> visited = new ArrayList<>(n + 5);
         List<Integer> parent = new ArrayList<>(n + 5);
         for (int j = 0; j < n + 5; j++) {
-            used.add(0);
+            visited.add(0);
             parent.add(0);
         }
- 
-        DFS(1, G, used, parent);
+        //calling dfs function in recursive way
+        DFS(1, G, visited, parent);
     }
 }
 
