@@ -16,6 +16,21 @@ public class DepthFirstSearch {
             }
         }
     }
+    
+    //How to perform DFS in disconnected component of a graph.
+    public static int numProvinces(int node, List<Integer>[] G, List<Integer> visited, int numOfNodes, 
+    								List<Integer> parent) {
+    	int provinces = 0;
+    	
+    	for(int nodee=1; nodee <numOfNodes; nodee++) {
+    		if(visited.get(nodee) == 0) {
+    			provinces++;
+    			System.out.println("provinces: "+provinces);
+    			DFS(nodee, G,visited,parent);
+    		}
+    	}
+    	return provinces;
+    }
  
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -45,7 +60,9 @@ public class DepthFirstSearch {
             parent.add(0);
         }
         //calling dfs function in recursive way
-        DFS(1, G, visited, parent);
+//        DFS(1, G, visited, parent);
+        int province = numProvinces(1,G,visited,m,parent);
+        System.out.println("Final provinces: "+province);
     }
 }
 
