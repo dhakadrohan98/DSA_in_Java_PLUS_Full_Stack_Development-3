@@ -2,7 +2,7 @@ package com.kumar.graph;
 
 import java.util.Scanner;
 
-public class NumberOfIslands { //Through DFS approach using stack
+public class NumberOfIslandsDFS { //Through DFS approach using stack
 	
 	static int[] rows = {1,-1,0,0,-1,-1,1,1};
 	static int[] cols = {0,0,1,-1,1,-1,1,-1};
@@ -23,7 +23,13 @@ public class NumberOfIslands { //Through DFS approach using stack
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[][] grid = {{0,1,0,1},{1,0,1,1},{1,0,0,0},{1,0,0,1}};
+		int[][] grid = {
+						{0,1,0,1},
+						{1,0,1,1},
+						{1,0,0,0},
+						{0,0,1,0},
+						{1,0,0,1}
+					   };
 		int islands = 0;
 		int n = grid.length;
 		int m = grid[0].length;
