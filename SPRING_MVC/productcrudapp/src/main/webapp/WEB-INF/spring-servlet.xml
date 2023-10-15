@@ -58,7 +58,9 @@
 		<!-- annotated classes -->
 		<property name="annotatedClasses">
 			<list>
-
+				<value>
+					productcrudapp.model.Product
+				</value>
 			</list>
 		</property>
 
