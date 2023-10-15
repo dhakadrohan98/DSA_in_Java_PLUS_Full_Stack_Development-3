@@ -29,14 +29,14 @@ public class ProductDao {
 		return products;
 	}
 	
-	//delete the single product
 	@Transactional
-	public void deleteProduct(int pid) 
-	{
+	//delete the single product
+	public void deleteProduct(int pid) {
 		Product p = this.hibernateTemplate.load(Product.class, pid);
-		this.hibernateTemplate.delete(p);	
+		this.hibernateTemplate.delete(p);
 	}
 	
+	@Transactional
 	//get a single product
 	public Product getProduct(int pid) 
 	{
