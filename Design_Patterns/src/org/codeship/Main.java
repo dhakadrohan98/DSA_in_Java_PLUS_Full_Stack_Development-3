@@ -11,5 +11,7 @@ public class Main {
 		Database object1 = db.getInstance();
 		System.out.println(object1);
 		
+		object1.getConnection();
+		
 	}
 }
