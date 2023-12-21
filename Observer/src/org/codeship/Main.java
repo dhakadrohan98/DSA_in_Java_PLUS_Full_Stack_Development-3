@@ -16,7 +16,7 @@ public class Main {
 		channel.subscribe(raman);
 		channel.newVideoUploaded("Design Patterns");
 		channel.newVideoUploaded("SpringBoot crash course");
-		channel.unsubscribe(raman);
+//		channel.unsubscribe(raman);
 		channel.newVideoUploaded("Top 100 DSA questions for interview");
 		
 		while(true) {

@@ -7,7 +7,7 @@ public class vectorClass {
 		Vector<Integer> vector = new Vector();
 		
 //		Current capacity of vector = 10; 
-		System.out.println(vector.capacity());
+		System.out.println("Vector capacity: "+ vector.capacity());
 		
 		vector.add(10);
 		vector.add(20);
@@ -22,14 +22,14 @@ public class vectorClass {
 		
 		ListIterator<Integer> list = vector.listIterator();
 		
+		System.out.println("Forward direction of list");
 		//Iterate the list in forward direction
 		while(list.hasNext())
 		{
 			System.out.println(list.next());
 		}
 		
-		System.out.println();
-		
+		System.out.println("Backward direction of list");
 		//Iterate the list in backward direction
 		while(list.hasPrevious())
 		{
