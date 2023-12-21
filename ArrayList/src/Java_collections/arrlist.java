@@ -4,8 +4,11 @@ import java.util.*;
 public class arrlist {
 
 	public static void main(String[] args) {
+		ArrayList<String> arrayList = new ArrayList<>(100); // Initial capacity set to 100
+
 		ArrayList<Integer> arr = new ArrayList();
-		
+		arr.ensureCapacity(20);
+		System.out.println(arr.size());
 		arr.add(10);
 		arr.add(20);
 		arr.add(30);

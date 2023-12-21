@@ -1,4 +1,3 @@
-package Queue;
 public class QueueUsingArrays {
 	
 	int size = 5;

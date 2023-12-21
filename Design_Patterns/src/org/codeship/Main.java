@@ -8,6 +8,7 @@ public class Main {
 		Database object = db.getInstance();
 		System.out.println(object);
 		
+		object.getConnection();	
 		Database object1 = db.getInstance();
 		System.out.println(object1);
 		
