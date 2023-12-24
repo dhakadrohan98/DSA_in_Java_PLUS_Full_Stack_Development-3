@@ -1,4 +1,4 @@
-package org.codeship;
+package org.array;
 import java.util.*;
 
 public class TwoSum {
