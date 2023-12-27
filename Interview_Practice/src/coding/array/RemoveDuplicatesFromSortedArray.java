@@ -1,4 +1,4 @@
-package org.array;
+package coding.array;
 import java.util.*;
 
 public class RemoveDuplicatesFromSortedArray {
