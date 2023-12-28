@@ -21,7 +21,7 @@ public class CopyConstructor {
 			return "InterviewBit [departments=" + departments + ", service=" + service + "]";
 		}
 
-		public static void main (String[] args) {
+		public static void main (String[] args) {	
 			CopyConstructor intr = new CopyConstructor();
 			intr.departments = "CSE";
 			intr.service = "developer";

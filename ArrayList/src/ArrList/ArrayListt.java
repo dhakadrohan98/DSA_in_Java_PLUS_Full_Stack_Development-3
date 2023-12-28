@@ -22,6 +22,7 @@ public class ArrayListt {
 			System.out.println(it.next());
 		}
 		
+		
 		//		for(Integer item:list) {
 //			System.out.println(item);
 //		}
