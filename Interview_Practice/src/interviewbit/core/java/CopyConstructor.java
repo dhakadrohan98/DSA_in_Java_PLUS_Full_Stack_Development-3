@@ -1,4 +1,4 @@
-package core.java;
+package interviewbit.core.java;
 
 public class CopyConstructor {
 
