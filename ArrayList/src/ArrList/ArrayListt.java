@@ -1,5 +1,7 @@
 package ArrList;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
 
 public class ArrayListt {
 
@@ -15,8 +17,13 @@ public class ArrayListt {
 		System.out.println(list);
 		System.out.println("list size: "+list.size());
 		
-		for(Integer item:list) {
-			System.out.println(item);
+		Iterator it = list.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
 		}
+		
+		//		for(Integer item:list) {
+//			System.out.println(item);
+//		}
     }
 }
