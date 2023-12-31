@@ -1,24 +1,31 @@
 package com.recursion;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class FibonacciRecursive {
-	
-	public static int fib(int n) {
-		
-		if(n==0 || n==1) {
-			return n;
-		}
-		
-		return fib(n-1) + fib(n-2);
-	}
 
+	public static int fibRecusrion(int num) {
+		
+		if(num == 0) {
+			return num;
+		} else if(num == 1) {
+			return num;
+		}
+		int res = fibRecusrion(num-1)+fibRecusrion(num-2);
+		return res;
+	}
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter a number: ");
-		int n = sc.nextInt();
-		System.out.println(fib(n));
+		System.out.print("Enter a number: ");
+		int num = sc.nextInt();
+		for(int i=0; i<num; i++) {
+			int fibo = fibRecusrion(i);
+			System.out.print(fibo+", ");
+		}
 		
 		
 
 	}
+
 }
