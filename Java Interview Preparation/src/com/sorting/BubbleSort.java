@@ -6,27 +6,27 @@ package com.sorting;
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		int[] arr = new int[] {13,32,25,35,10};
+		int[] arr = {64, 34, 25, 12, 22, 11, 90};
 		
 		for(int i=0; i<arr.length-1; i++) {
-			for(int j=i+1; j<arr.length; j++) {
+			for(int j=0; j<arr.length-1-i; j++) {
 				
-				if(arr[i]>arr[j]) {
-					swap(arr,i,j);
+				if(arr[j]>arr[j+1]) {
+					swap(arr,j,j+1);
 				}
 			}
 		}
 		
-		for(int i:arr) {
-			System.out.print(i+ " ");
+		for(int num:arr) {
+			System.out.print(num+ " ");
 		}
 
 	}
 	
-	public static void swap(int[] arr,int i, int j) {
-		int temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
+	public static void swap(int[] arr,int j, int k) {
+		int temp = arr[j];
+		arr[j] = arr[k];
+		arr[k] = temp;
 	}
 
 }
