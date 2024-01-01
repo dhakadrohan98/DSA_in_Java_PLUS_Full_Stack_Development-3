@@ -22,13 +22,13 @@ class MyThread2 extends Thread {
     public MyThread2(SharedResource2 sharedResource) {
         this.sharedResource = sharedResource;
     }
-
-    @Override
+    
+	@Override
     public void run() {
         for (int i = 0; i < 5; i++) {
-            sharedResource.incrementCounter();
+        	sharedResource.incrementCounter();
         }
-    }
+     }
 }
 
 public class ObjectLevellLock {
@@ -44,5 +44,6 @@ public class ObjectLevellLock {
         // Start the threads
         thread1.start();
         thread2.start();
+        
     }
 }
