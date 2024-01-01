@@ -1,6 +1,6 @@
 package org.digitalocean;
 
-// java bean class on which threads will work and call wait and notify methods.
+// A java bean class on which threads will work and call wait and notify methods.
 public class Message {
 	private String msg;
 	
