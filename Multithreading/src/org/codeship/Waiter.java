@@ -23,7 +23,7 @@ public class Waiter implements Runnable {
 				e.printStackTrace();
 			}
 			//process the message now
-			System.out.println("Message(from waiter class) is "+ this.message.getName());
+			System.out.println("Message(from waiter "+Thread.currentThread().getName()+" class) is "+ this.message.getName());
 		}
 	}
 }

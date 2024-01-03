@@ -46,6 +46,8 @@ public class Hashmap_LHashMap {
 		map.put(1, "Bhola");
 		map.put(15, "Jainam");
 		map.put(0, "Aradhya");
+		String putIfAbsent = map.putIfAbsent(1, "Narshima");
+		System.out.println(putIfAbsent);
 		
 		System.out.println(map);
 		System.out.println(map.entrySet());
