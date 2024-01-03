@@ -8,7 +8,7 @@ import java.util.List;
 public class TestComparable {
 
 	public static void main(String[] args) {
-		Student s1 = new Student(5, "Rohan Dhakad", 19);
+		Student s1 = new Student(5, "Rohan Dhakad", 98);
 		Student s2 = new Student(15, "Sanjeet Kumar", 21);
 		Student s3 = new Student(25, "Rakshit", 20);
 		Student s4 = new Student(35, "Ajay Srivastav", 18);
@@ -20,7 +20,9 @@ public class TestComparable {
 		
 		//sorting student objects on the basis of their age
 		Collections.sort(al); 
-		System.out.println(al);
+		for(Student st:al) {
+			System.out.println("Name: "+st.name + ",Age: "+st.age+",RollNo: "+st.rollNo);
+		}
 
 	}
 

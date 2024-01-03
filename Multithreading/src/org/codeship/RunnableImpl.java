@@ -17,8 +17,8 @@ public class RunnableImpl implements Runnable {
 	}
 	
 	public static void main(String[] args) {
-		Thread t1 = new Thread(new RunnableImpl());
-		Thread t2 = new Thread(new RunnableImpl());
+		Thread t1 = new Thread(new RunnableImpl(),"rohan-1");
+		Thread t2 = new Thread(new RunnableImpl(),"rohan-2");
 		
 		t1.start();
 		t2.start();

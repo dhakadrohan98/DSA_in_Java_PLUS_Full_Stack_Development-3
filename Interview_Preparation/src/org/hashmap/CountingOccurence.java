@@ -1,4 +1,4 @@
-package org.codeship;
+package org.hashmap;
 
 import java.util.*;
 
@@ -26,6 +26,20 @@ public class CountingOccurence {
 				hmap.put(ch, 1);
 			}
 		}
+		
+		for(char ch:hmap.keySet()) {
+			System.out.print(ch+",");
+		}
+		System.out.println();
+		for(int temp:hmap.values()) {
+			System.out.print(temp+", ");
+		}
+		System.out.println();
+		
+//		System.out.println("Iterating Hashmap through Map.Entry type and map.entrySet() method");  
+//		for(Map.Entry m: hmap.entrySet() ) {
+//			System.out.println("Key: "+m.getKey()+", Value: "+m.getValue());
+//		}
 		
 		System.out.println(hmap);
 		
