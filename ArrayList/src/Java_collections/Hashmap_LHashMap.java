@@ -4,7 +4,7 @@ import java.util.*;
 public class Hashmap_LHashMap {
 
 	public static void main(String[] args) {
-		
+			
 		// *** HashMap start ****
 //		Map <Integer,String> map = new HashMap<>();
 //		
