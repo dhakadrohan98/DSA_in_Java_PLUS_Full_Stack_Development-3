@@ -25,7 +25,7 @@ class MyThread2 extends Thread {
     
 	@Override
     public void run() {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i <=3; i++) {
         	sharedResource.incrementCounter();
         }
      }
@@ -36,14 +36,17 @@ public class ObjectLevellLock {
         // Creating two instances of SharedResource, each with its own lock
         SharedResource2 resource1 = new SharedResource2();
         SharedResource2 resource2 = new SharedResource2();
+        SharedResource2 resource3 = new SharedResource2();
 
         // Creating threads that share different instances of SharedResource
         MyThread2 thread1 = new MyThread2(resource1);
         MyThread2 thread2 = new MyThread2(resource2);
+        MyThread2 thread3 = new MyThread2(resource3);
 
         // Start the threads
         thread1.start();
         thread2.start();
+        thread3.start();
         
     }
 }
