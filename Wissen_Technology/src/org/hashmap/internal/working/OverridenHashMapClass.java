@@ -17,6 +17,6 @@ public class OverridenHashMapClass {
 		System.out.println("emp1->" + emp1.hashCode() + " :: emp2-> "+ emp2.hashCode());
 		hmap.forEach((k,v) -> System.out.println("Key is " + k.getName() +" Value is "+ v));
 
-	}
+	}	
 
 }

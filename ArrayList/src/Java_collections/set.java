@@ -17,6 +17,11 @@ public class set {
 //		System.out.println(set);
 //		// Adding Duplicate Elements
 		System.out.println(set.add(30));
+		System.out.println(set.remove(200));
+		
+//		for(int temp:set) {
+//			System.out.println(temp);
+//		}
 		
 		Iterator<Integer> it = set.iterator();
 		
@@ -25,19 +30,22 @@ public class set {
 			System.out.println(it.next());
 		}
 		
+		
+		System.out.println("****************");
+		System.out.println("LinkedHashSet starting");
 		// LinkedHashSet methods
 		
-//		LinkedHashSet<String> lhs = new LinkedHashSet<>();
+		LinkedHashSet<String> lhs = new LinkedHashSet<>();
+		
+		lhs.add("Ratul");
+		lhs.add("Anand");
+		lhs.add("Bhuvan");
+		lhs.add("Yash");
+		lhs.add("satyendra");
+		
+		System.out.println(lhs);
 //		
-//		lhs.add("Ratul");
-//		lhs.add("Anand");
-//		lhs.add("Bhuvan");
-//		lhs.add("Yash");
-//		lhs.add("satyendra");
-//		
-//		System.out.println(lhs);
-//		
-//		System.out.println(lhs.add("Ratul"));
+		System.out.println(lhs.add("Ratul"));
 		
 		//Remaining methods for LHS are same as of that HashSet.
 		
