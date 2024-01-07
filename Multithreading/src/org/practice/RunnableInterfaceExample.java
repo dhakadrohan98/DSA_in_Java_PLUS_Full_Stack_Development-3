@@ -38,7 +38,7 @@ public class RunnableInterfaceExample implements Runnable {
 		th3.start();
 		try {
 			th3.join();
-			System.out.println("All thread has been executed successfully");
+			System.out.println("All threads has been executed successfully");
 		} catch(InterruptedException e) {
 			e.printStackTrace();
 		}
