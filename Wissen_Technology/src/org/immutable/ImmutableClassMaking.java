@@ -11,7 +11,7 @@ public final class ImmutableClassMaking {
 
     public ImmutableClassMaking(String name, List<String> degrees) {
         this.name = name;
-        this.degrees = new ArrayList<>(degrees); // Creating a defensive copy of the list
+        this.degrees = new ArrayList<>(degrees); // Creating a defensive copy of the list (deep copy)
     }
 
     public String getName() {
