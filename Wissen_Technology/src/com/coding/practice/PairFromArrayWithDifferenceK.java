@@ -14,21 +14,22 @@ public class PairFromArrayWithDifferenceK {
 		System.out.println(hmap);
 		
 		for(int j=0; j<arr.length; j++) {
-			int diff = arr[j] - k;
-			if(hmap.containsKey(diff)) {
-				res[0] = arr[j];
-				res[1] = diff;
+			int num1 = arr[j];
+			int num2 = num1 - k;
+			if(hmap.containsKey(num2)) {
+				res[0] = num1;
+				res[1] = num2;
 				break;
 			}
-			hmap.remove(arr[j]);
-			System.out.println(hmap);
+			hmap.remove(num1);
+			System.out.println(hmap); //printing remaining hmap
 		}
 		return res;
 	}
 
 	public static void main(String[] args) {
 		int[] arr = {1,2,5,10,6}; //non-repeating integers
-		int k = -5;
+		int k = 5;
 		
 		int[] num = pairWithDifferencK(arr, k);
 		for(int temp: num) {

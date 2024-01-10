@@ -18,7 +18,7 @@ class SharedResource1 {
 class MyThread1 extends Thread {
 	@Override
 	public void run() {
-		for(int i=1; i<=3; i++) {
+		for(int i=1; i<=5; i++) {
 			SharedResource1.incrementCounter();
 		}
 	}
