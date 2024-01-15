@@ -12,6 +12,7 @@ public class SquareOfEvenNumbers1 {
 		
 		List<Integer> collect = list.stream().filter(n -> n%2 == 0).map(n -> n*n).collect(Collectors.toList());
 		System.out.println(collect);
+		
 	}
 
 }

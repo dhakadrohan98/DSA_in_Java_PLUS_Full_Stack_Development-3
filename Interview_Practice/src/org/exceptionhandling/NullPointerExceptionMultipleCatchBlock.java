@@ -16,6 +16,9 @@ public class NullPointerExceptionMultipleCatchBlock {
 		catch (Exception e) {
 			System.out.println("Exception: "+e.getMessage());
 		}
+		finally {
+			System.out.println("inside finally block");
+		}
 		System.out.println("rest of the code"); 
 	}
 }

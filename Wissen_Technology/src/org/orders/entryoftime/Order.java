@@ -18,4 +18,9 @@ class Order {
     public LocalTime getTimeOfEntry() {
         return timeOfEntry;
     }
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", timeOfEntry=" + timeOfEntry + "]";
+	}
 }
