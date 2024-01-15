@@ -12,8 +12,8 @@ public class NotifierTest {
 		th2.start();
 		
 		Notifier notifier1 = new Notifier(message);
-		Thread th3 = new Thread(notifier1, "notifier1");
-		th3.start();
+		Thread nth1 = new Thread(notifier1, "notifier1");
+		nth1.start();
 
 	}
 

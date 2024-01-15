@@ -23,7 +23,7 @@ public class Student {
 	@Override
 	public boolean equals(Object obj) {
 		if(this == obj) return true;
-		if(obj == null || getClass() != obj.getClass()) return false;
+		if(!(obj instanceof Student)) return false;
 		Student student = (Student)obj;
 		return id == student.id || Objects.equals(name, student.name);
 		
@@ -49,6 +49,11 @@ public class Student {
 		set.add(s5);
 		System.out.println(set);
 		System.out.println(Objects.equals(s1, s5));
+		System.out.println();
+		System.out.println(set.size());
+		s1.id =3;
+		System.out.println(set.size());
+		System.out.println(set);
 	}
 
 }

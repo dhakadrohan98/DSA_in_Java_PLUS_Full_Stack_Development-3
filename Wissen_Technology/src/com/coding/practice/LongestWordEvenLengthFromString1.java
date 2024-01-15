@@ -7,6 +7,7 @@ public class LongestWordEvenLengthFromString1 {
 				+ "greatness, and some have greatness thrust upon them";
 		int longestWord = 0;
 		
+		
 		String[] arr = str.split(" ");
 		
 		for(int i=0; i<arr.length; i++) {

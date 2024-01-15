@@ -26,12 +26,12 @@ public class PairOfMaximumProductInArray {
 		int[] arr1 = {-1,-3,-6,3,0,-5};
 		int[] pair = pairOfMaximumProduct(arr);
 		int[] pair1 = pairOfMaximumProduct(arr1);
-		System.out.print("pair ");
+		System.out.print("pair: ");
 		for(int temp:pair) {
 			System.out.print(temp+ ", ");
 		}
 		System.out.println();
-		System.out.print("pair1 ");
+		System.out.print("pair1: ");
 		for(int temp:pair1) {
 			System.out.print(temp+ ", ");
 		}

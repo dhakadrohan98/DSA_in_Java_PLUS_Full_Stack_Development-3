@@ -1,6 +1,7 @@
 package org.hashmap.internal.working;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class OverridenHashMapClass {
 
@@ -16,6 +17,10 @@ public class OverridenHashMapClass {
 		System.out.println();
 		System.out.println("emp1->" + emp1.hashCode() + " :: emp2-> "+ emp2.hashCode());
 		hmap.forEach((k,v) -> System.out.println("Key is " + k.getName() +" Value is "+ v));
+		
+		for(Employee emp:hmap.keySet()) {
+			System.out.println(emp);
+		}
 
 	}	
 

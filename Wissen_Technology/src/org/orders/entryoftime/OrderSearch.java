@@ -25,9 +25,11 @@ public class OrderSearch {
         orders.add(new Order("0124", "10:15"));
         orders.add(new Order("0345", "09:15"));
         orders.add(new Order("0873", "13:30"));
+        
+        System.out.println(orders);
 
         String startTime = "09:14";
-        String endTime = "14:00";
+        String endTime = "13:31";
 
         List<Order> result = searchOrdersByTime(orders, startTime, endTime);
 
