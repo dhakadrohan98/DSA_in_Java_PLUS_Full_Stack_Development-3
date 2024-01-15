@@ -6,9 +6,9 @@ public class TrainTicket implements Comparable<TrainTicket> {
 	private String ticketId;
 	private LocalTime entryOfTime;
 	
-	TrainTicket(String ticketId,LocalTime entryOfTime) {
+	TrainTicket(String ticketId,String entryOfTime) {
 		this.ticketId = ticketId;
-		this.entryOfTime = entryOfTime;
+		this.entryOfTime = LocalTime.parse(entryOfTime);
 	}
 
 	public String getTicketId() {

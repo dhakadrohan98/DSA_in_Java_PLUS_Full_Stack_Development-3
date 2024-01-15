@@ -22,20 +22,26 @@ public class OrderSearch {
 
     public static void main(String[] args) {
         List<Order> orders = new ArrayList<>();
+        orders.add(new Order("0347", "09:16"));
         orders.add(new Order("0124", "10:15"));
         orders.add(new Order("0345", "09:15"));
-        orders.add(new Order("0873", "13:30"));
+        orders.add(new Order("0873", "13:31"));
+        orders.add(new Order("0874", "13:30"));
         
         System.out.println(orders);
+        
+        Collections.sort(orders, new TimeComparator());
+        System.out.println(orders);
+        
 
-        String startTime = "09:14";
-        String endTime = "13:31";
-
-        List<Order> result = searchOrdersByTime(orders, startTime, endTime);
-
-        System.out.println("Orders between " + startTime + " and " + endTime + ":");
-        for (Order order : result) {
-            System.out.println("Order ID: " + order.getOrderId() + ", Time of Entry: " + order.getTimeOfEntry());
-        }
+//        String startTime = "09:14";
+//        String endTime = "13:31";
+//
+//        List<Order> result = searchOrdersByTime(orders, startTime, endTime);
+//
+//        System.out.println("Orders between " + startTime + " and " + endTime + ":");
+//        for (Order order : result) {
+//            System.out.println("Order ID: " + order.getOrderId() + ", Time of Entry: " + order.getTimeOfEntry());
+//        }
     }
 }
