@@ -12,17 +12,18 @@ public class Waiter implements Runnable {
 	}
 	@Override
 	public void run() {
-		String name = Thread.currentThread().getName();
+		String threadName = Thread.currentThread().getName();
+		//synchronized block is used to own the monitor of Message object.
 		synchronized (msg) {
 			try {
-				System.out.println(name+"-> waiting to get notified at time:"+System.currentTimeMillis());
+				System.out.println(threadName+"-> waiting to get notified at time:"+System.currentTimeMillis());
 				msg.wait();
 			} catch(InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println(name+"-> thread got notified at time:"+System.currentTimeMillis());
+			System.out.println(threadName+"-> thread got notified at time:"+System.currentTimeMillis());
 			//process the message now
-            System.out.println(name+" processed: "+msg.getMsg());
+            System.out.println(threadName+" is processed by "+msg.getMsg());
 		}
 		
 	}

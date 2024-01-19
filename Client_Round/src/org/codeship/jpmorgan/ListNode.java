@@ -58,10 +58,49 @@ public class ListNode {
 	
 	//Insert node at the beginning and return head of this newly Linked List
 	public static ListNode insertAtBeginning(ListNode head, int value) {
-		ListNode newNode = new ListNode(value);
-		newNode.setNext(head);
-		head = newNode;
+		ListNode firstNode = new ListNode(value);
+		firstNode.setNext(head);
+		head = firstNode;
 		return head;
+	}
+	
+	//Insert node at the last of LL
+	public static ListNode insertAtLast(ListNode tail, int value) {
+		ListNode lastNode = new ListNode(value);
+		tail.setNext(lastNode);
+		tail = lastNode;
+		return tail;
+	}
+	
+	//Insert node at a given position
+	public static ListNode insertAtGivenPosition(int value,int position, ListNode head) {
+		int size = size(head);
+		int index = 1;
+		if(position > size) {
+			System.out.println("Invalid position");
+			return head;
+		}
+		else if(position == 1) {
+			ListNode firstNode = new ListNode(value);
+			firstNode.setNext(head);
+			head = firstNode;
+			return head;
+		}
+		else {
+			ListNode prev = head;
+			while(index < position-1) {
+				System.out.println("index: "+ index); //can be commented
+				index++;
+				prev = prev.next;
+			}
+			//create a new node
+			ListNode newNode = new ListNode(value);
+			
+			ListNode curr = prev.next;
+			newNode.next = curr;
+			prev.next = newNode;
+			return head;
+		}
 	}
 	
 }
