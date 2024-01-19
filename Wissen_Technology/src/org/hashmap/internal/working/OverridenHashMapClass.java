@@ -16,7 +16,7 @@ public class OverridenHashMapClass {
 		System.out.println("Both Objects are Equal: " + emp1.equals(emp2));
 		System.out.println();
 		System.out.println("emp1->" + emp1.hashCode() + " :: emp2-> "+ emp2.hashCode());
-		hmap.forEach((k,v) -> System.out.println("Key is " + k.getName() +" Value is "+ v));
+		hmap.forEach((k,v) -> System.out.println("Key is " + k.getName() +" :: Value is "+ v));
 		
 		for(Employee emp:hmap.keySet()) {
 			System.out.println(emp);
