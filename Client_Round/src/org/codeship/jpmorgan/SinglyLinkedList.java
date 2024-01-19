@@ -16,19 +16,35 @@ public class SinglyLinkedList {
 		first.setNext(second); // 2 --> 4;
 		second.setNext(third);// 2 --> 4 --> 5;
 		third.setNext(fourth);// 2 --> 4 --> 5 --> 9 --> null;
+		ListNode curr = head;
 		
-		System.out.print("Linked List: ");
+		while(curr.getNext() != null) {
+			curr = curr.getNext();
+		}
+		tail = curr;
+		
+		System.out.print("Initial Linked List: ");
 		ListNode.display(head);
-		tail = ListNode.setTail(head, tail);
 		System.out.println("Tail Node of SLL: " + tail.getData());
 		System.out.println("Size of SLL: "+ListNode.size(head));
 		
 		//insert |15|null| node at the beginning
 		head = ListNode.insertAtBeginning(head,15);
-		System.out.print("Newly created Linked List: ");
+		System.out.print("After inserting 15 at the beginning, newly Linked List: ");
 		ListNode.display(head);
 		System.out.println("Size of SLL: "+ListNode.size(head));
+		
+		//insert |20|null| node at the beginning
+		tail = ListNode.insertAtLast(tail, 20);
+		System.out.print("After inserting 20 at the last, newly Linked List: ");
+		ListNode.display(head);
 		System.out.println("Tail Node of SLL: " + tail.getData());
+		System.out.println("Size of SLL: "+ListNode.size(head));
+		
+		//insert |6|null| at 5th position
+		head = ListNode.insertAtGivenPosition(15, 6, head);
+		ListNode.display(head);
+		System.out.println("Size of SLL: "+ListNode.size(head));
 
 	}
 
