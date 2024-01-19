@@ -96,7 +96,7 @@ public class EmployeeManagerRelation {
 		for(String manager: hmap.values()) {
 			set.add(manager);
 		}
-		System.out.println("Managers");
+		System.out.print("Managers count: ");
 		System.err.println(set.size());
 		System.out.println(set);
 		//storing Employees name in set
@@ -104,7 +104,7 @@ public class EmployeeManagerRelation {
 		for(String employee: hmap.keySet()) {
 				set1.add(employee);
 		}
-		System.out.println("Employees");
+		System.out.print("Employees count: ");
 		System.err.println(set1.size());
 		System.out.println(set1);
 		returnManager(hmap, set1,set);

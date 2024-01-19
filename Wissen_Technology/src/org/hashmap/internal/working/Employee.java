@@ -19,17 +19,17 @@ public class Employee
 		this.name = name;
 	}
 	
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj) {
-//			return true;
-//		}
-//		if (!(obj instanceof Employee)) {
-//			return false;
-//		}
-//		Employee other = (Employee) obj;
-//		return Objects.equals(name, other.name);
-//	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Employee)) {
+			return false;
+		}
+		Employee other = (Employee) obj;
+		return Objects.equals(name, other.name);
+	}
 	
 	@Override
 	public int hashCode() {
