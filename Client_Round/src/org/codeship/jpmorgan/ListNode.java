@@ -1,12 +1,16 @@
 package org.codeship.jpmorgan;
 
+import java.util.List;
+
 public class ListNode {
 	private int data;
 	private ListNode next;
+	private static int size;
 	
 	public ListNode(int data) {
 		this.data = data;
 		this.next = null;
+		size++;
 	}
 
 	public int getData() {
@@ -25,6 +29,14 @@ public class ListNode {
 		this.next = next;
 	}
 	
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
 	public static ListNode setTail(ListNode head, ListNode tail) {
 		ListNode curr = head;
 		
@@ -45,14 +57,7 @@ public class ListNode {
 		System.out.println();
 	}
 	
-	public static int size(ListNode head) {
-		ListNode curr = head;
-		int size = 0;
-		
-		while(curr != null) {
-			size++;
-			curr = curr.getNext();
-		}
+	public static int size() {
 		return size;
 	}
 	
@@ -74,7 +79,7 @@ public class ListNode {
 	
 	//Insert node at a given position
 	public static ListNode insertAtGivenPosition(int value,int position, ListNode head) {
-		int size = size(head);
+		int size = size();
 		int index = 1;
 		if(position > size) {
 			System.out.println("Invalid position");
@@ -84,6 +89,7 @@ public class ListNode {
 			ListNode firstNode = new ListNode(value);
 			firstNode.setNext(head);
 			head = firstNode;
+			size++;
 			return head;
 		}
 		else {
@@ -99,8 +105,49 @@ public class ListNode {
 			ListNode curr = prev.next;
 			newNode.next = curr;
 			prev.next = newNode;
+			size++;
 			return head;
 		}
 	}
+	
+	public static ListNode deleteFirstNode(ListNode head) {
+		 if(head == null) {
+			 return head;
+		 }
+		
+		 ListNode firstNode = head;
+		 head = head.next;
+		 firstNode.next = null;
+		 size--;
+		 return head;
+	}
+	
+	public static ListNode deleteLastNode(ListNode head) {
+		
+		if(head == null) {
+			return head;
+		}
+		ListNode curr = head;
+		
+		while(curr.next.next != null) {
+			curr = curr.next;
+		}
+		
+		ListNode last = curr.next;
+		curr.next = null;
+		size--;
+		return last;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
