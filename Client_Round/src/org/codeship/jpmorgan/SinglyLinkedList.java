@@ -47,16 +47,21 @@ public class SinglyLinkedList {
 		System.out.println("Size of SLL: "+ListNode.size());
 
 		//delete first node
-		System.out.println("Deleting first node");
-		head = ListNode.deleteFirstNode(head);
+//		System.out.println("Deleting first node");
+//		head = ListNode.deleteFirstNode(head);
+//		ListNode.display(head);
+//		System.out.println("Size of SLL: "+ListNode.size());
+		
+		//delete last node
+//		System.out.println("Deleting last node");
+//		ListNode last = ListNode.deleteLastNode(head);
+//		ListNode.display(head);
+//		System.out.println("Size of SLL: "+ListNode.size());
+		
+		ListNode deletedNode = ListNode.deleteNodeAtGivenPosition(head, 3);
+		System.out.println("Deleted node at 2nd position: " + deletedNode.getData());
 		ListNode.display(head);
 		System.out.println("Size of SLL: "+ListNode.size());
 		
-		//delete last node
-		System.out.println("Deleting last node");
-		ListNode last = ListNode.deleteLastNode(head);
-		ListNode.display(head);
-		System.out.println("Size of SLL: "+ListNode.size());
 	}
-
 }
