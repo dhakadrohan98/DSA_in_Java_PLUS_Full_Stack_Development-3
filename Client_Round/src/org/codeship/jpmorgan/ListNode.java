@@ -139,6 +139,31 @@ public class ListNode {
 		return last;
 	}
 	
+	public static ListNode deleteNodeAtGivenPosition(ListNode head, int position) {
+		
+		if(position > size) {
+			System.out.println("Invalid position");
+			return null;
+		}
+		int index = 1;
+		ListNode curr = head;
+		while(index < position-1) {
+			curr = curr.next;
+			index++;
+		}
+		ListNode nextNode = curr.next;
+		curr.next = nextNode.next;
+		nextNode.next = null;
+		size--;
+		return nextNode;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
