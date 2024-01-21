@@ -5,11 +5,13 @@ import java.util.List;
 public class ListNode {
 	private int data;
 	private ListNode next;
+	private ListNode prev;
 	private static int size;
 	
 	public ListNode(int data) {
 		this.data = data;
 		this.next = null;
+		this.prev = null;
 		size++;
 	}
 
@@ -158,13 +160,90 @@ public class ListNode {
 		return nextNode;
 	}
 	
+	public static int middleNode(ListNode head) {
+		if(head == null) {
+            return -1;
+        }
+		ListNode fast = head;
+		ListNode slow = head;
+        
+        while(fast!=null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow.data;
+	}
 	
+	public static ListNode reverseList(ListNode head) {
+		 ListNode curr = head;
+		 ListNode next = null;
+		 ListNode prev = null;
+	        
+		 while(curr != null) {
+	    	 next = curr.next;
+	    	 curr.next = prev;
+	    	 prev = curr;
+	    	 curr = next;
+	     }
+	     return prev;
+	}
 	
+	//Reverse a doubly linked list
+	public static ListNode reverseDLL(ListNode  head)
+	{
+		ListNode tail = head;
+	   
+	   while(tail.next != null) {
+	       tail = tail.next;
+	   }
+	   
+	   ListNode curr = tail;
+	   
+	   while(curr != null) {
+		   ListNode temp = curr.next;
+	       curr.next = curr.prev;
+	       curr.prev = temp;
+	       curr = curr.next;
+	   }
+	   return tail;
+	}
 	
+	//Detect a loop in linked list
+	public static ListNode detectCycle(ListNode head) {
+		
+		if(head == null)
+			return null;
+		
+		ListNode slow = head;
+		ListNode fast = head;
+		
+		while(fast.next != null && fast != null) {
+			slow = slow.next;
+			fast = fast.next;
+			
+			if(slow==fast) {
+				return slow;
+			}
+		}
+		return null;
+	}
 	
-	
-	
-	
+	//Detect first node if any cycle present in SLL.
+	public static ListNode detectFirstNode(ListNode head) {
+		ListNode meet = detectCycle(head);
+		
+		if(meet == null) {
+			return meet;
+		}
+		
+		ListNode start = head;
+		
+		while(start != meet) {
+			start = start.next;
+			meet = meet.next;
+		}
+		return start;
+	}
 	
 	
 	
