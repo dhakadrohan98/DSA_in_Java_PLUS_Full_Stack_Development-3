@@ -63,5 +63,17 @@ public class SinglyLinkedList {
 		ListNode.display(head);
 		System.out.println("Size of SLL: "+ListNode.size());
 		
+		int middleNode = ListNode.middleNode(head);
+		if(middleNode == 0) {
+			System.out.println("List is empty");
+		}
+		else {
+			System.out.println("Middle Node:" + middleNode);
+		}
+		
+		//Reverse a SLL
+		head = ListNode.reverseList(head);
+		System.out.println("Reversed list:");
+		ListNode.display(head);
 	}
 }
