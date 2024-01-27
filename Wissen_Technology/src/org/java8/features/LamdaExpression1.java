@@ -1,10 +1,11 @@
 package org.java8.features;
 
+@FunctionalInterface
 interface Functional {
 	public double calculatePi(double pi);
 }
 
-public class Java8 {
+public class LamdaExpression1 {
 
 	public static void main(String[] args) {
 		

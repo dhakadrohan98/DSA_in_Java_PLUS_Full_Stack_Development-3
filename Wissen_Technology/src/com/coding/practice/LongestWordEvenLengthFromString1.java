@@ -13,7 +13,7 @@ public class LongestWordEvenLengthFromString1 {
 		for(int i=0; i<arr.length; i++) {
 			
 			String comma = ",";
-			if(arr[i].contains(comma)) {
+			if(arr[i].contains(",")) {
 				int length = arr[i].length()-1; 
 				if(length % 2 == 0 &&  length > longestWord) {
 					longestWord = length;

@@ -34,14 +34,14 @@ public class OrderSearch {
         System.out.println(orders);
         
 
-//        String startTime = "09:14";
-//        String endTime = "13:31";
-//
-//        List<Order> result = searchOrdersByTime(orders, startTime, endTime);
-//
-//        System.out.println("Orders between " + startTime + " and " + endTime + ":");
-//        for (Order order : result) {
-//            System.out.println("Order ID: " + order.getOrderId() + ", Time of Entry: " + order.getTimeOfEntry());
-//        }
+        String startTime = "09:14";
+        String endTime = "13:31";
+
+        List<Order> result = searchOrdersByTime(orders, startTime, endTime);
+
+        System.out.println("Orders between " + startTime + " and " + endTime + ":");
+        for (Order order : result) {
+            System.out.println("Order ID: " + order.getOrderId() + ", Time of Entry: " + order.getTimeOfEntry());
+        }
     }
 }

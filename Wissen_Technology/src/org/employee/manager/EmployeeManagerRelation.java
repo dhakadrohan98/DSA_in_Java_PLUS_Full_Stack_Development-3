@@ -60,6 +60,8 @@ public class EmployeeManagerRelation {
 			list.add(list4);
 		}
 		
+		System.out.println();
+		System.out.println("Final List:");
 		for(List<String> temp: list) {
 			System.out.println(temp);
 		}
@@ -88,7 +90,9 @@ public class EmployeeManagerRelation {
 		hmap.put("Sam", "Jack");
 		hmap.put("Tim", "Karen");
 		hmap.put("Uma", "Larry");
+		System.out.println("Given relationship between employee and manager:");
 		System.out.println(hmap);
+		System.out.println();
 		
 		
 		//storing managers name in set
@@ -98,7 +102,9 @@ public class EmployeeManagerRelation {
 		}
 		System.out.print("Managers count: ");
 		System.err.println(set.size());
+		System.out.print("Managers LinkedHashSet: ");
 		System.out.println(set);
+		System.out.print("\n");
 		//storing Employees name in set
 		Set<String> set1 = new LinkedHashSet<>();
 		for(String employee: hmap.keySet()) {
@@ -106,6 +112,7 @@ public class EmployeeManagerRelation {
 		}
 		System.out.print("Employees count: ");
 		System.err.println(set1.size());
+		System.out.print("Employees LinkedHashSet: ");
 		System.out.println(set1);
 		returnManager(hmap, set1,set);
 		
