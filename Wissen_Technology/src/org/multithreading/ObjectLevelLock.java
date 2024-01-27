@@ -7,6 +7,13 @@ class SharedResource1{
 	
 	public void incrementCounter() {
 			synchronized (lock) {
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 				sharedCounter++;
 				System.out.println(Thread.currentThread().getName() 
 						+ " | count- " + sharedCounter);

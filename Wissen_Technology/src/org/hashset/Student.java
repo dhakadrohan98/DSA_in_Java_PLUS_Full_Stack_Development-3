@@ -5,33 +5,29 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Student {
-	
-	private int id;
-	private String name;
-	
-	public Student(int id, String name) {
-		super();
+
+	public int id;
+	public String name;
+
+	public Student(int id,String name) {
 		this.id = id;
 		this.name = name;
 	}
 
-	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return this.id;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if(this == obj) return true;
-		if(!(obj instanceof Student)) return false;
-		Student student = (Student)obj;
-		return id == student.id || Objects.equals(name, student.name);
-		
-	}
-	
-	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + "]";
+		return "Student: " + this.name + "@" + Integer.toHexString(hashCode());
+	}
+
+	public boolean equals(Object o) {
+		if (o instanceof Student) {
+			Student s = (Student) o;
+			return s.id == this.id ? true : false;
+		}
+		return false;
 	}
 
 	public static void main(String[] args) {
@@ -40,18 +36,25 @@ public class Student {
 		Student s3 = new Student(3, "Pranav pankaj");
 		Student s4 = new Student(4, "Ritesh Rana");
 		Student s5 = new Student(1, "Rohit Dhakad");
-		Set<Student> set = new HashSet<>();
-		
+		HashSet<Student> set = new HashSet<>();
+
 		set.add(s1);
 		set.add(s2);
 		set.add(s3);
 		set.add(s4);
 		set.add(s5);
+//		System.out.println(set);
+//		System.out.println(Objects.equals(s1, s5));
+//		System.out.println();
+//		System.out.println("Initial size: " + set.size());
+//		s1.id = 3;
+//		System.out.println("Later size: " + set.size());
+//		System.out.println(set);
+		System.out.println("s1 hashCode: " + Objects.hashCode(s1));
+		System.out.println("s5 hashCode: "+ Objects.hashCode(s5));
 		System.out.println(set);
-		System.out.println(Objects.equals(s1, s5));
-		System.out.println();
 		System.out.println(set.size());
-		s1.id =3;
+		s1.id = 3;
 		System.out.println(set.size());
 		System.out.println(set);
 	}

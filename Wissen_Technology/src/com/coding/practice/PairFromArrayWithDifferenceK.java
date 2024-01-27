@@ -29,7 +29,7 @@ public class PairFromArrayWithDifferenceK {
 
 	public static void main(String[] args) {
 		int[] arr = {1,2,5,10,6}; //non-repeating integers
-		int k = 5;
+		int k = -3;
 		
 		int[] num = pairWithDifferencK(arr, k);
 		for(int temp: num) {
