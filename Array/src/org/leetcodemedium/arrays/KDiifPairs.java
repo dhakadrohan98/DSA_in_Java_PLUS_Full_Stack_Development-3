@@ -4,16 +4,7 @@ import java.util.HashMap;
 
 public class KDiifPairs {
 
-	public static void main(String[] args) {
-		int[] nums= {1,3,1,5,4};
-		int k = 2;
-		
-		int result = kdiffPairs(nums, k);
-		System.out.println(result);
-
-	}
-
-	private static int kdiffPairs(int[] nums, int k) {
+	public static int kdiffPairs(int[] nums, int k) {
 		 HashMap<Integer, Integer> hmap = new HashMap<>();
 	        int count=0;
 	        
@@ -42,6 +33,15 @@ public class KDiifPairs {
 	        
 			return count;
 		
+	}
+	
+	public static void main(String[] args) {
+		int[] nums= {1,3,1,5,4};
+		int k = 2;
+		
+		int result = kdiffPairs(nums, k);
+		System.out.println(result);
+
 	}
 
 }
