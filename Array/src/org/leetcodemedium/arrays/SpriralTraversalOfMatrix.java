@@ -11,31 +11,36 @@ public class SpriralTraversalOfMatrix {
         int left = 0, right = m-1; //columns traversing
         int top = 0, bottom = n-1; //rows traversing
         List<Integer> list = new ArrayList<Integer>();
+        int col=0, row=0;
         
         while(top <= bottom && left <= right) {
-            for(int i=left; i<=right; i++) {
-                list.add(matrix[top][i]);
+            col = left;
+            while(col <= right && top<=bottom) {
+            	list.add(matrix[top][col]);
+            	col++;
             }
             top++;
             
-            for(int i=top; i<= bottom; i++) {
-                list.add(matrix[i][right]);
+            row = top;
+            while(row <= bottom && left <= right) {
+            	list.add(matrix[row][right]);
+            	row++;
             }
             right--;
             
-            if(top<=bottom) {
-                for(int i=right; i>=left; i--) {
-                    list.add(matrix[bottom][i]);
-                }
-                bottom--;
+            col = right;
+            while(col >= left && top <= bottom) {
+            	list.add(matrix[bottom][col]);
+            	col--;
             }
+            bottom--;
             
-            if(left <= right) {
-                for(int i=bottom; i >= top; i--) {
-                    list.add(matrix[i][left]);
-                }
-                left++;
+            row = bottom;
+            while(row >= top && left <= right) {
+            	list.add(matrix[row][left]);
+            	row--;
             }
+            left++;
         }
         
         return list;

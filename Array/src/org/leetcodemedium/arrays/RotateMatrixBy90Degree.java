@@ -5,8 +5,10 @@ public class RotateMatrixBy90Degree {
 	public static void rotate(int[][] matrix) {
 	      int n = matrix.length;
 	      
+	    //Transponse of a matrix
 	      for(int i=0; i<n-1; i++) {
 	          for(int j=i+1; j<n; j++) {
+	        	  //swapping
 	              int temp = matrix[i][j];
 	              matrix[i][j] =  matrix[j][i];
 	               matrix[j][i] = temp;

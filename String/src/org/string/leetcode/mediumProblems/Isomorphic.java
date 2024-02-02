@@ -47,10 +47,10 @@ public class Isomorphic {
             		return false;
             	}
             } else if(hmap2.containsKey(ch2)) {
-            	return false; //2nd map has used ch1
+            	return false; //ch2 is already mapped with someone.
             } else {
-            	hmap1.put(ch1, ch2);
-            	hmap2.put(ch2, true);
+            	hmap1.put(ch1, ch2); //map ch1 with ch2
+            	hmap2.put(ch2, true); //put value of ch2 true in map2 as it has been used till now.
             }
         }
         
