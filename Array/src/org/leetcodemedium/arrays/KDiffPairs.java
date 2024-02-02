@@ -2,7 +2,7 @@ package org.leetcodemedium.arrays;
 
 import java.util.HashMap;
 
-public class KDiifPairs {
+public class KDiffPairs {
 
 	public static int kdiffPairs(int[] nums, int k) {
 		 HashMap<Integer, Integer> hmap = new HashMap<>();
