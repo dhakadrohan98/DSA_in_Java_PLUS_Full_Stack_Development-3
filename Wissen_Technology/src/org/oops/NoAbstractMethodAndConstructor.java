@@ -10,8 +10,8 @@ abstract class Bike {
 	abstract void run();
 
 	// Non abstract method
-	public void changeGear() {
-		System.out.println("gear changed");
+	public void changeGear(int gear) {
+		System.out.println("gear changed to " + gear);
 	}
 }
 
@@ -26,7 +26,9 @@ public class NoAbstractMethodAndConstructor {
 	public static void main(String[] args) {
 		Bike bike = new Honda();
 		bike.run();
-		bike.changeGear();
+		bike.changeGear(2);
+		bike.run();
+		bike.changeGear(3);
 
 	}
 

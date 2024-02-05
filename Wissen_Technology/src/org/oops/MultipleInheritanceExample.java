@@ -15,7 +15,7 @@ interface Running {
 class Bird implements Flying, Swimming, Running {
     @Override
     public String getName() {
-        return "I am a bird, who is flying, swimming and then running";
+        return "I am a bird, who is flying, swimming and can run";
     }
 }
 
