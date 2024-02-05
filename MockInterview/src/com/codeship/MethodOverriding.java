@@ -5,7 +5,7 @@ import java.util.*;
 public class MethodOverriding extends Main {
 
 	public void run() {
-		System.out.println("Main method run from another class");
+		System.out.println("Main method run from MethodOverriding class");
 	}
 	
 	public static void main(String[] args) {
