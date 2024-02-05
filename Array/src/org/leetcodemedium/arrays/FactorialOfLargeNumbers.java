@@ -7,22 +7,23 @@ public class FactorialOfLargeNumbers {
 	public static int multiply(int[] arr, int size, int multiplier) {
 
 		int carry = 0;
+		//multiplier = 5;
+		//size = 2;
+		for (int i = 0; i < size; i++) {	// i = 1;
+											// arr[1] = 2; 
+			int res = multiplier * arr[i]; // res = 5*2 = 10 ; carry = 2;
+			res = res + carry; // res = 10 + 2 = 12;
 
-		for (int i = 0; i < size; i++) {
-
-			int res = multiplier * arr[i];
-			res = res + carry;
-
-			arr[i] = res % 10; // 24
-			carry = res / 10;
+			arr[i] = res % 10; // arr[1] = 12%10 = 2;
+			carry = res / 10; // carry = 12/10 = 1;
 		}
 
-		// carry = 12
+		// carry = 0
 		while (carry > 0) {
 
-			arr[size] = carry % 10;
-			size++;
-			carry = carry / 10;
+			arr[size] = carry % 10; // arr[2] = 1%10 = 1;
+			size++; //size = 3;
+			carry = carry / 10; //carry = 1/10 = 0;
 		}
 
 		return size;
@@ -47,7 +48,8 @@ public class FactorialOfLargeNumbers {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int num = 10;
+		System.out.println(factorial(num));
 
 	}
 
