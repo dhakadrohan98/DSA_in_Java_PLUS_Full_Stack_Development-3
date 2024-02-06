@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class BuyAndSellStock {
 
-	public int maxProfit(int[] prices) {
+	public static int maxProfit(int[] prices) {
 		if (prices.length == 1) {
 			return 0;
 		}
@@ -27,8 +27,8 @@ public class BuyAndSellStock {
 		int[] nums = { 7, 1, 5, 3, 6, 4 };
 		int[] nums1 = { 7, 6, 4, 3, 1 };
 		int[] nums2 = { 2, 1, 4 };
-		int maxProfit = maxProfit(nums2);
-		System.out.println(maxProfit);
+		int maxProfitVal = maxProfit(nums2);
+		System.out.println(maxProfitVal);
 
 	}
 }
