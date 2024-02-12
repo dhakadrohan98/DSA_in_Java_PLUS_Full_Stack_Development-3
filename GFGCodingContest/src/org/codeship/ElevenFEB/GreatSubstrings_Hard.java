@@ -72,7 +72,7 @@ public class GreatSubstrings_Hard {
 	            k++;
 	            i++;
 	        } else {
-	            //count the inversion when an element is choosen from the right partition
+	            //count the inversion when an element is chosen from the right partition
 	            inversions[0] = mid - i + 1;
 	            temp[k] = arr[j];
 	            k++;

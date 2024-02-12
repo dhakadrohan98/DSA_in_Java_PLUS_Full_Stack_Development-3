@@ -31,7 +31,7 @@ public class StartingPointInALoopOfLL {
 			return temp;
 		} else {
 			return null;
-		}j
+		}
 
 	}
 

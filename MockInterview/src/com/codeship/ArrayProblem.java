@@ -6,7 +6,7 @@ import java.util.List;
 public class ArrayProblem {
 	
 	public static List<int[]> splitArray(int[] array, int splitSize) {
-		
+		return null;
 	}
 
 	public static void main(String[] args) {
