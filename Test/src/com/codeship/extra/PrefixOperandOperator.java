@@ -1,19 +1,21 @@
 package com.codeship.extra;
 
+import java.util.Stack;
+
 public class PrefixOperandOperator {
 
 	public int calculateValue(String str) {
 		//tempStr= hold the sign
 		//HashMap<String, String>
 		Stack stack = new Stack();
-		{"+":add}
-		{"-":subtraction}
-		{"%": remainder}
-		{"/": divide}
-		
-		if("add") {
-			result = n1 + n2;
-		}
+//		{"+":add}
+//		{"-":subtraction}
+//		{"%": remainder}
+//		{"/": divide}
+//		
+//		if("add") {
+//			result = n1 + n2;
+//		}
 	
 		//string does not contain comma
 		   //iterate over string & if found any symbol.

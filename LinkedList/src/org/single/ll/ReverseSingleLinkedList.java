@@ -2,15 +2,15 @@ package org.single.ll;
 
 class ListNode {
 	
-	int data;
+	int val;
 	ListNode next;
 	
-	ListNode(int data) {
-		this.data = data;
+	ListNode(int val) {
+		this.val = val;
 	}
 	
 	ListNode(int data, ListNode next) {
-		this.data = data;
+		this.val = val;
 		this.next = next;
 	}
 }
