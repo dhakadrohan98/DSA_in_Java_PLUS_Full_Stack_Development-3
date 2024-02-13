@@ -4,7 +4,7 @@ public class MergeSort {
 	/* Function to merge the subarrays of a[] */
 	public static void merge(int a[], int beg, int mid, int end) {
 		int i, j, k;
-		int n1 = (mid+1) - beg;
+		int n1 = mid - beg + 1;
 		int n2 = end - mid;
 
 		/* temporary Arrays */
@@ -62,12 +62,14 @@ public class MergeSort {
 
 	public static void main(String args[]) {
 		int a[] = { 11, 30, 24, 7, 31, 16, 39, 41 };
+		int[] arr = {15, 31, 25, 8, 32, 17, 40, 42};
 		int n = a.length;
+		int m = arr.length;
 		System.out.println("\nBefore sorting array elements are - ");
-		printArray(a, n);
-		mergeSort(a, 0, n - 1);
+		printArray(arr, m);
+		mergeSort(arr, 0, m - 1);
 		System.out.println("\nAfter sorting array elements are - ");
-		printArray(a, n);
+		printArray(arr, m);
 		System.out.println("");
 	}
 }
