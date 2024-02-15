@@ -12,7 +12,7 @@ public class LongestPalindromicSubstring {
 			while((axis - orbit) >= 0 && (axis + orbit) < str.length()) {
 				if(str.charAt(axis-orbit) == str.charAt(axis+orbit)) {
 					orbit++;
-					len += 2;
+					len += 2; //length of palindromic substring
 				} else {
 					break;
 				}
