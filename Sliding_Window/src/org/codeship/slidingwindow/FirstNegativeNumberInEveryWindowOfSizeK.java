@@ -8,7 +8,7 @@ public class FirstNegativeNumberInEveryWindowOfSizeK {
 
 	public static List<Long> maximumSubarraySum(long[] nums, int k) {
 		if (nums.length < k) {
-			return new ArrayList<Long>();
+			return new ArrayList<>();
 		}
 
 		int i = 0, j = 0;

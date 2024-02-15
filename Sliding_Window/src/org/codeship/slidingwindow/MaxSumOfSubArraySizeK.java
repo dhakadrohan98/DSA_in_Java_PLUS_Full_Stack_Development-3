@@ -6,15 +6,15 @@ public class MaxSumOfSubArraySizeK {
 		if (nums.length < k) {
 			return 0;
 		}
-
 		long max = Long.MIN_VALUE;
 		long sum = 0;
 		int i = 0, j = 0;
 
 		while (j < nums.length) {
-
+			//calculation
 			sum = sum + nums[j];
-
+			System.out.println("j: " + j + " sum: " + sum );
+			
 			if (j - i + 1 < k) { // if j-i+1 is less than window size K
 				j++;
 			} else if (j - i + 1 == k) { // if j-i+1 is equal to the window size K
@@ -23,7 +23,6 @@ public class MaxSumOfSubArraySizeK {
 				i++;
 				j++;
 			}
-
 		}
 		return max;
 
