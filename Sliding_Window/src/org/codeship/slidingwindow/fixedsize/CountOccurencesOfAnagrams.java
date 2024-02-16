@@ -1,4 +1,4 @@
-package org.codeship.slidingwindow;
+package org.codeship.slidingwindow.fixedsize;
 
 import java.util.*;
 
@@ -15,7 +15,6 @@ public class CountOccurencesOfAnagrams {
 				hmap.put(ch, 1);
 			}
 		}
-		System.out.println(hmap);
 
 		int i = 0, j = 0;
 		int distinctCharacterCount = hmap.size();
@@ -36,10 +35,11 @@ public class CountOccurencesOfAnagrams {
 			if (j - i + 1 < k) { //// window size is less than k
 				j++;
 			} else if (j - i + 1 == k) { // window size is equal to k.
-				// calculation
+				// calculating answer
 				if (distinctCharacterCount == 0) {
 					ans++;
 				}
+				// sliding the window
 				// calculation for ith index before moving it ahead by one step.
 				char ichar = txt.charAt(i);
 				if (hmap.containsKey(ichar)) {
@@ -51,7 +51,6 @@ public class CountOccurencesOfAnagrams {
 				i++;
 				j++;
 			}
-			System.out.println("at " + j + " : " + hmap);
 		}
 		return ans;
 	}

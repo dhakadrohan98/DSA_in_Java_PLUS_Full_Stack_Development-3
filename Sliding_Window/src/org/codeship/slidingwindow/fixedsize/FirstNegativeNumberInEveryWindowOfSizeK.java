@@ -1,4 +1,4 @@
-package org.codeship.slidingwindow;
+package org.codeship.slidingwindow.fixedsize;
 
 import java.util.ArrayList;
 import java.util.List;
