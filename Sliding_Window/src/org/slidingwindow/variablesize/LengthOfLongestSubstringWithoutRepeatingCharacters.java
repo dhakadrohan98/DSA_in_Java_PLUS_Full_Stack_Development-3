@@ -37,13 +37,13 @@ public class LengthOfLongestSubstringWithoutRepeatingCharacters {
 
 			} // once the map size becomes equal to j-i+1 it means substring(i,j) contains
 				// non-repeating characters
-				// Then take max of previousMax, (j - i + 1)substring length to keep track of
+				// Then take max of {previousMax, (j - i + 1)} substring length to keep track of
 				// longest substring according
 				// to question.
 			else if (hmap.size() == j - i + 1) {
 				max = Math.max(max, j - i + 1);
 			}
-			// Then finally increase the value of j by 1 after above two conditions.
+			// Then finally increase the value of j by 1 after the above two conditions.
 			j++;
 		}
 		return max;
@@ -59,7 +59,7 @@ public class LengthOfLongestSubstringWithoutRepeatingCharacters {
 }
 
 //Human resocia interview questions:
-	
+
 //		main logic
 //			int firstMax = lines[0];
 //			int secondMax  lines[0];
