@@ -5,7 +5,7 @@ public class TheCeilAndFloor {
 	public static int[] getFloorAndCeil(int[] nums, int n, int x) {
 	      int[] ans = new int[2];
 	      int floor = -1;
-	      int ceil = n;
+	      int ceil = -1;
 	      int low = 0;
 	      int high = n-1;
 
