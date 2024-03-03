@@ -1,15 +1,22 @@
 package org.codeship.binarysearch;
 
-public class SearchInRotatedSortedArray {
+public class SearchInRotatedSortedArrayII {
 
-	public int search(int[] nums, int target) {
+	public boolean search(int[] nums, int target) {
 		int low = 0, high = nums.length - 1;
 
 		while (low <= high) {
 			int mid = (low + high) / 2;
 
 			if (nums[mid] == target) {
-				return mid;
+				return true;
+			}
+
+			// for duplicate elements's edge case
+			if (nums[low] == nums[mid] && nums[mid] == nums[high]) {
+				low++;
+				high--;
+				continue;
 			}
 
 			// left sorted
@@ -29,7 +36,8 @@ public class SearchInRotatedSortedArray {
 				}
 			}
 		}
-		return -1;
+		return false;
+
 	}
 
 	public static void main(String[] args) {
