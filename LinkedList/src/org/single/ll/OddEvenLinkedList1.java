@@ -5,7 +5,7 @@ public class OddEvenLinkedList1 {
 	public ListNode oddEvenList(ListNode head) {
 		// TC: O(n)
 		// SC: O(1)
-		// if list is empty or having one element
+		// if list is empty or having one element only
 		if (head == null || head.next == null) {
 			return head;
 		}
