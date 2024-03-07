@@ -2,7 +2,26 @@ package org.single.ll;
 
 public class DeletetheMiddleNodeofaLinkedList {
 
-	
+	//TC: O(n/2)
+	//SC: O(1)
+	public ListNode deleteMiddle(ListNode head) {
+        //base case
+        if(head == null || head.next == null) {
+            return null;
+        }
+        
+        ListNode slow = head;
+        ListNode fast = head;
+        fast = fast.next.next;
+        
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;   
+        }
+        slow.next = slow.next.next;
+        return head;
+    }
+	 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
