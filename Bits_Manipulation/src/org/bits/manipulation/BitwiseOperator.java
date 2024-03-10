@@ -19,10 +19,13 @@ public class BitwiseOperator {
 		
 		//left shift operator : <<(number)
 		//left shit by 1
-		System.err.println("left shift operator : <<(number) 23 * 2^1" + (23 << 1));
+		System.out.println("left shift operator : <<(number) 23 * 2^1 - " + (23 << 1));
 		
 		//left shit by 2
-		System.err.println("left shift operator : <<(number) 23 * 2^2" + (23 << 2));
+		System.out.println("left shift operator : <<(number) 23 * 2^2 - " + (23 << 2));
+		
+		//left shit by 3
+		System.out.println("left shift operator : <<(number) 23 * 2^3 - " + (23 << 3));
 	}
 
 }
