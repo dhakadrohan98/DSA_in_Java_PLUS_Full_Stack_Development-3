@@ -15,7 +15,7 @@ public class BitwiseOperator {
 		System.out.println("Exclusive OR : ^ " + (21 ^ 23));
 
 		// one's complement: ~
-		System.out.println("1's complement: ~ " + (~0));
+		System.out.println("1's complement: ~ " + (~2));
 		
 		//left shift operator : <<(number)
 		//left shit by 1
