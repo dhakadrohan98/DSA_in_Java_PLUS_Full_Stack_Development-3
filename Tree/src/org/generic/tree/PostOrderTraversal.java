@@ -4,23 +4,27 @@ import java.util.*;
 
 public class PostOrderTraversal {
 
-	 public List<Integer> postorder(TreeNode root) {
+	 public int postorder(TreeNode root) {
 	        
+		 	int count = 0;
 	        List<Integer> list = new ArrayList<>();
 	        if(root != null) {
-	            helper(root, list);
+	            helper(root, list, count);
 	        }
-	        return list;
+	        return count;
 	    }
 	    
-	    private void helper(TreeNode node, List<Integer> list) {
+	    private void helper(TreeNode node, List<Integer> list, int count) {
 	        //base case
 	        if(node == null) {
 	            return;
 	        }
 	        List<TreeNode> childrens = node.children;
+	        if(childrens == null) {
+	        	count++;
+	        }
 	        for(TreeNode child: childrens) {
-	            helper(child, list);
+	            helper(child, list, count);
 	        }
 	        list.add(node.data);
 	    }
