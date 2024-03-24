@@ -1,8 +1,11 @@
 package com.recusrion.striver;
 
 public class Recursion1 {
-
+	//TC: O(n)
+	//SC: O(n) Stack space
+	
 	static int count = 0;
+	
 	public static void print() {
 		
 		//base condition
