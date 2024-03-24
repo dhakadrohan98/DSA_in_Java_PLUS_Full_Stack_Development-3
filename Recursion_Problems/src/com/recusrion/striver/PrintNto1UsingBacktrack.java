@@ -1,7 +1,8 @@
 package com.recusrion.striver;
 
 public class PrintNto1UsingBacktrack {
-
+	//TC: O(n)
+	//SC: O(n) Stack space
 	public static void print(int i, int num) {
 		//base case
 		if (i > num) {
@@ -12,7 +13,7 @@ public class PrintNto1UsingBacktrack {
 	}
 
 	public static void main(String[] args) {
-		int num = 5;
+		int num = 4;
 		print(1, num);
 	}
 
