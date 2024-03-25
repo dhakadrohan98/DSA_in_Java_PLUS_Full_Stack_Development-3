@@ -2,7 +2,7 @@ package com.recusrion.striver;
 
 public class FibonacciNumber {
 	//TC: O(2^n) nearly exponential
-	//SC: O(2^n)
+	//SC: O(2*N)
 	private static int func(int num) {
 		//base case
 		if(num <= 1) return num;
