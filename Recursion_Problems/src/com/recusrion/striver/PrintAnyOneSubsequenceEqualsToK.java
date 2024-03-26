@@ -12,7 +12,7 @@ public class PrintAnyOneSubsequenceEqualsToK {
 	private static boolean sub(int indx, List<Integer> list, int[] arr, int s, int k, int len) {
 		// base case
 		if (indx == len) {
-			// condition is satisfied then return true.
+			// condition is satisfied then return tru	e.
 			// sum is equal to k then print it.
 			if (s == k) {
 				for (int temp : list) {
