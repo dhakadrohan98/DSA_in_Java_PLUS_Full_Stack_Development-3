@@ -20,7 +20,7 @@ public class CountLeafNodeBFS {
 				TreeNode temp = q.poll();
 				List<TreeNode> childs = temp.children;
 
-				if (childs == null) {
+				if (childs.size() == 0) {
 					count++;
 				}
 				for (int j = 0; j < temp.children.size(); j++)
