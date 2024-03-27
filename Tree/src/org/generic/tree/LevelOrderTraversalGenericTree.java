@@ -7,7 +7,7 @@ public class LevelOrderTraversalGenericTree {
 	public static void levelOrder(TreeNode root) {
 		if (root == null) return;
 		Queue<TreeNode> q = new LinkedList();
-		q.add(root);
+		q.offer(root);
 		while (!q.isEmpty()) {
 			int size = q.size();
 			for (int i = 0; i < size; i++) {
