@@ -21,7 +21,7 @@ public class CountLeafNodesDFS {
 			return;
 		}
 		List<TreeNode> childrens = node.children;
-		if (childrens == null) {
+		if (childrens.size() == 0) {
 			count++;
 		}
 		for (TreeNode child : childrens) {
