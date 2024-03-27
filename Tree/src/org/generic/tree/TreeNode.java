@@ -1,20 +1,22 @@
 package org.generic.tree;
 
-import java.util.ArrayList;
-import java.util.List;
-
+// Definition for a binary tree node.
 public class TreeNode {
 	
-	int data;
-	List<TreeNode> children;
-	
-	public TreeNode(int data) {
-		this.data = data;
+	int val;
+	TreeNode left;
+	TreeNode right;
+
+	TreeNode() {
 	}
-	
-	public TreeNode(int data, List<TreeNode> children) {
-		super();
-		this.data = data;
-		this.children = children;
+
+	TreeNode(int val) {
+		this.val = val;
+	}
+
+	TreeNode(int val, TreeNode left, TreeNode right) {
+		this.val = val;
+		this.left = left;
+		this.right = right;
 	}
 }

@@ -5,19 +5,19 @@ import java.util.*;
 public class CreateTree {
 
 	public static void main(String[] args) {
-		TreeNode first = new TreeNode(4);
-		TreeNode second = new TreeNode(5);
-		TreeNode third = new TreeNode(6);
-		TreeNode fourth = new TreeNode(1);
-		TreeNode fifth = new TreeNode(2);
-		TreeNode sixth = new TreeNode(3);
+		TreeNode1 first = new TreeNode1(4);
+		TreeNode1 second = new TreeNode1(5);
+		TreeNode1 third = new TreeNode1(6);
+		TreeNode1 fourth = new TreeNode1(1);
+		TreeNode1 fifth = new TreeNode1(2);
+		TreeNode1 sixth = new TreeNode1(3);
 		
-		List<TreeNode> firstNodeChild = new ArrayList<>();
+		List<TreeNode1> firstNodeChild = new ArrayList<>();
 		firstNodeChild.add(second);
 		firstNodeChild.add(third);
 		firstNodeChild.add(fourth);
 		
-		List<TreeNode> thirdNodeChild = new ArrayList<>();
+		List<TreeNode1> thirdNodeChild = new ArrayList<>();
 		thirdNodeChild.add(fifth);
 		thirdNodeChild.add(sixth);
 

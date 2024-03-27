@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CountNoOfLeafNodesThroughPostorderTraversal {
 
-	public int postorder(TreeNode root) {
+	public int postorder(TreeNode1 root) {
         
 	 	int count = 0;
         List<Integer> list = new ArrayList<>();
@@ -15,16 +15,16 @@ public class CountNoOfLeafNodesThroughPostorderTraversal {
         return count;
     }
     
-    private void helper(TreeNode node, List<Integer> list, int count) {
+    private void helper(TreeNode1 node, List<Integer> list, int count) {
         //base case
         if(node == null) {
             return;
         }
-        List<TreeNode> childrens = node.children;
+        List<TreeNode1> childrens = node.children;
         if(childrens == null) {
         	count++;
         }
-        for(TreeNode child: childrens) {
+        for(TreeNode1 child: childrens) {
             helper(child, list, count);
         }
         list.add(node.data);

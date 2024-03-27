@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PreOrderTraversalNaryTree {
 
-    public List<Integer> preorder(TreeNode root) {
+    public List<Integer> preorder(TreeNode1 root) {
         
         List<Integer> ans = new ArrayList<>();
         if(root != null) {
@@ -13,15 +13,15 @@ public class PreOrderTraversalNaryTree {
         return ans;
     }
     
-    private void helper(TreeNode root, List<Integer> ans) {
+    private void helper(TreeNode1 root, List<Integer> ans) {
         //base case
         if(root == null) {
             return;
         }
         //adding current node into ans List
         ans.add(root.data);
-        List<TreeNode> childrens = root.children;
-        for(TreeNode child: childrens) {
+        List<TreeNode1> childrens = root.children;
+        for(TreeNode1 child: childrens) {
             helper(child, ans);
         }
     }

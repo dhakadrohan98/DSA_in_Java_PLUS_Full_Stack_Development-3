@@ -8,17 +8,17 @@ public class CountLeafNodeBFS {
 
 	static int count = 0;
 
-	public static int countLeafBfs(TreeNode root) {
+	public static int countLeafBfs(TreeNode1 root) {
 		//Through BFS (level order traversal)
 		if (root == null)
 			return count;
-		Queue<TreeNode> q = new LinkedList();
+		Queue<TreeNode1> q = new LinkedList();
 		q.add(root);
 		while (!q.isEmpty()) {
 			int size = q.size();
 			for (int i = 0; i < size; i++) {
-				TreeNode temp = q.poll();
-				List<TreeNode> childs = temp.children;
+				TreeNode1 temp = q.poll();
+				List<TreeNode1> childs = temp.children;
 
 				if (childs.size() == 0) {
 					count++;
@@ -33,12 +33,12 @@ public class CountLeafNodeBFS {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = new TreeNode(100);
-		TreeNode node1 = new TreeNode(1);
-		TreeNode node2 = new TreeNode(2);
-		TreeNode node3 = new TreeNode(3);
-		TreeNode node4 = new TreeNode(4);
-		TreeNode node5 = new TreeNode(5);
+		TreeNode1 root = new TreeNode1(100);
+		TreeNode1 node1 = new TreeNode1(1);
+		TreeNode1 node2 = new TreeNode1(2);
+		TreeNode1 node3 = new TreeNode1(3);
+		TreeNode1 node4 = new TreeNode1(4);
+		TreeNode1 node5 = new TreeNode1(5);
 		root.children.add(node1);
 		root.children.add(node2);
 		root.children.add(node3);
