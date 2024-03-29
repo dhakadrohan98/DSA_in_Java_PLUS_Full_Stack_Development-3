@@ -3,7 +3,7 @@ package org.generic.tree;
 import java.util.*;
 
 public class MaxDepthOfNaryTree {
-
+	//global variable
     int depth = 0;
     
     public int maxDepth(Node root) {
@@ -22,9 +22,9 @@ public class MaxDepthOfNaryTree {
         if(root == null) {
             return;
         }
-        if(root.children.size() == 0) { //it is a leaf node
-            depth = Math.max(depth, level);
-        } 
+		if (root.children.size() == 0) { // it is a leaf node
+			depth = Math.max(depth, level);
+		} 
         
         List<Node> children = root.children;
         //Traverse through children of current node & then again call helper function on these childrens
