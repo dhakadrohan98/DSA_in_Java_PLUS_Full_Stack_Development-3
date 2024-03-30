@@ -4,6 +4,8 @@ import java.util.*;
 
 public class GenericTreeZigZagTraversal {
 
+	//TC: O(n)
+	//SC: O(n)
 	public static List<List<Integer>> zigzagLevelOrder(TreeNode1 root) {
 		List<List<Integer>> ans = new ArrayList<>();
 		// base case
