@@ -3,12 +3,12 @@ package org.slidingwindow.variablesize;
 public class SumUptoKButMinimize {
 
 	public static int computeMinSumLen(int[] nums, int x) {
-		int len = Integer.MAX_VALUE;
-		int sum = nums[0];
+		int[] prefix = new int[nums.length];
 		
-		while(j < nums.l) {
-			
+		for(int i=0; i<nums.length; i++) {
+			prefix[i] += nums[i];
 		}
+		//sorted prefix sum arr we have now
 		
 		
 		return len;
