@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrintPathFromRootToGivenNode {
-
+    //TC: O(n)
+    //SC: O(h)
+	//Inorder traversal
 	private static boolean getPath(TreeNode root, List<Integer> ds, int x) {
 		// base case
 		// if root is NULL
