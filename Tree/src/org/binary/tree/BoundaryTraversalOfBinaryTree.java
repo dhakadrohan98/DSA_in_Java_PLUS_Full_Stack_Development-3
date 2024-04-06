@@ -63,7 +63,7 @@ public class BoundaryTraversalOfBinaryTree {
 			ans.add(node.data);
 		}
 		addLeftBoundary(node, ans);
-		addLeaves(node, ans);
+		addLeaves(node, ans); //if one node is given then its data will be added through this line in ans ArraYList
 		addRightBoundary(node, ans);
 		return ans;
 	}
