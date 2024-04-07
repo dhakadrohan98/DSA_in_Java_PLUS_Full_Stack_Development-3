@@ -1,6 +1,6 @@
 package org.binary.tree;
 
-public class ConstructBinaryTreeFromPreorderInorder {
+public class ConstructBinaryTreeFromPreorderInorderLuckyKumar {
 	static int i = 0;
 	
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -18,7 +18,8 @@ public class ConstructBinaryTreeFromPreorderInorder {
 		int len = idx - in_s;
 		System.out.println(len);
          System.out.println("i: " + i++);
-         System.out.println("in_s: " + in_s + "len -1: " + (len-1));
+         System.out.println("in_s: " + in_s + "len -1"
+         		+ ": " + (len-1));
 		root.left = construct(preorder, inorder, pre_s + 1, pre_s + len, in_s, len - 1);
 		root.right = construct(preorder, inorder, pre_s + len + 1, pre_e, idx + 1, in_e);
 
