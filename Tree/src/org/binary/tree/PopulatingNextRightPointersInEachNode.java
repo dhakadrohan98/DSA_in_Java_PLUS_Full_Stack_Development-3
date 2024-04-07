@@ -2,8 +2,8 @@ package org.binary.tree;
 
 public class PopulatingNextRightPointersInEachNode {
 
-	//1st way:
-	
+	// 1st way:
+
 	// solve this problem like a matrix or in iterative manner
 	public Node connect(Node root) {
 		// base case
@@ -53,10 +53,4 @@ public class PopulatingNextRightPointersInEachNode {
 		connectTwoNodes(q.left, q.right);
 		connectTwoNodes(p.right, q.left);
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
