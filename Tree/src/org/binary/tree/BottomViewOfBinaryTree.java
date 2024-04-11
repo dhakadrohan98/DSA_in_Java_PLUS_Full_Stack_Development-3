@@ -6,7 +6,7 @@ public class BottomViewOfBinaryTree {
 
 	class Data {
 		Node node;
-		int hd = 0;
+		int hd;
 
 		Data(Node node, int hd) {
 			this.node = node;

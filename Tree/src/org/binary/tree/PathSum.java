@@ -3,8 +3,10 @@ package org.binary.tree;
 public class PathSum {
 
 	public boolean hasPathSum(TreeNode root, int sum) {
-		if (root == null)
+		if (root == null) {
 			return false;
+		}
+			
 		// check whether root's val == sum or not and coming root is leaf node or not
 		if (root.val == sum && (root.left == null && root.right == null))
 			return true;
