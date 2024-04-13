@@ -33,7 +33,7 @@ public class MinimumDistanceBetweenTwoNodes {
 	        else return a+b+1;
 	    }
 	    
-	    int findDist(Node root, int a, int b) {
+	    public static int findDist(Node root, int a, int b) {
 	    	//To find LCA p & q's node val is being sent instead of node itself
 	        Node LCA = lowestCommonAncestor(root, a, b);
 	        //call for node a
