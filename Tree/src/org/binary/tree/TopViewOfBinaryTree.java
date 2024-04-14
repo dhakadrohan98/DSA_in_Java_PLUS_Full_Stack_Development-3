@@ -1,9 +1,13 @@
 package org.binary.tree;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class BottomViewOfBinaryTree {
+import org.binary.tree.BottomViewOfBinaryTree.Data;
 
+public class TopViewOfBinaryTree {
 	class Data {
 		Node node;
 		int hd;
@@ -33,8 +37,9 @@ public class BottomViewOfBinaryTree {
 			int size = queue.size();
 			for (int i = 0; i < size; i++) {
 				Data temp = queue.poll();
-				hm.put(temp.hd, temp);
-
+				if(!hm.containsKey(temp.hd)) {
+					hm.put(temp.hd, temp);
+				}
 				min = Math.min(min, temp.hd);
 				max = Math.max(max, temp.hd);
 
@@ -58,10 +63,5 @@ public class BottomViewOfBinaryTree {
 		return ans;
 
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }
