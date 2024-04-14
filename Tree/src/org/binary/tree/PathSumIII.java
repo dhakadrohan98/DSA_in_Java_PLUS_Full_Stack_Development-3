@@ -1,7 +1,7 @@
 package org.binary.tree;
 
 public class PathSumIII {
-
+	//@9:40
 	int total = 0;
     public int pathSum(TreeNode root, int targetSum) {
         //edge case
@@ -20,7 +20,7 @@ public class PathSumIII {
         if(root == null) return;
         
         currSum += root.val;
-        
+        	
         if(targetSum == currSum)
             total++;
         

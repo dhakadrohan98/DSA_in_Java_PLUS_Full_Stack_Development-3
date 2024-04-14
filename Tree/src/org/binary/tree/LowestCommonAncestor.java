@@ -31,3 +31,24 @@ public class LowestCommonAncestor {
 	}
 
 }
+
+//public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+//    List<TreeNode> pathP = findPath(root, p);
+//   List<TreeNode> pathQ = findPath(root, q);
+//
+//   if (pathP == null || pathQ == null) {
+//       return null;
+//   }
+//
+//   int size = Math.min(pathP.size(), pathQ.size());
+//   TreeNode lca = null;
+//
+//   for (int i = 0; i < size; i++) {
+//       if (pathP.get(i) != pathQ.get(i)) {
+//           break;
+//       }
+//       lca = pathP.get(i);
+//   }
+//
+//   return lca; 
+//}
