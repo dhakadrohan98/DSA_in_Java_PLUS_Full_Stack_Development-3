@@ -24,11 +24,12 @@ public class FirstNegativeNumberInEveryWindowOfSizeK {
 			}
 			System.out.println("List: " + list);
 			
-			if(j-i+1 < k) {
+			if(j-i+1 < k) {	
 				j++;
 			} else if(j-i+1 == k) {
 				//calculation (add a element to ans List)
-				//check whether a list empty or not
+				//check whether a list empty or not, it means there is no negative
+				//number we got, when we hit the window size k
 				if(list.size() == 0) {
 					ans.add((long) 0);
 				} else {
@@ -37,7 +38,7 @@ public class FirstNegativeNumberInEveryWindowOfSizeK {
 				}
 				
 				if(nums[i] < 0) {
-					//Removing first element from list
+					//Removing ith negative element from list
 					list.remove(0);
 				}
 				i++;
