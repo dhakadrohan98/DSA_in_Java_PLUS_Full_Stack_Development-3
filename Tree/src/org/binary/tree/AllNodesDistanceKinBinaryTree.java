@@ -32,14 +32,15 @@ public class AllNodesDistanceKinBinaryTree {
 		Queue<TreeNode> queue = new LinkedList<>();
 		queue.offer(target);
 		visited.put(target, true);
-		int currLevel = 0;
+		int distance = 0;
 		while (!queue.isEmpty()) {
 			// second BFS to go upto K level from target node and using our hahsTable info.
 			int size = queue.size();
-			if (currLevel == k) {
+			//remaining nodes into queue will be our nodes at a distance k from target node.
+			if (distance == k) {
 				break;
 			}
-			currLevel++;
+			distance++;
 			for (int i = 0; i < size; i++) {
 				TreeNode current = queue.poll();
 				if (current.left != null && visited.get(current.left) == null) {

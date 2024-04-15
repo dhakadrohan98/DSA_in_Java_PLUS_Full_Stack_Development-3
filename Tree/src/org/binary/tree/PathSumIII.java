@@ -10,13 +10,13 @@ public class PathSumIII {
 		if (root == null)
 			return 0;
 
-		Map<Integer, Integer> hm = new HashMap<>();
-		hm.put(0, 1);
-		findPathSum(root, 0, targetSum, hm);
+		Map<Long, Integer> hm = new HashMap<>();
+		hm.put((long) 0, 1);
+		findPathSum(root, (long) 0, targetSum, hm);
 		return total;
 	}
 
-	private void findPathSum(TreeNode curr, int sum, int target, Map<Integer, Integer> hm) {
+	private void findPathSum(TreeNode curr, Long sum, int target, Map<Long, Integer> hm) {
 		// base case
 		if (curr == null)
 			return;
@@ -33,7 +33,6 @@ public class PathSumIII {
 		hm.put(sum, hm.get(sum) - 1);
 		return;
 	}
-
 }
 
 //path sum through brute force approach TC: O(n^2)
