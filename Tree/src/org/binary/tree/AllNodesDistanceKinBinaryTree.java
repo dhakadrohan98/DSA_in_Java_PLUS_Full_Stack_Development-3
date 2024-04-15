@@ -9,9 +9,8 @@ import java.util.*;
 //- As long as we have not seen our node previously, Traverse up, left, right until reached Kth distance
 //- When reached Kth distance, break out of BFS loop and remaining node's values in our queue is our result.
 public class AllNodesDistanceKinBinaryTree {
-
 	private void markParents(TreeNode root, Map<TreeNode, TreeNode> parent_track, TreeNode target) {
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		Queue<TreeNode> queue = new LinkedList<>();
 		queue.offer(root);
 		while (!queue.isEmpty()) {
 			TreeNode current = queue.poll();
@@ -43,19 +42,20 @@ public class AllNodesDistanceKinBinaryTree {
 			currLevel++;
 			for (int i = 0; i < size; i++) {
 				TreeNode current = queue.poll();
-				if (current.left != null && visited.get(current.left) == false) {
+				if (current.left != null && visited.get(current.left) == null) {
 					queue.offer(current.left);
 					visited.put(current.left, true);
 				}
-				if (current.right != null && visited.get(current.right) == false) {
+				if (current.right != null && visited.get(current.right) == null) {
 					queue.offer(current.right);
 					visited.put(current.right, true);
 				}
-				TreeNode parentOfCurrNode= parent_track.get(current);
-				if(parentOfCurrNode != null && visited.get(parentOfCurrNode) == null) {
+				TreeNode parentOfCurrNode = parent_track.get(current);
+				if (parentOfCurrNode != null && visited.get(parentOfCurrNode) == null) {
 					queue.offer(parentOfCurrNode);
 					visited.put(parentOfCurrNode, true);
 				}
+
 			}
 		}
 
@@ -67,10 +67,4 @@ public class AllNodesDistanceKinBinaryTree {
 		}
 		return result;
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
