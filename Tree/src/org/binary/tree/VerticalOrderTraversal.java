@@ -3,6 +3,8 @@ package org.binary.tree;
 import java.util.*;
 
 public class VerticalOrderTraversal {
+	//TC: O(n * log2n)
+	//SC: O(n) + O(n)
 	class Tuple {
 	    TreeNode node;
 	    //vertical
