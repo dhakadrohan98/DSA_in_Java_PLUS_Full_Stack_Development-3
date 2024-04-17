@@ -1,6 +1,7 @@
 package org.tabulation.problem;
 
 public class ClimbingStairsTabulation {
+	//Tabulation - Bottom up
 	// TC: O(n)
 	// SC: O(n)
 	public int climbStairs(int n) {
