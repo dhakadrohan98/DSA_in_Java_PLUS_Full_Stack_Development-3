@@ -1,4 +1,4 @@
-package org.recursion.solution;
+package org.recursion.dp.solution;
 
 import java.util.Arrays;
 
