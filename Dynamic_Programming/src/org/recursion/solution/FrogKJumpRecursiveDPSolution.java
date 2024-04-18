@@ -3,6 +3,8 @@ package org.recursion.solution;
 import java.util.Arrays;
 
 public class FrogKJumpRecursiveDPSolution {
+	//TC: O(n * k)
+	//SC: O(n) stack space + O(n) arrya space
 	public static int frogJump(int n, int heights[], int k) {
 		int[] dp = new int[n + 1];
 		Arrays.fill(dp, -1);

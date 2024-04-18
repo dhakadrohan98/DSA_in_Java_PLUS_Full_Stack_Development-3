@@ -17,6 +17,7 @@ public class FrogJumpTabulationDP {
 			dp[i] = Math.min(firstStep, secondStep);
 			System.out.println("i - " + i + " dp[i] - " + dp[i]);
 		}
+		System.out.println("dp[6] : " + dp[n]);
 		return dp[n - 1];
 	}
 

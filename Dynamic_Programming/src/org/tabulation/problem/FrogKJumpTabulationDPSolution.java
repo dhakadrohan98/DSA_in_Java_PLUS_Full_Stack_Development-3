@@ -1,7 +1,10 @@
-package org.tabulation.problem;import org.space.optimizationsolution.FrogJump;
+package org.tabulation.problem;
+
+import org.space.optimizationsolution.FrogJump;
 
 public class FrogKJumpTabulationDPSolution {
-
+	//TC: O(n * k)
+	//SC: O(n)
 	public static int frogJump(int n, int[] heights, int k) {
 		// declare dp of size n+1;
 		int[] dp = new int[n + 1];
@@ -21,14 +24,20 @@ public class FrogKJumpTabulationDPSolution {
 			dp[indx] = minSteps;
 			System.out.println(" indx - " + indx + " dp[indx]: " + dp[indx]);
 		}
-		return dp[n-1];
+		return dp[n - 1];
 	}
 
 	public static void main(String[] args) {
 		int[] heights = { 30, 10, 60, 10, 60, 50 };
-		int k = 5;
-		System.out.println(frogJump(heights.length, heights, k));
+		int k1 = 5;
+		System.out.println("k1 = " + k1);
+		System.out.println(frogJump(heights.length, heights, k1));
+		int k2 = 4;
+		System.out.println("k2 = " + k2);
+		System.out.println(frogJump(heights.length, heights, k2));
+		int k3 = 3;
+		System.out.println("k3 = " + k3);
+		System.out.println(frogJump(heights.length, heights, k3));
 
 	}
-
 }
