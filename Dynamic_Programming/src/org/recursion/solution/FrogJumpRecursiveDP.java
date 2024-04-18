@@ -32,7 +32,7 @@ public class FrogJumpRecursiveDP {
 
 	public static void main(String[] args) {
 		int[] heights = { 10, 20, 30, 10 };
-		System.out.println(frogJump(4, heights));
+		System.out.println(frogJump(heights.length, heights));
 
 	}
 
