@@ -2,6 +2,8 @@ package org.tabulation.problem;
 
 public class FrogJumpTabulationDP {
 	//Iterative solution, tabulation form
+	//TC: O(n)
+	//SC: O(n)
 	public static int frogJump(int n, int[] heights) {
 		int[] dp = new int[n+1];
 		//constant operation similar to base case of recusive solution
