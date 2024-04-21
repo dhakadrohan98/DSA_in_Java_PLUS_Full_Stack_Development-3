@@ -1,6 +1,7 @@
 package org.binary.search.tree;
 
 public class LowestCommonAncestor {
+	
 	 public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 	        TreeNode temp = root;
 	        int min = Math.min(p.val, q.val);
