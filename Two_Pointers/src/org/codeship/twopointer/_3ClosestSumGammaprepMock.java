@@ -39,7 +39,7 @@ public class _3ClosestSumGammaprepMock {
 		System.out.println(findClosetSum(nums1, target1));
 	}
 
-	//TC:O(N^2)
+	//TC:O(N^2) + O(N * logN)
 	//SC:O(1)
 	public static int findClosetSum(int[] nums, int target) {
 		Arrays.sort(nums);
