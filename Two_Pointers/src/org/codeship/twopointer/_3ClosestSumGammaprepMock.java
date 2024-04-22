@@ -36,43 +36,33 @@ public class _3ClosestSumGammaprepMock {
 		int target1 = -1;
 		int[] nums2 = { -1, 2, 1, -4 };
 		int target2 = 1;
-
-		Arrays.sort(nums1);
 		System.out.println(findClosetSum(nums1, target1));
-
 	}
-	//TC: O(n^2)
+
+	//TC:O(N^2)
+	//SC:O(1)
 	public static int findClosetSum(int[] nums, int target) {
-		int k = nums.length - 1;
-		int ans = Integer.MAX_VALUE;
-		int sum = 0;
-		int debug = 0;
-		boolean isJbreaked = false;
+		Arrays.sort(nums);
+		int prevSum = nums[0] + nums[1] + nums[nums.length - 1];
 
 		for (int i = 0; i < nums.length - 2; i++) {
-			if (isJbreaked == true) {
-				break;
-			}
-
-			for (int j = i + 1; j < nums.length - 1; j++) {
-				if (j < k) {
-					System.out.println("Debug: " + (++debug));
-					sum = nums[i] + nums[j] + nums[k];
-					ans = sum;
-					System.out.println("ans: " + ans);
-					if (sum == target) {
-						isJbreaked = true;
-						break;
-					}
-					if (sum < target) {
-						continue;
-					} else if (sum > target) {
-						k--;
-					}
+			int j = i + 1;
+			int k = nums.length - 1;
+			while (j < k) {
+				int currSum = nums[i] + nums[j] + nums[k];
+				if (currSum <= target) {
+					j++;
+				} else if (currSum > target) {
+					k--;
+				}
+				// check if absolute value of (currSum-target) is less than (prevSum-target)
+				// then store currSum to the prevSum variable.
+				if (Math.abs(currSum - target) < Math.abs(prevSum - target)) {
+					prevSum = currSum;
 				}
 
 			}
 		}
-		return ans;
+		return prevSum;
 	}
 }
