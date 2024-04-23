@@ -52,7 +52,6 @@ public class NinjaTrainingDPRecursiveSol {
 		points[3] = new int[] { 8, 3, 7 };
 
 		int ans = ninjaTraining(n, points);
-		System.out.println();
-		System.out.println(ans);
+		System.out.println("Final ans: " + ans);
 	}
 }
