@@ -1,6 +1,6 @@
 package org.recursion.pure.solution;
 
-public class HouseRobber {
+public class HouseRobberPureRecursiveSol {
 	//TC: O(2^n)
 	//SC: O(n)
 	 public int helper(int indx, int[] nums) {
