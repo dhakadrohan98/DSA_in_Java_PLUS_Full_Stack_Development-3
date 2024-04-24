@@ -1,6 +1,6 @@
 package org.codeship.binarysearch;
 
-public class TheCeilAndFloor {
+public class CeilTheFloor {
 
 	public static int[] getFloorAndCeil(int[] nums, int n, int x) {
 	      int[] ans = new int[2];
