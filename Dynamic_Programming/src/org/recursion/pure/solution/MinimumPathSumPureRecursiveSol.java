@@ -16,7 +16,7 @@ public class MinimumPathSumPureRecursiveSol {
 		}
 		
 		if(i < 0 || j < 0) {
-			return (int) Math.pow(10, 9);
+			return (int) Math.pow(10, 9); // If we're out of bounds, return a large value
 		}
 		int up = grid[i][j] + rec(grid, i-1, j);
 		int down = grid[i][j] + rec(grid, i, j-1);
