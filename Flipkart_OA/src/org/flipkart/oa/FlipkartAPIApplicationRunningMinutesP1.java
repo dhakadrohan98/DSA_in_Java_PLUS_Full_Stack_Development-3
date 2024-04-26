@@ -1,9 +1,8 @@
-package org.recursion.dp.solution;
+package org.flipkart.oa;
 
 import java.util.Scanner;
 
 public class FlipkartAPIApplicationRunningMinutesP1 {
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt(); // Number of APIs
