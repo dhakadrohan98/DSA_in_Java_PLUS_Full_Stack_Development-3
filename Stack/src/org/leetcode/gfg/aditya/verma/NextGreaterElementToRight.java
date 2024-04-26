@@ -2,7 +2,7 @@ package org.leetcode.gfg.aditya.verma;
 
 import java.util.Stack;
 
-public class NextGreaterElement {
+public class NextGreaterElementToRight {
 
 	//TC: O(n)
 	//SC: O(n) auxiliary space
