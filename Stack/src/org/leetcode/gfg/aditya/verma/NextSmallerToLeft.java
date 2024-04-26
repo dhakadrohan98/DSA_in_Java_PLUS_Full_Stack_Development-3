@@ -35,7 +35,6 @@ public class NextSmallerToLeft {
 			// outside of all if, else if conditions, push current element into the stack.
 			st.push(nums[i]);
 		}
-
 		return ans;
 	}
 	
