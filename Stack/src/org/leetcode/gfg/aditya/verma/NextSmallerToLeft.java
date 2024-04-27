@@ -37,9 +37,9 @@ public class NextSmallerToLeft {
 		}
 		return ans;
 	}
-	
+
 	public static void main(String[] args) {
-		int[] nums = {4,5,2,10,8};
+		int[] nums = { 4, 5, 2, 10, 8 };
 		int[] res = prevSmaller(nums);
 		for (int val : res) {
 			System.out.println(val);
