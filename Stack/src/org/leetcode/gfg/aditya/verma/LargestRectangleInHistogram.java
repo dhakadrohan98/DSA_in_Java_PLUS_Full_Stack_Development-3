@@ -104,5 +104,4 @@ public class LargestRectangleInHistogram {
 		int res = largestRectangleArea(heights);
 		System.out.println(res);
 	}
-
 }
