@@ -16,12 +16,7 @@ public class SubArraySumEqualsK {
 				count += hmap.get(remain);
 			}
 			// Storing prefix sum
-			if (hmap.containsKey(prefixSum)) {
-				int val = hmap.get(prefixSum) + 1;
-				hmap.put(prefixSum, val);
-			} else {
-				hmap.put(prefixSum, 1);
-			}
+			hmap.put(prefixSum, hmap.getOrDefault(prefixSum,0)+1);
 		}
 		return count;
 	}
@@ -30,10 +25,11 @@ public class SubArraySumEqualsK {
 		int[] nums1 = { 1, 2, 3 };
 		int[] nums2 = { 1, 1, 1 };
 		int[] nums3 = { 1, -1, 0 };
+		int[] nums4 = new int[]{1,2,3,-3,1,1,1,4,2,-3};
 		int k1 = 3;
 		int k2 = 2;
 		int k3 = 0;
-		int subarraySum = subarraySum(nums3, k3);
+		int subarraySum = subarraySum(nums4, k1);
 		System.out.println(subarraySum);
 	}
 }

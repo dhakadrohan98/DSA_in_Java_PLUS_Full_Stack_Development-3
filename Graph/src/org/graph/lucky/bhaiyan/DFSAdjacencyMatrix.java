@@ -2,7 +2,7 @@ package org.graph.lucky.bhaiyan;
 
 import java.util.Scanner;
 
-public class DFS1 {
+public class DFSAdjacencyMatrix {
 	public static void printHelper(int adj_mat[][], int sv,  boolean visited[]) {
 		System.out.println(sv);
 		visited[sv] = true;
