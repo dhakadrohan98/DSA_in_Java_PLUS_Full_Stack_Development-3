@@ -7,7 +7,6 @@ import java.util.Stack;
 public class MaximumAreaOfRectangleInBinaryMatrix {
 	
 	public static int maximalRectangle(char[][] matrix) {
-		
 		//Two base cases
 		if (matrix.length == 0 || matrix[0].length == 0)
 	        return 0;
