@@ -2,6 +2,7 @@ package org.dsa.problems;
 
 import java.util.*;
 
+//BFS
 public class RightSideViewBinaryTree {
 	// TC: O(n)
 	// SC: O(n)
