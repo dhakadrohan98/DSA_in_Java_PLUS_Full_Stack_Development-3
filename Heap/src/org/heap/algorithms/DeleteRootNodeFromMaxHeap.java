@@ -1,7 +1,7 @@
 package org.heap.algorithms;
 
-//Time complexity: O(logn) where n is no of elements in the heap
-//Auxiliary Space: O(1)
+//Time complexity: O(logN) where N is no of elements in the heap
+//SC: O(1)
 public class DeleteRootNodeFromMaxHeap {
 
 	// To heapify a subtree rooted with node i which is
