@@ -3,7 +3,7 @@ package org.recursion.pure.solution;
 public class HouseRobberPureRecursiveSol {
 	//TC: O(2^n)
 	//SC: O(n)
-	 public int helper(int indx, int[] nums) {
+	 public static int helper(int indx, int[] nums) {
 	        //base cases
 	        if(indx == 0) return nums[indx];
 	        if(indx < 0) return 0;
@@ -19,7 +19,9 @@ public class HouseRobberPureRecursiveSol {
 	    }
 	    
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int[] nums = {1,2,3,1};
+		int n = nums.length;
+		System.out.println(helper(n-1, nums));
 
 	}
 

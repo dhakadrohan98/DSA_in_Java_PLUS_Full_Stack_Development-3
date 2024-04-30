@@ -4,7 +4,7 @@ public class HouseRobberDPTabulation {
 	//TC: O(N)
 	//SC: O(N)
 	//Tabulation -> space optimization
-	public int rob(int[] nums) {
+	public static int rob(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];
         //base cases of recursive approach
@@ -19,12 +19,17 @@ public class HouseRobberDPTabulation {
         	int nonTake = 0 + dp[i-1];
         	dp[i] = Math.max(take, nonTake);
         }
-        
+        System.out.print("printing Dp ");
+        for(int temp: dp) {
+        	System.out.print(temp + " ");
+        }
+        System.out.println();
         return dp[n-1];
     }
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int[] nums = {2,7,9,3,1};
+		System.out.println(rob(nums));
 
 	}
 
