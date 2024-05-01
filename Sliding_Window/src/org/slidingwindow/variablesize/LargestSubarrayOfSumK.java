@@ -12,17 +12,17 @@ public class LargestSubarrayOfSumK {
 
 			if (sum < k) {
 				j++;
+			} else if (sum == k) {
+				max = Math.max(max, j - i + 1);
+				j++;
 			} else if (sum > k) {
 				while (sum > k) {
 					sum = sum - nums[i];
 					i++;
 				}
 				if (sum == k) {
-					max = Math.max(max, j-i+1);
+					max = Math.max(max, j - i + 1);
 				}
-				j++;
-			} else if (sum == k) {
-				max = Math.max(max, j-i+1);
 				j++;
 			}
 		}
@@ -36,6 +36,10 @@ public class LargestSubarrayOfSumK {
 		int k = 5;
 		System.out.println(maximumSubarraySumEqualsK(nums1, k));
 		System.out.println(maximumSubarraySumEqualsK(nums, k));
+		
+		int[] nums2 = {1, 2, 3, 1, 1, 1, 1};
+		int k2 = 3;
+		System.out.println(maximumSubarraySumEqualsK(nums2, k2));
 
 	}
 
