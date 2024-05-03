@@ -24,17 +24,16 @@ public class UniquePathsObstaclePureRecursive {
 		if (m == 0 && n == 0) {
 			return 1;
 		}
-
+		
 		int up = helper(arr, m - 1, n);
 		int left = helper(arr, m, n - 1);
 		return up + left;
 	}
-
+	
 	public static void main(String[] args) {
 		int[][] obstacleGrid = { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
 		int[][] obstacleGrid1 = {{0,1}, {0,0}};
 		System.out.println(uniquePathsWithObstacles(obstacleGrid));
-
 	}
 
 }

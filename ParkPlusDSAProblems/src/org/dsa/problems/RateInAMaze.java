@@ -1,10 +1,10 @@
-package com.recusrion.striver;
+package org.dsa.problems;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class RateInAMaze {
-	//TC: O(4 ^ (m*n))
-	//SC: O(m * n) auxiliary space
+	// TC: O(4 ^ (m*n))
+	// SC: O(m * n) auxiliary space
 	private static void solve(int i, int j, int matrix[][], int n, ArrayList<String> ans, String move,
 			boolean visited[][]) {
 
@@ -47,19 +47,19 @@ public class RateInAMaze {
 	public static ArrayList<String> findPath(int[][] matrix, int n) {
 		boolean visited[][] = new boolean[n][n];
 		ArrayList<String> ans = new ArrayList<>();
-		//If the source cell is 0, the rat cannot move to any other cell.
+		// If the source cell is 0, the rat cannot move to any other cell.
 		if (matrix[0][0] == 1) {
 			solve(0, 0, matrix, n, ans, "", visited);
-		}	
+		}
 		return ans;
 	}
 
 	public static void main(String[] args) {
-	    int[][] matrix = {{1,0,0,0},{1,1,0,1},{1,1,0,0},{0,1,1,1}};
-	    int n = matrix.length;
-	    ArrayList<String> ans = findPath(matrix, n);
-	    for(String str: ans) {
-	    	System.out.println(str);
-	    }
+		int[][] matrix = { { 1, 0, 0, 0 }, { 1, 1, 0, 1 }, { 1, 1, 0, 0 }, { 0, 1, 1, 1 } };
+		int n = matrix.length;
+		ArrayList<String> ans = findPath(matrix, n);
+		for (String str : ans) {
+			System.out.println(str);
+		}
 	}
 }

@@ -6,7 +6,6 @@ import java.util.List;
 public class MaximumOfAllSubarraysOfSizeK {
 
 	public static List<Integer> maximumOfAllSubarraysOfSizeK(int[] nums, int k) {
-
 		List<Integer> ans = new ArrayList<Integer>();
 		if (k > nums.length) {
 			ans.add(0);
@@ -39,9 +38,9 @@ public class MaximumOfAllSubarraysOfSizeK {
 		}
 		return ans;
 	}
-	
+
 	public static void main(String[] args) {
-		int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+		int[] nums = { 1, 3, -1, -3, 5, 3, 6, 7 };
 		int k = 3;
 		System.out.println(maximumOfAllSubarraysOfSizeK(nums, k));
 	}

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class WaysToMakeCoinChange {
 
-	public long count(int[] coins, int n, int target) {
+	public static long count(int[] coins, int n, int target) {
 		long dp[][] = new long[n][target + 1];
 		for (long[] temp : dp) {
 			Arrays.fill(temp, -1);
@@ -12,7 +12,7 @@ public class WaysToMakeCoinChange {
 		return helper(coins, dp, n - 1, target);
 	}
 
-	private long helper(int[] coins, long[][] dp, int indx, int target) {
+	private static long helper(int[] coins, long[][] dp, int indx, int target) {
 		// base case
 		if (indx == 0) {
 			if (target % coins[indx] == 0) {
@@ -36,7 +36,9 @@ public class WaysToMakeCoinChange {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int[] coins = {1,2,3};
+		int target = 4;
+		System.out.println(count(coins, coins.length, target));
 
 	}
 
