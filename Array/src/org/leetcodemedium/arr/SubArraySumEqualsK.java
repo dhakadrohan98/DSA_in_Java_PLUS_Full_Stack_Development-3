@@ -3,7 +3,8 @@ package org.leetcodemedium.arr;
 import java.util.*;
 
 public class SubArraySumEqualsK {
-
+	//TC: O(N)
+	//SC: O(N)
 	public static int subarraySum(int[] nums, int k) {
 		int count = 0, prefixSum = 0;
 		HashMap<Integer, Integer> hmap = new HashMap<>();

@@ -20,8 +20,8 @@ public class UniquePathsPureRecursive {
 		if(m == 0 && n == 0) {
 			return 1;
 		}
-	
-		int total = dfs(arr, m-1, n) + dfs(arr, n-1, m);
+					 // up           + //left
+		int total = dfs(arr, m-1, n) + dfs(arr, m, n-1);
 		return total;
 	}
 	
