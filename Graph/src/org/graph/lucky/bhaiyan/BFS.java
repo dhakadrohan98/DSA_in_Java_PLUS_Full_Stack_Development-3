@@ -5,27 +5,26 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class BFS {
-
-	//TC: O(N)
-	//SC: O(N^2)
+	// TC: O(N)
+	// SC: O(N^2)
 	private static void printBFSHelper(int[][] mat, int sv, boolean[] visited) {
 		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(sv);
 		visited[sv] = true;
 		int v = mat.length;
-		while(!q.isEmpty()) {
+		while (!q.isEmpty()) {
 			int front = q.poll();
 			System.out.println(front);
-			for(int i = 0; i < v; i++) {
-				if(mat[front][i] == 1 && visited[i] == false) {
+			for (int i = 0; i < v; i++) {
+				if (mat[front][i] == 1 && visited[i] == false) {
 					q.add(i);
 					visited[i] = true;
 				}
 			}
 		}
-		
+
 	}
-	
+
 	public static void printBFS(int[][] mat) {
 		int v = mat.length;
 		boolean[] visited = new boolean[v];
