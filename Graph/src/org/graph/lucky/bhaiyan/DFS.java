@@ -3,39 +3,45 @@ package org.graph.lucky.bhaiyan;
 import java.util.*;
 
 public class DFS {
+	// TC: O(N^2)
+	// SC: O(1)
+	public static void dfsHelper(int adj_mat[][], int sv, boolean visited[]) {
+		System.out.println(sv);
+		visited[sv] = true;
+		int v = adj_mat.length;
+		for (int i = 0; i < v; i++) {
+			if (adj_mat[sv][i] == 1 && visited[i] == false) {
+				dfsHelper(adj_mat, i, visited);
 
-	public static void main(String[] args) {
-		boolean[][] mat = new boolean[5][5];
-		//Adjacency matrix
-		mat[0][1] = true;
-		mat[1][0] = true;
-		mat[1][2] = true;
-		mat[2][1] = true;
-		mat[2][3] = true;
-		mat[3][2] = true;
-		mat[3][4] = true;
-		mat[4][3] = true;
-		
-//		for(int i = 0; i<mat.length; i++) {
-//			for(int j = 0; j < mat[0].length; j++) {
-//				System.out.print(mat[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
-		Set<Integer> set = new HashSet<>();
-		
-		int start = 0;
-		while(start < mat.length) {
-			for(int j = 0; j < mat[0].length; j++) {
-				if(mat[start][j] == true) {
-					set.add(start);
-				}
 			}
-			start++;
 		}
-		
-		System.out.println(set);
-
 	}
 
+	private static void dfs(int[][] adj_mat) {
+		int v = adj_mat.length;
+		boolean visited[] = new boolean[v];
+		for (int i = 0; i < v; i++) {
+			if (visited[i] == false) {
+				// here first node of each unvisited component is accessed.
+				System.out.println("printing " + i + "th component");
+				dfsHelper(adj_mat, i, visited);
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter no of vertex");
+		int v = sc.nextInt();
+		System.out.println("enter no of edges");
+		int e = sc.nextInt();
+		int adj_mat[][] = new int[v][v];
+		for (int i = 0; i < e; i++) {
+			int sv = sc.nextInt();
+			int ev = sc.nextInt();
+			adj_mat[sv][ev] = 1;
+			adj_mat[ev][sv] = 1;
+		}
+		dfs(adj_mat);
+	}
 }

@@ -3,6 +3,8 @@ package org.graph.lucky.bhaiyan;
 import java.util.*;
 
 public class KeysAndRooms {
+	//TC: O(N^2)
+	//SC: O(N)
 	 public boolean canVisitAllRooms(List<List<Integer>> rooms) {
 	        Queue<Integer> q = new LinkedList<Integer>();
 	        boolean[] visited = new boolean[rooms.size()];
