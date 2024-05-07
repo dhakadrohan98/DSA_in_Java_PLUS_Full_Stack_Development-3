@@ -2,6 +2,8 @@ package org.graph.lucky.bhaiyan;
 
 public class NumberOfProvinces {
 	//use code template of DFS on adjacency list
+	//TC: O(N^2)
+	//SC: O(N)
 	
 	int count = 0;
     public static void printHelper(int adj_mat[][], int sv, boolean visited[]) {
