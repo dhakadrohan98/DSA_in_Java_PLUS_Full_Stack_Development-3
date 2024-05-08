@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class AjacencyList {
+public class AdjacencyList {
 	//TC: O(v+2e)
 	//SC: O(v^2)
 	public static void main(String[] args) {
