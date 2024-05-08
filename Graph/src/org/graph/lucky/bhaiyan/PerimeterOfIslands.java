@@ -2,7 +2,7 @@ package org.graph.lucky.bhaiyan;
 
 public class PerimeterOfIslands {
 	//TC: O(V + E)
-	//SC: O(V)
+	//SC: O(m*n) + O(v) stack space in case of all lands are connected in all four direction
 	int count = 0;
     private void dfs(int[][] grid, boolean[][] visited, int i, int j) {
         //base case
