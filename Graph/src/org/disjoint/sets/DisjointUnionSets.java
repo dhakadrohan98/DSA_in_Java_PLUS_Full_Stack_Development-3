@@ -1,5 +1,8 @@
 package org.disjoint.sets;
 
+//union() & find() operation
+//union by rank
+//path compression
 public class DisjointUnionSets {
 
 	int[] parent, rank;
@@ -9,7 +12,7 @@ public class DisjointUnionSets {
 		parent = new int[n];
 		rank = new int[n];
 		this.n = n;
-		// Initialise parent array with its indexes values at the very starting
+		// Initializing parent array with its indexes values at the very starting
 		for (int i = 0; i < n; i++) {
 			parent[i] = i;
 		}
