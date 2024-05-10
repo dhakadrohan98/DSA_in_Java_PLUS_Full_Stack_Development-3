@@ -50,7 +50,7 @@ public class DisjointSetUnionByRank {
 		ds.unionByRank(6, 7);
 		ds.unionByRank(5, 6);
 
-		// if 3 and 7 belong to the same component or not
+		// if 3 and 7 belong to the same component or not.
 		if (ds.findUPar(3) == ds.findUPar(7)) {
 			System.out.println("Same");
 		} else
