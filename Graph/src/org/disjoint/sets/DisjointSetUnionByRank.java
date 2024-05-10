@@ -7,6 +7,7 @@ public class DisjointSetUnionByRank {
 
 	List<Integer> rank = new ArrayList<>();
 	List<Integer> parent = new ArrayList<>();
+	
 	//will work for 0 & 1 based indexing for parent & rank ArrayList.
 	public DisjointSetUnionByRank(int n) {
 		for (int i = 0; i <= n; i++) {
@@ -20,6 +21,7 @@ public class DisjointSetUnionByRank {
 			return node;
 		}
 		int ulp = findUPar(parent.get(node));
+		//path compression is happenning here
 		parent.set(node, ulp);
 		return parent.get(node);
 	}
@@ -48,7 +50,7 @@ public class DisjointSetUnionByRank {
 		ds.unionByRank(6, 7);
 		ds.unionByRank(5, 6);
 
-		// if 3 and 7 same or not
+		// if 3 and 7 belong to the same component or not
 		if (ds.findUPar(3) == ds.findUPar(7)) {
 			System.out.println("Same");
 		} else
