@@ -5,7 +5,6 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class FriendCircles {
-
 	public static int friendCirclesCount(int[][] grid) {
 		int count = BFS(grid, 0);
 		return count;
@@ -38,6 +37,5 @@ public class FriendCircles {
 				}
 			}
 		}
-
 	}
 }
