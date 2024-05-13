@@ -26,14 +26,14 @@ public class DetectCycleInADirectedGraph {
 		ArrayList<Integer> neighbours = adj.get(i);//store all neighbour nodes into ArrayList
 		for(int k=0; k<neighbours.size(); k++) {
 			int curr = neighbours.get(k);
-			//if cycle detected then return true from here
+			//if cycle detected then return true from here.
 			if(helper[curr] == true) return true;
 			if(visited[curr] == false) {
 				boolean ans = DFS(adj, curr, visited, helper);
 				if(ans == true) return true;
 			}
 		}
-		//mark unvisit the current node while doing backtrack in DFS (DFS in reverse order through backtracking)
+		//mark unvisit the current node while performing backtracking in DFS (DFS in reverse order through backtracking)
 		helper[i] = false;
 		return false;
 	}
