@@ -37,3 +37,11 @@ public class DetectCycleInUndirectedGraph {
 		return false;
 	}
 }
+
+//inputs:
+//EX:1
+//adj = {{1}, {0, 2, 4}, {1, 3}, {2, 4}, {1, 3}}
+
+//EX:2
+//adj = {{}, {2}, {1, 3}, {2}}
+
