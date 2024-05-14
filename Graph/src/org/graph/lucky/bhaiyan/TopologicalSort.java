@@ -32,7 +32,14 @@ public class TopologicalSort {
 			}
 		}
 		// after performing dfs at one entry node then push nodes of that group into
-		// stack from backward side.
+		// stack in a reverse manner.
 		st.push(i);
 	}
 }
+
+//Sample inputs:
+//EX:1
+//adj = {{1}, {0, 2, 4}, {1, 3}, {2, 4}, {1, 3}}
+
+//EX:2
+//adj = {{}, {2}, {1, 3}, {2}}
