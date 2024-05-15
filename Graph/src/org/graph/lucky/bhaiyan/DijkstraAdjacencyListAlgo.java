@@ -2,6 +2,9 @@ package org.graph.lucky.bhaiyan;
 
 import java.util.*;
 
+//Best Case Time Complexity: O((V + E) log V)
+//Worst Case Time Complexity: O(V² log V)
+//Auxiliary Space Complexity: O(V) to O(E + V)
 public class DijkstraAdjacencyListAlgo {
 	public static class Pair implements Comparable<Pair> {
 		int vertex;
