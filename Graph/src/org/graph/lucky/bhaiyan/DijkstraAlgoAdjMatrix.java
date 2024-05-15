@@ -54,7 +54,7 @@ public class DijkstraAlgoAdjMatrix {
 			}
 		}
 	}
-	//find minimum distance vertex from unvisited array category.
+	//find minimum vertex having minimum dist. from distance & unvisited array.
 	public static int findMinV(int[] distance, boolean[] visited) {
 		int minV = -1;
 		for (int i = 0; i < distance.length; i++) {
