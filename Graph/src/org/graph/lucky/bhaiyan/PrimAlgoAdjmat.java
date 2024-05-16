@@ -76,3 +76,25 @@ public class PrimAlgoAdjmat { //using Adjacency matrix
 		prim(adjMat, srcV, V);
 	}
 }
+
+//user input:
+
+//Enter total no. of vertexes: 
+//6
+//Enter total no. of edges: 
+//7
+//Enter sv, ev & weight (from sv to ev):-
+//0 1 2
+//0 3 4
+//1 3 1
+//1 2 3
+//2 5 4
+//3 4 2
+//4 5 1
+//Enter source vertex(srcV):-
+//0
+//0 : --> 2
+//1 : --> 3
+//1 : --> 1
+//3 : --> 2
+//4 : --> 1
