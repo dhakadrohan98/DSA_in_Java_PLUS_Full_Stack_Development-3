@@ -3,7 +3,7 @@ package org.recursion.dp.solution;
 import java.util.Arrays;
 import java.util.List;
 
-public class MinPathFixedStartingPointVariableEndingPointDPSolutionMemoization {
+public class MinPathFixedStartingPointVariableEndingPointMemoizationSol {
 	//TC: O(n*n)
 	//SC: O(n) recursion stack space + O(n^2) for dp array
 	public int minimumTotal(List<List<Integer>> triangle) {
