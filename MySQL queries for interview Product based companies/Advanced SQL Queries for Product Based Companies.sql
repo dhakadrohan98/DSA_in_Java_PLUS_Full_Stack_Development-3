@@ -215,33 +215,157 @@ FROM employees
 ORDER BY salary DESC
 LIMIT 1 OFFSET 3;
 -- For the 4th row:
--- LIMIT 1 OFFSET 3;	
+-- LIMIT 1 OFFSET 3;
 
+use corporate;
+select * from Employees;
+select * from EmployeeDetails;
 
+INSERT into EmployeeDetails (Emp_Id, FullName, ManagerId, DateOfJoining, City)
+VALUES(2, 'Farukh khan', 261, '1998/08/27', 'Columbia');
 
+-- union
+select * from Employees
+union
+select * from EmployeeDetails;
 
+-- Employee table for appying inner joins
+use employee;
+show tables;
+select * from departments;
+Create table employee (
+	empid int primary key,
+	ename varchar(50) not null,
+	designation varchar(25) not null,
+	managerid int(15) not null,
+	hiredate date not null,
+	salary int(16) not null,
+	deptno int(15) not null
+);
+describe employee;
+-- Insert single employee data
+Insert into employee values
+(7839, 'king', 'president', 0, '1981/11/17', 5000, 10);
+-- Insert mutliple employee data
+Insert into employee values
+(7698, 'blake', 'manager', 7839, '1981/05/01', 2850, 30),
+(7782, 'clark', 'manager', 7839, '1981/06/09', 2450, 10),
+(7566, 'jones', 'manager', 7839, '1981/04/02', 2975, 20),
+(7788, 'scott', 'analyst', 7566, '1987/04/19', 3000, 20),
+(7902, 'FORD', 'analyst', 7566, '1981/12/03', 3000, 20),
+(7369, 'smith', 'clerk', 7902, '1980/12/17', 800, 20);
+select * from employee;
+-- Inner joins problems:
 
+-- 1.How to find which employee is an manager of which employee from employee table(having EmpNo, Ename, designation, managerId, hiredate, salary, departmentNo) ? 
+SELECT e1.Ename AS employee,  m2.Ename AS manager 
+FROM employee e1
+INNER JOIN employee m2 ON e1.managerId = m2.empid;
 
+-- 2.Display employee details who are getting more salary than their manager salary?
+SELECT e1.Ename AS employeeName,  m2.Ename AS managerName, m2.salary as managerSalary
+FROM employee e1
+INNER JOIN employee m2 
+ON e1.managerId = m2.empid and e1.salary > m2.salary;
 
+-- 3.Display employee details who joined before their manager?
+SELECT e1.Ename AS employeeName,  m2.Ename AS managerName, m2.hiredate as hireDate
+FROM employee e1
+INNER JOIN employee m2 
+ON e1.managerId = m2.empid and e1.hiredate < m2.hiredate;
 
+-- create department table for left, right, full & corss join
+use employee;
+create table department(
+	deptno int(10) not null,
+    dname varchar(40) not null,
+    loc varchar(30) not null
+);
+describe department;
+insert into department values
+(10, 'accounting', 'New york'),
+(20, 'research', 'Dallas'),
+(30, 'sales', 'chicago'),
+(40, 'operations', 'Boston');
+select * from employee;
+select * from department;
+-- Left join:
+select e.empid, e.ename, e.designation, e.salary, d.deptno, d.dname, d.loc
+from employee e
+left join department d
+on e.deptno = d.deptno and d.dname = 'accounting';
+-- Right join
+select e.empid, e.ename, e.designation, e.salary, d.deptno, d.dname, d.loc
+from employee e
+right join department d
+on e.deptno = d.deptno;
+-- Full join
+SELECT e.deptno, e.empid, e.salary,d.deptno, d.dname, d.loc
+FROM employee e
+FULL JOIN department d ON d.deptno = 20;
+-- Equivalent sql queries to FULL JOIN (using union on left & right join)
+SELECT e.deptno, e.empid, e.salary,d.deptno, d.dname, d.loc
+FROM employee e
+LEFT JOIN department d ON d.deptno = 20
+UNION
+SELECT e.deptno, e.empid, e.salary, d.deptno, d.dname, d.loc
+FROM employee e
+RIGHT JOIN department d ON d.deptno = 20;
 
+select * from employee;
+-- cross join
+select e.empid, e.ename, d.deptno, d.dname, d.loc
+from employee e
+cross join department d;
 
+-- first row or last row
+select * from (
+select row_number() over (order by salary) as rowNum, ename, designation, salary
+from employee) as subQuery
+where rowNum = 1 or rowNum = (select count(*) from employee);
 
+-- last two or N rows of the table
+select * from (
+select row_number() over (order by salary) as rowNum, ename, designation, salary 
+from employee) as subQuery
+order by rowNum desc
+limit 2;
 
+select * from (
+	select row_number() over (order by salary) as rowNum, ename, designation, salary
+    from employee) as subQuery
+where rowNum = 1 or rowNum > (select count(*)-2 from employee);
 
+select distinct(salary) from employee 
+order by salary desc 
+limit 1 offset 2;
 
+create database city;
+use city;
 
+create table area1(
+city varchar(40) NOT NULL,
+country varchar(40) NOT NULL);
+Insert into area1 values('hyderabad', 'India'),
+('Kolkata', 'west bengal'),
+('Indore', 'Madhya pradesh');
+Insert into area1 values('Dalla', 'North america');
+select * from area1;
 
+create table area2(
+city varchar(40) NOT NULL,
+country varchar(40) NOT NULL);
+Insert into area2 values('USA', 'Texas'),
+('chichago', 'Souht america'),
+('Dalla', 'North america'),
+('Hyderabad', 'India');
+select * from area2;
 
-
-
-
-
-
-
-
-
-
-
-
-
+-- Intersect
+SELECT city, country
+FROM area1
+INTERSECT
+SELECT city, country  
+FROM area2;
+ 
+ 
