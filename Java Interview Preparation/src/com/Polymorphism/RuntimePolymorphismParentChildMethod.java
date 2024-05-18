@@ -16,7 +16,7 @@ class Child extends Parent {
 	 }
 }
 
-public class RuntimePolymorphism {
+public class RuntimePolymorphismParentChildMethod {
 
 	public static void main(String[] args) {
 // If a Parent type reference refers to a Parent object, then Parent's show is called
