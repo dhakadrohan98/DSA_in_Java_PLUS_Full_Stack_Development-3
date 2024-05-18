@@ -28,5 +28,4 @@ public class RuntimePolymorphismParentChildMethod {
         obj2.show();
 
 	}
-
 }

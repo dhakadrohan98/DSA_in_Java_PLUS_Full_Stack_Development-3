@@ -8,9 +8,13 @@ public class CompileTimePolymorphism {
 		public Calculation() {
 			super();
 		}
-
+		//method overloading
 		public int sum(int a, int b) {
 			return a+b;
+		}
+		
+		public int sum(int a, int b, int c) {
+			return a+b+c;
 		}
 		
 		public float sum(float a, float b) {

@@ -10,6 +10,7 @@ class Polygon {
 
 class Square extends Polygon {
 	// renders Square
+	@Override
 	public void render() {
 		System.out.println("Rendering Square...");
 	}
@@ -17,6 +18,7 @@ class Square extends Polygon {
 
 class Circle extends Polygon {
 	// renders circle
+	@Override
 	public void render() {
 		System.out.println("Rendering Circle...");
 	}
