@@ -1,4 +1,4 @@
-package org.codeship;
+package singletonPattern;
 
 public class Main {
 
@@ -12,6 +12,9 @@ public class Main {
 		Database object2 = db.getInstance();
 		System.out.println(object2);
 		
+		if(object1.hashCode() == object2.hashCode()) {
+			System.err.println("true");
+		}
 		object1.getConnection();
 		
 	}

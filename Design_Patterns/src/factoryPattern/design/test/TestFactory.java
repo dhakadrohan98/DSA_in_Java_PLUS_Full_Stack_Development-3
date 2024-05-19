@@ -1,7 +1,7 @@
-package org.codeship.design.test;
+package factoryPattern.design.test;
 
-import org.codeship.design.factory.*;
-import org.codeship.design.model.*;
+import factoryPattern.design.Factory.*;
+import factoryPattern.design.model.*;
 
 public class TestFactory {
 

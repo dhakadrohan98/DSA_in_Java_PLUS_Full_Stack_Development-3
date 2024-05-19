@@ -1,5 +1,6 @@
-package org.codeship;
+package singletonPattern;
 
+//Lazy Instantiation: 
 public class Database {
 	
 //	Create a private attribute of the class type that refers to the single object.

@@ -3,7 +3,7 @@ package org.heap.algorithms;
 import java.util.PriorityQueue;
 
 public class KthLargestElementInArray {
-
+	//TC: O(n * logk)
 	public static int findKthLargest(int[] nums, int k) {
 		int n = nums.length;
 		PriorityQueue<Integer> pq = new PriorityQueue<>();
