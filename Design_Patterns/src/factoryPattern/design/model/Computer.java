@@ -1,4 +1,4 @@
-package org.codeship.design.model;
+package factoryPattern.design.model;
 
 //Abstract class with abstract method
 public abstract class Computer {
