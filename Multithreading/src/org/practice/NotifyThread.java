@@ -1,7 +1,5 @@
 package org.practice;
 
-
-
 public class NotifyThread {
 
 	public static void main(String[] args) {
