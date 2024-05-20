@@ -1,4 +1,4 @@
-package org.notifyNotifyAllWait;
+package org.notifyNotifyAllWait.InterTreadCommunication;
 
 import java.lang.Object;
 
