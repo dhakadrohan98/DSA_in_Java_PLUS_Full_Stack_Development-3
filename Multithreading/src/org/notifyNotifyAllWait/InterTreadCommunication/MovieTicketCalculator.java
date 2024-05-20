@@ -1,4 +1,4 @@
-package org.notifyNotifyAllWait;
+package org.notifyNotifyAllWait.InterTreadCommunication;
 
 public class MovieTicketCalculator {
 
@@ -13,3 +13,4 @@ public class MovieTicketCalculator {
 	}
 
 }
+	
