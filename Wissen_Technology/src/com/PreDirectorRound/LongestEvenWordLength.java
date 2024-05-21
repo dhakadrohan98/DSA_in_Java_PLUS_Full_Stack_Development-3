@@ -1,8 +1,6 @@
-package org.string;
+package com.PreDirectorRound;
 
-import java.util.concurrent.ExecutorService;
-
-public class LongestWordEvenLengthFromString {
+public class LongestEvenWordLength {
 
 	public static void main(String[] args) {
 		String str = "Be not afraid of greatness, some are born great, some achieve greatness, "
