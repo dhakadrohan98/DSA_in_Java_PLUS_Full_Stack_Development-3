@@ -12,13 +12,13 @@ public class RemoveOuterMostParenthesis {
 			char ch = s.charAt(i);
 
 			if (ch == '(') {
-				if (st.size() > 0) { // //curr ch is not outermost opening Parentheses
+				if (st.size() > 0) { // //curr ch is not outermost opening Parenthesis
 					sb.append(ch);
 				}
 				st.push(ch);
 			} else {
 				st.pop();
-				if (st.size() > 0) { // curr ch is not outermost closing parentheses
+				if (st.size() > 0) { // curr ch is not outermost closing parenthesis
 					sb.append(ch);
 				}
 

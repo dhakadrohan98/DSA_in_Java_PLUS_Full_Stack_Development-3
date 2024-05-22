@@ -9,19 +9,18 @@ public class LongestWordEvenLengthFromString {
 				+ "and some have greatness thrust upon them.";
 		String[] arr = str.split(" ");
 		int longest = 0;
-		
-		for(int i=0; i < arr.length-1; i++) {
+
+		for (int i = 0; i < arr.length - 1; i++) {
 			int len = arr[i].length();
-			
-			if(arr[i].contains(",") || arr[i].contains(".")) {
+
+			if (arr[i].contains(",") || arr[i].contains(".")) {
 				len = len - 1;
 			}
-			if(len % 2 == 0) {
+			if (len % 2 == 0) {
 				longest = Math.max(longest, len);
 			}
 		}
 		System.out.println("longest even word length is " + longest);
 
 	}
-
 }

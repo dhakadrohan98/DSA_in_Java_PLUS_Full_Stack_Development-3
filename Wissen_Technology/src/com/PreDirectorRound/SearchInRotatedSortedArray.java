@@ -1,6 +1,6 @@
 package com.PreDirectorRound;
 
-public class SearchInSortedArray {
+public class SearchInRotatedSortedArray {
 	//TC: O(logn)
 	//SC: O(1)
 	public int search(int[] arr, int target) {
