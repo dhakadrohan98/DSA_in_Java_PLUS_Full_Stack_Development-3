@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class FloodFill {
+	// TC: O(m*n)
+	// SC: O(m*n)
 	class Pair {
 		int x;
 		int y;

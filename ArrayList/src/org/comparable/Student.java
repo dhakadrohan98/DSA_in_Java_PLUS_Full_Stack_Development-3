@@ -16,17 +16,9 @@ public class Student implements Comparable<Student> {
 
 		@Override
 		public int compareTo(Student st) {
-			
-//			if(age == st.age) {
-//				return 0;
-//			}
-//			else if(age>st.age) {
-//				return 1;
-//			}
-//			else {
-//				return -1;
-//			}
-			return this.name.compareTo(st.name);
+		
+			return this.age - st.age; //non-decreasing order
+//			return this.name.compareTo(st.name);
 		}
 
 		@Override
