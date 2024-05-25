@@ -31,32 +31,19 @@ public class Student {
 	}
 
 	public static void main(String[] args) {
-		Student s1 = new Student(1, "Rohan Dhakad");
-		Student s2 = new Student(2, "Sanjeet Kumar");
-		Student s3 = new Student(3, "Pranav pankaj");
-		Student s4 = new Student(4, "Ritesh Rana");
-		Student s5 = new Student(1, "Rohit Dhakad");
 		HashSet<Student> set = new HashSet<>();
-
+		Student s1 = new Student(1, "Nimit");
+		Student s2 = new Student(3, "Rahul");
+		Student s3 = new Student(2, "Nimit");
 		set.add(s1);
 		set.add(s2);
 		set.add(s3);
-		set.add(s4);
-		set.add(s5);
-//		System.out.println(set);
-//		System.out.println(Objects.equals(s1, s5));
-//		System.out.println();
-//		System.out.println("Initial size: " + set.size());
-//		s1.id = 3;
-//		System.out.println("Later size: " + set.size());
-//		System.out.println(set);
-		System.out.println("s1 hashCode: " + Objects.hashCode(s1));
-		System.out.println("s5 hashCode: "+ Objects.hashCode(s5));
 		System.out.println(set);
 		System.out.println(set.size());
+		//same key at the different bucket index
 		s1.id = 3;
-		System.out.println(set.size());
 		System.out.println(set);
+		int size = set.size();
+		System.out.println(size);
 	}
-
 }

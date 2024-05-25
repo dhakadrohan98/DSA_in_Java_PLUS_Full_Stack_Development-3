@@ -5,6 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+//Stream API definition:
+
+// Stream API is basically perform bulk operations(on objects of collection) and 
+//process objects of collection.
+
+//it can take advantage of multiple cores to process data in parallel. This makes it ideal for 
+//processing large amounts of data.
+
+
 public class SquareOfEvenNumbers1 {
 
 	public static void main(String[] args) {
