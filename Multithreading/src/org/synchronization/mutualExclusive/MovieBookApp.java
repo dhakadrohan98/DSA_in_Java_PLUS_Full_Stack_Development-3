@@ -1,7 +1,7 @@
 package org.synchronization.mutualExclusive;
 
 public class MovieBookApp extends Thread {
-	//variable of BookTheaterSeat type
+	//class variable of BookTheaterSeat type
 	static BookTheaterSeat b;
 	int seats;
 	

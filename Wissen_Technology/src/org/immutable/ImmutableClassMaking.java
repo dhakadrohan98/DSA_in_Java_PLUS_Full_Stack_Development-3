@@ -11,7 +11,8 @@ public final class ImmutableClassMaking {
 
     public ImmutableClassMaking(String name, List<String> degrees) {
         this.name = name;
-        this.degrees = new ArrayList<>(degrees); // Creating a defensive copy of the list (deep copy)
+     // Defensive copying(deep copy) to maintain immutability
+        this.degrees = new ArrayList<>(degrees);
     }
 
     public String getName() {
@@ -19,6 +20,7 @@ public final class ImmutableClassMaking {
     }
 
     public List<String> getDegrees() {
-        return Collections.unmodifiableList(degrees); // Returning an unmodifiable view of the list
+    	// Return a copy to prevent exposing the internal Address object
+        return new ArrayList<>(degrees);
     }
 }

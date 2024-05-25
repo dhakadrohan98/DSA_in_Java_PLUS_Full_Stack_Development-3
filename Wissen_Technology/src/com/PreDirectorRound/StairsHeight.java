@@ -1,4 +1,4 @@
-package com.coding.practice;
+package com.PreDirectorRound;
 
 public class StairsHeight {
 	//anti intuitive problem
@@ -25,3 +25,4 @@ public class StairsHeight {
 	}
 
 }
+
