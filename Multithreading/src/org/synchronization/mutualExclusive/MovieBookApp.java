@@ -7,7 +7,7 @@ public class MovieBookApp extends Thread {
 	
 	@Override
 	public void run() {
-		b.bookSeat(seats);
+		b.bookSeat(this.seats);
 	}
 	
 	public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class MovieBookApp extends Thread {
 		deepak.start();
 		
 		MovieBookApp diksha = new MovieBookApp();
-		diksha.seats = 3;
+		diksha.seats = 2;
 		diksha.start();
 	}
 }
