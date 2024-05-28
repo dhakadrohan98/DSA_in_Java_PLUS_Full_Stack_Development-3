@@ -45,5 +45,8 @@ public class Student {
 		System.out.println(set);
 		int size = set.size();
 		System.out.println(size);
+		System.out.println("s1 hashcode- " + s1.hashCode());
+		System.out.println("s3 hashcode- " + s2.hashCode());
+		System.out.println(s1.equals(s2));
 	}
 }

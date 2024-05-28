@@ -4,7 +4,7 @@ package singletonPattern;
 public class Database {
 	
 //	Create a private attribute of the class type that refers to the single object.
-	private static Database dbObject;
+	private static Database dbObject = null;
 	
 // Create a private constructor of the class to restrict object creation outside of the class
 	private Database() {

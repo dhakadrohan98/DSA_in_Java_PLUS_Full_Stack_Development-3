@@ -4,7 +4,7 @@ public abstract class Animal {
 	//abstract method
 	public abstract void animalSound();
 	
-	//Regular method
+	//Regular(non abstract) method
 	public void sleep() {
 		System.out.println("Zzz...");
 	}
