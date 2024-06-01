@@ -3,8 +3,9 @@ package org.arrays.stringPracticeProblems;
 import java.util.*;
 
 public class AllocateBook {
-	//Linear search
-	//TC: O(sum-max) * N
+	//Binary search
+	//TC: O(log(sum-max)) * n
+	//SC: O(1)
 	//@18:12
 	public static int findPages(List<Integer> arr, int n, int m) {
 		if (m > n) {
@@ -15,23 +16,28 @@ public class AllocateBook {
 		for (int i = 0; i < n; i++) {
 			max = Math.max(max, arr.get(i));
 		}
-		System.out.println("max: " + max);
 		// sum of arrlist
 		int sum = 0;
 		for (int i = 0; i < n; i++) {
 			sum = sum + arr.get(i);
-		}
-		System.out.println("sum: " + sum);
+		};
 		// main logic
-		for(int pages = max; pages <= sum; pages++) {
-			int countStudent = countStudent(arr, pages, m);
-			System.out.println("countStudent: " + countStudent + " from pages: " + pages);
-			if(countStudent == m) {
-				return pages;
+		int low = max;
+		int high = sum;
+		int ans = 0;
+
+		while(low <= high) {
+			int mid = (low+high) / 2;
+			int noOfStudent = countStudent(arr, mid, m);
+			if(noOfStudent > m) {
+				ans = mid;
+				low = mid + 1;
+			}
+			else {
+				high = mid-1;
 			}
 		}
-		return -1;
-
+		return low;
 	}
 
 	private static int countStudent(List<Integer> arr, int pages, int m) {
@@ -64,3 +70,33 @@ public class AllocateBook {
 	}
 
 }
+
+//Linear search
+//TC: O(sum-max) * N
+//public static int findPages(List<Integer> arr, int n, int m) {
+//	if (m > n) {
+//		return -1;
+//	}
+//	// largest element
+//	int max = Integer.MIN_VALUE;
+//	for (int i = 0; i < n; i++) {
+//		max = Math.max(max, arr.get(i));
+//	}
+//	System.out.println("max: " + max);
+//	// sum of arrlist
+//	int sum = 0;
+//	for (int i = 0; i < n; i++) {
+//		sum = sum + arr.get(i);
+//	}
+//	System.out.println("sum: " + sum);
+//	// main logic
+//	for(int pages = max; pages <= sum; pages++) {
+//		int countStudent = countStudent(arr, pages, m);
+//		System.out.println("countStudent: " + countStudent + " from pages: " + pages);
+//		if(countStudent == m) {
+//			return pages;
+//		}
+//	}
+//	return -1;
+//
+//}
