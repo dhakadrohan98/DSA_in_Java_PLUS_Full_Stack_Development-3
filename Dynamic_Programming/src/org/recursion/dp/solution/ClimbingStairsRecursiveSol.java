@@ -14,7 +14,7 @@ public class ClimbingStairsRecursiveSol {
 		return left + right;
 	}
 	public static void main(String[] args) {
-		int num = 3;
+		int num = 4;
 		System.out.println(climbStairs(num));
 
 	}

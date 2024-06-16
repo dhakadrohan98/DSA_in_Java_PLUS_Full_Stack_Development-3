@@ -13,7 +13,7 @@ public class MostGreenestGardenOnOtherSide {
 		// first maximum & second maximum
 		for (int i = 1; i < arr.length; ++i) {
 
-			if (arr[i] > firstMax) {
+			if (arr[i] >= firstMax) {
 				secondMax = firstMax;
 				firstMax = arr[i];
 			}
