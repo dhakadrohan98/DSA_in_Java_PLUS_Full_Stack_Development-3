@@ -2,6 +2,16 @@ package org.string.leetcode.mediumProblems;
 
 import java.util.*;
 
+class Pair {
+	char ch;
+	int freq;
+
+	Pair(char ch, int freq) {
+		this.ch = ch;
+		this.freq = freq;
+	}
+}
+
 public class SortCharactersByFrequency {
 
 	public static String frequencySort(String s) {
