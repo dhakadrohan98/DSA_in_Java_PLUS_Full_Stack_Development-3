@@ -2,18 +2,9 @@ package org.string.leetcode.mediumProblems;
 
 import java.util.*;
 
-//class Pair {
-//	char ch;
-//	int freq;
-//
-//	Pair(char ch, int freq) {
-//		this.ch = ch;
-//		this.freq = freq;
-//	}
-//}
 
-public class SortCharactersByFrequency1 implements Comparator<Pair> {
-
+public class SortCharactersByFrequency_Rev implements Comparator<Pair> {
+	
 	public int compare(Pair p1, Pair p2) {
 		//sort in the decreasing order of freq
 		return p2.freq - p1.freq;
