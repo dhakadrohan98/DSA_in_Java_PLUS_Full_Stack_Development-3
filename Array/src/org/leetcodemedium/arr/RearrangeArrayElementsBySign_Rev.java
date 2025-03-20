@@ -1,8 +1,7 @@
 package org.leetcodemedium.arr;
 
 public class RearrangeArrayElementsBySign_Rev {
-	
-	 //TC: O(n)
+	//TC: O(n)
     //SC: O(n)
     public int[] rearrangeArray(int[] nums) {
         int n = nums.length;
