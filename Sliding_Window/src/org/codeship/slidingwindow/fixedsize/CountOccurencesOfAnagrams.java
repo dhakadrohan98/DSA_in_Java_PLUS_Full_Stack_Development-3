@@ -58,7 +58,8 @@ public class CountOccurencesOfAnagrams {
 	public static void main(String[] args) {
 		String txt = "aabaabaa";
 		String pat = "aaba";
-
+		System.out.println(search(pat, txt));
+		
 		String txt1 = "forxxorfxdofr";
 		String pat1 = "for";
 		System.out.println(search(pat1, txt1));
