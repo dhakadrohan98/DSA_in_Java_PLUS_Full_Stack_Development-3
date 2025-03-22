@@ -40,12 +40,13 @@ public class InventoryService {
 	
 	public List<Item> searchItem(List<String> brand, List<String> category, Integer priceFrom, Integer priceTo, 
 			String sortBy, String orderBy){
+		System.out.println(brand + " " + category + " " + priceFrom + " " + priceTo + " " + sortBy + " " + orderBy);
 		List<Item> filteredItems = new ArrayList<>();
 		//search item based on brand & category in the list of Item 
 		for(Item item : inventoryDao.getItem()) {
-			if((brand != null && !brand.isEmpty() &&  brand.contains(item.getBrand())) || 
-			   (category != null && !category.isEmpty() && category.contains(item.getCategory())) &&
-			   ((priceFrom == null && priceTo == null) || (priceFrom >= item.getPrice() && priceTo <= item.getPrice()))) 
+			if(((brand != null && brand.contains(item.getBrand())) ||
+			   (category != null && category.contains(item.getCategory()))) &&
+			   ((priceFrom == null && priceTo == null) || (priceFrom <= item.getPrice() && item.getPrice() <= priceTo)))
 			{
 				filteredItems.add(item);
 			}

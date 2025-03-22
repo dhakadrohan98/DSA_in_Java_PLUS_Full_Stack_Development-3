@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="82183014-23ee-4408-923d-b3bd0531afeb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/org/codeship/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/codeship/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/codeship/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/codeship/service/InventoryService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2ufj35S0OFwFUtBCnBeYYRXMWAW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dsa",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ADMIN/Old-code/DSA_in_Java_PLUS_Full_Stack_Development-3/Flipkart_Inventory/src"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82183014-23ee-4408-923d-b3bd0531afeb" name="Changes" comment="" />
+      <created>1742646320526</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742646320526</updated>
+    </task>
+    <servers />
+  </component>
+</project>
