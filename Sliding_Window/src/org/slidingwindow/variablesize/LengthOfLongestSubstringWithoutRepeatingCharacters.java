@@ -41,6 +41,7 @@ public class LengthOfLongestSubstringWithoutRepeatingCharacters {
 				// longest substring according
 				// to question.
 			else if (hmap.size() == j - i + 1) {
+				
 				max = Math.max(max, j - i + 1);
 			}
 			// Then finally increase the value of j by 1 after the above two conditions.
