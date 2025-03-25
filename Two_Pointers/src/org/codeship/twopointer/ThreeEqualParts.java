@@ -2,6 +2,10 @@ package org.codeship.twopointer;
 
 public class ThreeEqualParts {
 
+	//Do dry run on below example to understand this algo
+	//arr -> [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1]
+	//TC: O(n)
+	//SC: O(1)
 	public static int[] threeEqualParts(int[] arr) {
 	    int[] ans = new int[] {-1,-1};
 

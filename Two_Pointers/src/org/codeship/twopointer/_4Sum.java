@@ -2,7 +2,7 @@ package org.codeship.twopointer;
 
 import java.util.*;
 
-public class FourSum {
+public class _4Sum {
 
 	  // TC : O(n3)
 	  public List<List<Integer>> fourSum(int[] nums, int target) {
