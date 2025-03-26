@@ -12,6 +12,7 @@ public class Driver {
     public static void main(String[] args) {
         InventoryService inventoryService = new InventoryService(new InventoryDao());
         try {
+
             // add items
             inventoryService.addItem("Amul", "Milk", 100);
             inventoryService.addItem("Amul", "Curd", 50);
