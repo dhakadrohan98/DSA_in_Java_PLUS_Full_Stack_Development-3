@@ -8,7 +8,7 @@ public class NumberOfSubsequencesSatisfyGivenSumCondition {
     //SC: O(logn) + O(n) power array
     public int numSubseq(int[] nums, int target) {
         Arrays.sort(nums);
-        int mod = 1_000_000_007;
+        int mod = 1000000007;
         int n = nums.length;
         int i = 0, j = n - 1;
         int res = 0;
