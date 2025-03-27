@@ -25,7 +25,7 @@ public class InventoryService {
 	}
 	
 	public void addInventory(String brand, String category, Integer quantity) {
-		if(brand == null || category == null) {
+		if(brand == null || category == null || quantity <= 0) {
 			throw new IllegalArgumentException("Invalid data is passed. Brand or Category is not passed");
 		}
 		for(Item item : inventoryDao.getItem()) {
