@@ -1,4 +1,4 @@
-package org.leetcodemedium.arr;
+package org.leetcodemedium.arr.revision;
 
 public class RearrangeArrayElementsBySign_Rev {
 	//TC: O(n)
