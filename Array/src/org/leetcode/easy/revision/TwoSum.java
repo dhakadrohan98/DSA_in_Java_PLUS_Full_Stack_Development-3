@@ -1,4 +1,4 @@
-package org.leetcode.easy;
+package org.leetcode.easy.revision;
 
 import java.util.*;
 
