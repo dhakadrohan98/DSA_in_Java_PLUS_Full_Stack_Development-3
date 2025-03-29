@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class MergeOverlappingIntervals {
+public class MergeOverlappingIntervals_OptimalSolution {
 	public static int[][] merge(int[][] intervals) {
         int n=intervals.length; // size of the array
         //sort the given intervals:
@@ -24,7 +24,7 @@ public class MergeOverlappingIntervals {
        }
        
        System.out.println();
-        // List of arrays
+        // List of 1D array
         List<int[]> ans=new ArrayList<>();
         
         for(int i=0;i<n;i++) {   // select an interval:  
@@ -33,7 +33,7 @@ public class MergeOverlappingIntervals {
 
             if(ans.isEmpty() || start > ans.get(ans.size()-1)[1]) {
                 ans.add(intervals[i]);  
-            } else {
+            } else {	
                 int firstOfBackElement = ans.get(ans.size()-1)[0];
                 int lastOfBackElement = ans.get(ans.size()-1)[1];
                 int lastPosition = ans.size()-1;
@@ -59,7 +59,7 @@ public class MergeOverlappingIntervals {
 		for(int i=0; i<merge.length; i++) {
 	    	   System.out.print("{");
 	    	   for(int j=0; j<2; j++) {
-	    		   System.out.print(+merge[i][j] + " ");
+	    		   System.out.print(merge[i][j] + " ");
 	    	   }
 	    	   System.out.print("}, ");
 	    }
